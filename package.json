@@ -20,6 +20,23 @@
                 }
             }
         },
+        "commands": [
+            {
+                "command": "mb.real.currentISOTimestamp",
+                "title": "Insert: Current ISO Timestamp",
+                "shortTitle": "ISO Timestamp"
+            },
+            {
+                "command": "mb.real.date-time.currentISODate",
+                "title": "Insert: Current ISO Date",
+                "shortTitle": "ISO Date"
+            },
+            {
+                "command": "mb.real.date-time.currentISOTime",
+                "title": "Insert: Current ISO Time",
+                "shortTitle": "ISO Time"
+            }
+        ],
         "menus": {
             "editor/context": [
                 {
@@ -30,8 +47,23 @@
             ],
             "mockingbird": [
                 {
-                    "submenu": "mockingbird/real",
-                    "group": "mockingbird"
+                    "submenu": "mockingbird/real"
+                }
+            ],
+            "mockingbird/real": [
+                {
+                    "submenu": "mockingbird/real/date-time"
+                },
+                {
+                    "command": "mb.real.currentISOTimestamp"
+                }
+            ],
+            "mockingbird/real/date-time": [
+                {
+                    "command": "mb.real.date-time.currentISODate"
+                },
+                {
+                    "command": "mb.real.date-time.currentISOTime"
                 }
             ]
         },
@@ -39,6 +71,14 @@
             {
                 "id": "mockingbird",
                 "label": "Mockingbird"
+            },
+            {
+                "id": "mockingbird/real",
+                "label": "Real"
+            },
+            {
+                "id": "mockingbird/real/date-time",
+                "label": "Date Time"
             }
         ]
     },
