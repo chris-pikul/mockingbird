@@ -6,7 +6,27 @@ import {
     currentLocaleTime,
     currentLocaleTimestamp,
     currentTimestampFormatted,
-} from './real/date-time';
+} from './date-time';
+import {
+    getE,
+    getEpsilon,
+    getPI,
+    randomByte,
+    randomFloat,
+    randomFloatRange,
+    randomHexInteger16,
+    randomHexInteger24,
+    randomHexInteger32,
+    randomInteger,
+    randomIntegerRange,
+    randomNegativeFloat,
+    randomNegativeInteger,
+    randomPositiveFloat,
+    randomPositiveInteger,
+    randomSignedByte,
+    randomSimpleFloat,
+    randomUnit,
+} from './numbers';
 import { Command } from './vscode';
 
 const commands: Command[] = [
@@ -59,6 +79,128 @@ const commands: Command[] = [
             validator: (input?: string) => !!(input && input.length > 0),
             errorMessage: 'Please enter a formatting string',
         },
+    },
+    {
+        key: 'number.pi',
+        title: 'Insert: Pi',
+        shortTitle: 'Pi',
+        func: getPI,
+    },
+    {
+        key: 'number.e',
+        title: "Insert: Euler's Number",
+        shortTitle: 'Euler',
+        func: getE,
+    },
+    {
+        key: 'number.epsilon',
+        title: 'Insert: Epsilon (Really Small Number)',
+        shortTitle: 'Epsilon',
+        func: getEpsilon,
+    },
+    {
+        key: 'number.randomUnit',
+        title: 'Random: Unit Float (0..1)',
+        shortTitle: 'Random Unit',
+        func: randomUnit,
+    },
+    {
+        key: 'number.randomPositiveFloat',
+        title: 'Random: Positive Float (0..MAX)',
+        shortTitle: 'Random Positive Float',
+        func: randomPositiveFloat,
+    },
+    {
+        key: 'number.randomNegativeFloat',
+        title: 'Random: Negative Float (0..-MAX)',
+        shortTitle: 'Random Negative Float',
+        func: randomNegativeFloat,
+    },
+    {
+        key: 'number.randomFloat',
+        title: 'Random: Complex Float (-MAX/2..MAX/2)',
+        shortTitle: 'Random Complex Float',
+        func: randomFloat,
+    },
+    {
+        key: 'number.randomSimpleFloat',
+        title: 'Random: Simple Float',
+        shortTitle: 'Random Float',
+        func: randomSimpleFloat,
+    },
+    {
+        key: 'number.randomFloatRange',
+        title: 'Random: Float in Range',
+        shortTitle: 'Random Float',
+        func: randomFloatRange,
+        prompt: {
+            message:
+                'Provide a range by specifying the minimum and maximum values separated by a space.',
+            defaultValue: '0 100',
+            placeholder: 'MIN MAX',
+            validator: (input?: string) => !!(input && input.indexOf(' ') > 0),
+        },
+    },
+    {
+        key: 'number.randomPositiveInteger',
+        title: 'Random: Positive Integer',
+        shortTitle: 'Random Positive Integer',
+        func: randomPositiveInteger,
+    },
+    {
+        key: 'number.randomNegativeInteger',
+        title: 'Random: Negative Integer',
+        shortTitle: 'Random Negative Integer',
+        func: randomNegativeInteger,
+    },
+    {
+        key: 'number.randomInteger',
+        title: 'Random: Integer',
+        shortTitle: 'Random Integer',
+        func: randomInteger,
+    },
+    {
+        key: 'number.randomIntegerRange',
+        title: 'Random: Integer Range',
+        shortTitle: 'Random Integer Range',
+        func: randomIntegerRange,
+        prompt: {
+            message:
+                'Provide a range by specifying the minimum and maximum values separated by a space.',
+            defaultValue: '0 100',
+            placeholder: 'MIN MAX',
+            validator: (input?: string) => !!(input && input.indexOf(' ') > 0),
+        },
+    },
+    {
+        key: 'number.randomByte',
+        title: 'Random: Byte (Unsigned)',
+        shortTitle: 'Random Byte',
+        func: randomByte,
+    },
+    {
+        key: 'number.randomSignedByte',
+        title: 'Random: Byte (Signed)',
+        shortTitle: 'Random Signed Byte',
+        func: randomSignedByte,
+    },
+    {
+        key: 'number.randomHexInteger16',
+        title: 'Random: 16bit Hexidecimal Integer',
+        shortTitle: 'Random 16bit Hex',
+        func: randomHexInteger16,
+    },
+    {
+        key: 'number.randomHexInteger24',
+        title: 'Random: 24bit Hexidecimal Integer',
+        shortTitle: 'Random 24bit Hex',
+        func: randomHexInteger24,
+    },
+    {
+        key: 'number.randomHexInteger32',
+        title: 'Random: 32bit Hexidecimal Integer',
+        shortTitle: 'Random 32bit Hex',
+        func: randomHexInteger32,
     },
 ];
 export default commands;

@@ -55,6 +55,96 @@
                 "command": "mb.date-time.currentFormatted",
                 "title": "Insert: Current Date/Time With Formatting",
                 "shortTitle": "Formatted Date/Time"
+            },
+            {
+                "command": "mb.number.pi",
+                "title": "Insert: Pi",
+                "shortTitle": "Pi"
+            },
+            {
+                "command": "mb.number.e",
+                "title": "Insert: Euler's Number",
+                "shortTitle": "Euler"
+            },
+            {
+                "command": "mb.number.epsilon",
+                "title": "Insert: Epsilon (Really Small Number)",
+                "shortTitle": "Epsilon"
+            },
+            {
+                "command": "mb.number.randomUnit",
+                "title": "Random: Unit Float (0..1)",
+                "shortTitle": "Random Unit"
+            },
+            {
+                "command": "mb.number.randomPositiveFloat",
+                "title": "Random: Positive Float (0..MAX)",
+                "shortTitle": "Random Positive Float"
+            },
+            {
+                "command": "mb.number.randomNegativeFloat",
+                "title": "Random: Negative Float (0..-MAX)",
+                "shortTitle": "Random Negative Float"
+            },
+            {
+                "command": "mb.number.randomFloat",
+                "title": "Random: Complex Float (-MAX/2..MAX/2)",
+                "shortTitle": "Random Complex Float"
+            },
+            {
+                "command": "mb.number.randomSimpleFloat",
+                "title": "Random: Simple Float",
+                "shortTitle": "Random Float"
+            },
+            {
+                "command": "mb.number.randomFloatRange",
+                "title": "Random: Float in Range",
+                "shortTitle": "Random Float"
+            },
+            {
+                "command": "mb.number.randomPositiveInteger",
+                "title": "Random: Positive Integer",
+                "shortTitle": "Random Positive Integer"
+            },
+            {
+                "command": "mb.number.randomNegativeInteger",
+                "title": "Random: Negative Integer",
+                "shortTitle": "Random Negative Integer"
+            },
+            {
+                "command": "mb.number.randomInteger",
+                "title": "Random: Integer",
+                "shortTitle": "Random Integer"
+            },
+            {
+                "command": "mb.number.randomIntegerRange",
+                "title": "Random: Integer Range",
+                "shortTitle": "Random Integer Range"
+            },
+            {
+                "command": "mb.number.randomByte",
+                "title": "Random: Byte (Unsigned)",
+                "shortTitle": "Random Byte"
+            },
+            {
+                "command": "mb.number.randomSignedByte",
+                "title": "Random: Byte (Signed)",
+                "shortTitle": "Random Signed Byte"
+            },
+            {
+                "command": "mb.number.randomHexInteger16",
+                "title": "Random: 16bit Hexidecimal Integer",
+                "shortTitle": "Random 16bit Hex"
+            },
+            {
+                "command": "mb.number.randomHexInteger24",
+                "title": "Random: 24bit Hexidecimal Integer",
+                "shortTitle": "Random 24bit Hex"
+            },
+            {
+                "command": "mb.number.randomHexInteger32",
+                "title": "Random: 32bit Hexidecimal Integer",
+                "shortTitle": "Random 32bit Hex"
             }
         ],
         "menus": {
@@ -68,6 +158,9 @@
             "mockingbird": [
                 {
                     "submenu": "mockingbird/date-time"
+                },
+                {
+                    "submenu": "mockingbird/number"
                 }
             ],
             "mockingbird/date-time": [
@@ -92,6 +185,62 @@
                 {
                     "command": "mb.date-time.currentFormatted"
                 }
+            ],
+            "mockingbird/number": [
+                {
+                    "command": "mb.number.pi"
+                },
+                {
+                    "command": "mb.number.e"
+                },
+                {
+                    "command": "mb.number.epsilon"
+                },
+                {
+                    "command": "mb.number.randomUnit"
+                },
+                {
+                    "command": "mb.number.randomPositiveFloat"
+                },
+                {
+                    "command": "mb.number.randomNegativeFloat"
+                },
+                {
+                    "command": "mb.number.randomFloat"
+                },
+                {
+                    "command": "mb.number.randomSimpleFloat"
+                },
+                {
+                    "command": "mb.number.randomFloatRange"
+                },
+                {
+                    "command": "mb.number.randomPositiveInteger"
+                },
+                {
+                    "command": "mb.number.randomNegativeInteger"
+                },
+                {
+                    "command": "mb.number.randomInteger"
+                },
+                {
+                    "command": "mb.number.randomIntegerRange"
+                },
+                {
+                    "command": "mb.number.randomByte"
+                },
+                {
+                    "command": "mb.number.randomSignedByte"
+                },
+                {
+                    "command": "mb.number.randomHexInteger16"
+                },
+                {
+                    "command": "mb.number.randomHexInteger24"
+                },
+                {
+                    "command": "mb.number.randomHexInteger32"
+                }
             ]
         },
         "submenus": [
@@ -102,6 +251,10 @@
             {
                 "id": "mockingbird/date-time",
                 "label": "Date Time"
+            },
+            {
+                "id": "mockingbird/number",
+                "label": "Number"
             }
         ]
     },
