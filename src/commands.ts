@@ -7,19 +7,19 @@ import { Command } from './vscode';
 
 const commands: Command[] = [
     {
-        key: 'real.currentISOTimestamp',
+        key: 'date-time.currentISOTimestamp',
         title: 'Insert: Current ISO Timestamp',
         shortTitle: 'ISO Timestamp',
         func: currentISOTimestamp,
     },
     {
-        key: 'real.date-time.currentISODate',
+        key: 'date-time.currentISODate',
         title: 'Insert: Current ISO Date',
         shortTitle: 'ISO Date',
         func: currentISODate,
     },
     {
-        key: 'real.date-time.currentISOTime',
+        key: 'date-time.currentISOTime',
         title: 'Insert: Current ISO Time',
         shortTitle: 'ISO Time',
         func: currentISOTime,

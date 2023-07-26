@@ -22,17 +22,17 @@
         },
         "commands": [
             {
-                "command": "mb.real.currentISOTimestamp",
+                "command": "mb.date-time.currentISOTimestamp",
                 "title": "Insert: Current ISO Timestamp",
                 "shortTitle": "ISO Timestamp"
             },
             {
-                "command": "mb.real.date-time.currentISODate",
+                "command": "mb.date-time.currentISODate",
                 "title": "Insert: Current ISO Date",
                 "shortTitle": "ISO Date"
             },
             {
-                "command": "mb.real.date-time.currentISOTime",
+                "command": "mb.date-time.currentISOTime",
                 "title": "Insert: Current ISO Time",
                 "shortTitle": "ISO Time"
             }
@@ -47,23 +47,18 @@
             ],
             "mockingbird": [
                 {
-                    "submenu": "mockingbird/real"
+                    "submenu": "mockingbird/date-time"
                 }
             ],
-            "mockingbird/real": [
+            "mockingbird/date-time": [
                 {
-                    "submenu": "mockingbird/real/date-time"
+                    "command": "mb.date-time.currentISOTimestamp"
                 },
                 {
-                    "command": "mb.real.currentISOTimestamp"
-                }
-            ],
-            "mockingbird/real/date-time": [
-                {
-                    "command": "mb.real.date-time.currentISODate"
+                    "command": "mb.date-time.currentISODate"
                 },
                 {
-                    "command": "mb.real.date-time.currentISOTime"
+                    "command": "mb.date-time.currentISOTime"
                 }
             ]
         },
@@ -73,11 +68,7 @@
                 "label": "Mockingbird"
             },
             {
-                "id": "mockingbird/real",
-                "label": "Real"
-            },
-            {
-                "id": "mockingbird/real/date-time",
+                "id": "mockingbird/date-time",
                 "label": "Date Time"
             }
         ]
