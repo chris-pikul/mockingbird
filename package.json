@@ -35,6 +35,21 @@
                 "command": "mb.date-time.currentISOTime",
                 "title": "Insert: Current ISO Time",
                 "shortTitle": "ISO Time"
+            },
+            {
+                "command": "mb.date-time.currentLocaleTimestamp",
+                "title": "Insert: Current Timestamp Using Local Locale",
+                "shortTitle": "Timestamp Local Locale"
+            },
+            {
+                "command": "mb.date-time.currentLocaleDate",
+                "title": "Insert: Current Date Using Local Locale",
+                "shortTitle": "Date Local Locale"
+            },
+            {
+                "command": "mb.date-time.currentLocaleTime",
+                "title": "Insert: Current Time Using Local Locale",
+                "shortTitle": "Date Local Locale"
             }
         ],
         "menus": {
@@ -59,6 +74,15 @@
                 },
                 {
                     "command": "mb.date-time.currentISOTime"
+                },
+                {
+                    "command": "mb.date-time.currentLocaleTimestamp"
+                },
+                {
+                    "command": "mb.date-time.currentLocaleDate"
+                },
+                {
+                    "command": "mb.date-time.currentLocaleTime"
                 }
             ]
         },

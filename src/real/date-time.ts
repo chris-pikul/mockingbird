@@ -26,3 +26,15 @@ export function currentISOTime(): string {
         representation: 'time',
     });
 }
+
+export function currentLocaleTimestamp(): string {
+    return new Date().toLocaleString();
+}
+
+export function currentLocaleDate(): string {
+    return new Date().toLocaleDateString();
+}
+
+export function currentLocaleTime(): string {
+    return new Date().toLocaleTimeString();
+}
