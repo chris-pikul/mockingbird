@@ -5,6 +5,7 @@ import {
     currentLocaleDate,
     currentLocaleTime,
     currentLocaleTimestamp,
+    currentTimestampFormatted,
 } from './real/date-time';
 import { Command } from './vscode';
 
@@ -44,6 +45,20 @@ const commands: Command[] = [
         title: 'Insert: Current Time Using Local Locale',
         shortTitle: 'Date Local Locale',
         func: currentLocaleTime,
+    },
+    {
+        key: 'date-time.currentFormatted',
+        title: 'Insert: Current Date/Time With Formatting',
+        shortTitle: 'Formatted Date/Time',
+        func: currentTimestampFormatted,
+        prompt: {
+            message:
+                'Supply a formatting string that uses Moment.JS/Date-FNS acceptable tokens',
+            placeholder: 'h:mm do MMMM uuuu',
+            defaultValue: "h:mmaaa, do 'of' MMMM uuuu",
+            validator: (input?: string) => !!(input && input.length > 0),
+            errorMessage: 'Please enter a formatting string',
+        },
     },
 ];
 export default commands;

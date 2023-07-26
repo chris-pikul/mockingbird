@@ -50,6 +50,11 @@
                 "command": "mb.date-time.currentLocaleTime",
                 "title": "Insert: Current Time Using Local Locale",
                 "shortTitle": "Date Local Locale"
+            },
+            {
+                "command": "mb.date-time.currentFormatted",
+                "title": "Insert: Current Date/Time With Formatting",
+                "shortTitle": "Formatted Date/Time"
             }
         ],
         "menus": {
@@ -83,6 +88,9 @@
                 },
                 {
                     "command": "mb.date-time.currentLocaleTime"
+                },
+                {
+                    "command": "mb.date-time.currentFormatted"
                 }
             ]
         },

@@ -6,18 +6,20 @@
 import * as vscode from 'vscode';
 
 /**
- * Specifies the type of command, essentially how it is expected to be used.
- *
- * Options (for now) include:
- * - `generator` the function generates new source code
- *
- */
-export type ECommandType = 'generator';
-
-/**
  * A function that returns a string for generating new text
  */
-export type OutputFunction = () => string;
+export type OutputFunction = (...args: any[]) => string;
+
+/**
+ * If a command can have a prompt, then these are the options for that operation.
+ */
+export type CommandPrompt = {
+    message: string;
+    placeholder?: string;
+    validator?: (input?: string) => boolean | string;
+    errorMessage?: string;
+    defaultValue?: string;
+};
 
 /**
  * Declares a command that can be registered. If the `type` field is missing,
@@ -25,10 +27,10 @@ export type OutputFunction = () => string;
  */
 export type Command = {
     key: string;
-    type?: ECommandType;
     title: string;
     shortTitle?: string;
     func: OutputFunction;
+    prompt?: CommandPrompt;
 };
 
 /**
@@ -100,7 +102,10 @@ export function insert(source: string): void {
  *
  * @param func Function that returns new source text
  */
-export function insertWithGenerator(func: OutputFunction): void {
+export function insertWithGenerator(
+    func: OutputFunction,
+    ...args: (string | undefined)[]
+): void {
     const editor = vscode.window.activeTextEditor;
     if (!editor) return showError('No active text editor is available');
 
@@ -108,7 +113,7 @@ export function insertWithGenerator(func: OutputFunction): void {
     editor
         .edit((builder) => {
             editor.selections.forEach((selection) => {
-                const text = func();
+                const text = func(...args);
                 builder.replace(selection, text);
                 selections.push(getEndSelection(selection, text));
             });
@@ -131,9 +136,44 @@ export function registerGeneratorCommand(
     context: vscode.ExtensionContext,
     cmd: Command,
 ) {
-    const handle = vscode.commands.registerCommand(
+    const handle = vscode.commands.registerTextEditorCommand(
         makeCommandKey(cmd.key),
         () => insertWithGenerator(cmd.func),
+    );
+    context.subscriptions.push(handle);
+}
+
+export function registerPromptGeneratorCommand(
+    context: vscode.ExtensionContext,
+    cmd: Command,
+) {
+    if (typeof cmd.prompt === 'undefined')
+        throw new Error('Command is missing prompt options');
+
+    const handle = vscode.commands.registerTextEditorCommand(
+        makeCommandKey(cmd.key),
+        () => {
+            vscode.window
+                .showInputBox({
+                    title: cmd.shortTitle,
+                    prompt: cmd.prompt?.message,
+                    placeHolder: cmd.prompt?.placeholder,
+                    value: cmd.prompt?.defaultValue,
+                    validateInput: (input: string) => {
+                        if (cmd.prompt && cmd.prompt.validator) {
+                            const result = cmd.prompt.validator(input);
+                            if (typeof result === 'string') return result;
+                            else if (
+                                typeof result === 'boolean' &&
+                                result === false
+                            )
+                                return 'The value you entered is invalid, please try again';
+                        }
+                        return null;
+                    },
+                })
+                .then((value?: string) => insertWithGenerator(cmd.func, value));
+        },
     );
     context.subscriptions.push(handle);
 }
@@ -153,11 +193,8 @@ export function registerCommand(
     context: vscode.ExtensionContext,
     cmd: Command,
 ) {
-    switch (cmd.type ?? 'generator') {
-        case 'generator':
-            registerGeneratorCommand(context, cmd);
-            break;
-        default:
-            console.error(`Unknown command type "${cmd.type}"!`);
-    }
+    if (cmd.prompt) registerPromptGeneratorCommand(context, cmd);
+    else if (typeof cmd.func === 'function')
+        registerGeneratorCommand(context, cmd);
+    else console.error(`Invalid command "${cmd.key}"!`);
 }

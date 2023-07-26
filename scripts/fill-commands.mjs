@@ -41,7 +41,8 @@ async function compileCommands() {
 
         const clean = content
             .substring(nextBracket, endBracket + 1)
-            .replaceAll(/func\:.+,/gi, '');
+            .replaceAll(/func\:.+,/gi, '')
+            .replaceAll(/validator\:.+,/gi, '');
 
         /* eslint-disable no-new-func */
         const array = new Function(`return ${clean};`)();

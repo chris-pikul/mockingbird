@@ -4,7 +4,7 @@
  * @module MockingBird
  * @author Chris Pikul
  */
-import { formatISO } from 'date-fns';
+import { format, formatISO } from 'date-fns';
 
 export function currentISOTimestamp(): string {
     return formatISO(new Date(), {
@@ -37,4 +37,8 @@ export function currentLocaleDate(): string {
 
 export function currentLocaleTime(): string {
     return new Date().toLocaleTimeString();
+}
+
+export function currentTimestampFormatted(fmtStr: string): string {
+    return format(new Date(), fmtStr);
 }
