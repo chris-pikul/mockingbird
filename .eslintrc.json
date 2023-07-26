@@ -8,6 +8,7 @@
     "plugins": [
         "@typescript-eslint"
     ],
+    "extends": [".eslint.strict.js", "prettier"],
     "rules": {
         "@typescript-eslint/naming-convention": "warn",
         "@typescript-eslint/semi": "warn",
