@@ -67,6 +67,7 @@ function processCommand(cmd) {
         title: cmd.title,
     };
     if (cmd.shortTitle) newCommand.shortTitle = cmd.shortTitle;
+    if (cmd.category) newCommand.category = cmd.category;
     commands.push(newCommand);
 
     const parts = cmd.key.split('.');

@@ -27,6 +27,7 @@ export type CommandPrompt = {
  */
 export type Command = {
     key: string;
+    category?: string;
     title: string;
     shortTitle?: string;
     func: OutputFunction;
