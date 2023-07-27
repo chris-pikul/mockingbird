@@ -227,6 +227,11 @@
                 "command": "mb.number.randomBinaryInteger32",
                 "title": "Random: Binary Integer (32bit)",
                 "shortTitle": "Random Binary 32"
+            },
+            {
+                "command": "mb.number.randomPrime",
+                "title": "Random: Prime",
+                "shortTitle": "Random Prime"
             }
         ],
         "menus": {
@@ -352,6 +357,9 @@
                 },
                 {
                     "command": "mb.number.randomBinaryInteger32"
+                },
+                {
+                    "command": "mb.number.randomPrime"
                 }
             ]
         },
@@ -375,11 +383,7 @@
         "compile": "webpack",
         "watch": "webpack --watch",
         "package": "webpack --mode production --devtool hidden-source-map",
-        "compile-tests": "tsc -p . --outDir out",
-        "watch-tests": "tsc -p . -w --outDir out",
-        "pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
         "lint": "eslint src --ext ts",
-        "test": "node ./out/test/runTest.js",
         "commands": "node ./scripts/fill-commands.mjs"
     },
     "devDependencies": {

@@ -1,3 +1,4 @@
+import Primes from './primes.json';
 import { parseRange, withDigits } from './utils';
 import { getConfigValue } from './vscode';
 
@@ -142,4 +143,9 @@ export function randomBinaryInteger24(): string {
 export function randomBinaryInteger32(): string {
     const prefix = getConfigValue<string>('numbers.binaryPrefix');
     return `${prefix}${Math.trunc(rand(0xffffffff)).toString(2)}`;
+}
+
+export function randomPrime(): string {
+    const ind = Math.trunc(Math.random() * Primes.length);
+    return Primes[ind].toString();
 }

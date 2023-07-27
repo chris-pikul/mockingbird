@@ -31,6 +31,7 @@ import {
     randomOctalInteger32,
     randomPositiveFloat,
     randomPositiveInteger,
+    randomPrime,
     randomShort,
     randomSignedByte,
     randomSignedShort,
@@ -271,6 +272,12 @@ const commands: Command[] = [
         title: 'Random: Binary Integer (32bit)',
         shortTitle: 'Random Binary 32',
         func: randomBinaryInteger32,
+    },
+    {
+        key: 'number.randomPrime',
+        title: 'Random: Prime',
+        shortTitle: 'Random Prime',
+        func: randomPrime,
     },
 ];
 export default commands;
