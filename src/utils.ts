@@ -17,6 +17,24 @@ export function parseRange(input: string): [number, number] {
 }
 
 /**
+ * Returns a random fraction with up to 2 digits in the decimal place.
+ *
+ * @returns New float
+ */
+export function randFrac(): number {
+    return Math.floor(Math.random() * 100) / 100;
+}
+
+/**
+ * Returns a random whole integer percentage with sign at the end.
+ *
+ * @returns New string
+ */
+export function randPerc(): string {
+    return `${Math.floor(Math.random() * 100).toString()}%`;
+}
+
+/**
  * Returns a random float within the given range, maximum not inclusive.
  *
  * @param min Minimum value

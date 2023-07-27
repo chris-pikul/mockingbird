@@ -1,4 +1,13 @@
 import {
+    randomColorCMYK,
+    randomColorHSB,
+    randomColorHSL,
+    randomColorHex,
+    randomColorHexSimple,
+    randomColorRGB,
+    randomColorRGBA,
+} from './colors';
+import {
     currentISODate,
     currentISOTime,
     currentISOTimestamp,
@@ -36,6 +45,7 @@ import {
     randomOctalInteger16,
     randomOctalInteger24,
     randomOctalInteger32,
+    randomPercentage,
     randomPositiveFloat,
     randomPositiveInteger,
     randomPrime,
@@ -385,6 +395,54 @@ const commands: Command[] = [
         title: 'Prime',
         shortTitle: 'Random Prime',
         func: randomPrime,
+    },
+    {
+        key: 'number.randomPercentage',
+        category: 'Random',
+        title: 'Percentage',
+        func: randomPercentage,
+    },
+    {
+        key: 'color.randomHex',
+        category: 'Random',
+        title: 'Hex Color',
+        func: randomColorHex,
+    },
+    {
+        key: 'color.randomHexSimple',
+        category: 'Random',
+        title: 'Hex Color (Simple Limited-Precision)',
+        func: randomColorHexSimple,
+    },
+    {
+        key: 'color.randomRGB',
+        category: 'Random',
+        title: 'RGB Color',
+        func: randomColorRGB,
+    },
+    {
+        key: 'color.randomRGBA',
+        category: 'Random',
+        title: 'RGBA Color',
+        func: randomColorRGBA,
+    },
+    {
+        key: 'color.randomHSL',
+        category: 'Random',
+        title: 'HSL Color',
+        func: randomColorHSL,
+    },
+    {
+        key: 'color.randomHSB',
+        category: 'Random',
+        title: 'HSB Color',
+        func: randomColorHSB,
+    },
+    {
+        key: 'color.randomCMYK',
+        category: 'Random',
+        title: 'CMYK Color',
+        func: randomColorCMYK,
     },
 ];
 export default commands;

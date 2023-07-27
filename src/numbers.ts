@@ -1,5 +1,5 @@
 import Primes from './primes.json';
-import { parseRange, rand, randInt, withDigits } from './utils';
+import { parseRange, rand, randInt, randPerc, withDigits } from './utils';
 import { getConfigValue } from './vscode';
 
 function randSigned(mult: number): number {
@@ -136,4 +136,8 @@ export function randomBinaryInteger32(): string {
 
 export function randomPrime(): string {
     return Primes[randInt(Primes.length)].toString();
+}
+
+export function randomPercentage(): string {
+    return randPerc();
 }

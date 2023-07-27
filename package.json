@@ -320,6 +320,46 @@
                 "title": "Prime",
                 "shortTitle": "Random Prime",
                 "category": "Random"
+            },
+            {
+                "command": "mb.number.randomPercentage",
+                "title": "Percentage",
+                "category": "Random"
+            },
+            {
+                "command": "mb.color.randomHex",
+                "title": "Hex Color",
+                "category": "Random"
+            },
+            {
+                "command": "mb.color.randomHexSimple",
+                "title": "Hex Color (Simple Limited-Precision)",
+                "category": "Random"
+            },
+            {
+                "command": "mb.color.randomRGB",
+                "title": "RGB Color",
+                "category": "Random"
+            },
+            {
+                "command": "mb.color.randomRGBA",
+                "title": "RGBA Color",
+                "category": "Random"
+            },
+            {
+                "command": "mb.color.randomHSL",
+                "title": "HSL Color",
+                "category": "Random"
+            },
+            {
+                "command": "mb.color.randomHSB",
+                "title": "HSB Color",
+                "category": "Random"
+            },
+            {
+                "command": "mb.color.randomCMYK",
+                "title": "CMYK Color",
+                "category": "Random"
             }
         ],
         "menus": {
@@ -339,6 +379,9 @@
                 },
                 {
                     "submenu": "mockingbird/number"
+                },
+                {
+                    "submenu": "mockingbird/color"
                 }
             ],
             "mockingbird/others": [
@@ -477,6 +520,32 @@
                 },
                 {
                     "command": "mb.number.randomPrime"
+                },
+                {
+                    "command": "mb.number.randomPercentage"
+                }
+            ],
+            "mockingbird/color": [
+                {
+                    "command": "mb.color.randomHex"
+                },
+                {
+                    "command": "mb.color.randomHexSimple"
+                },
+                {
+                    "command": "mb.color.randomRGB"
+                },
+                {
+                    "command": "mb.color.randomRGBA"
+                },
+                {
+                    "command": "mb.color.randomHSL"
+                },
+                {
+                    "command": "mb.color.randomHSB"
+                },
+                {
+                    "command": "mb.color.randomCMYK"
                 }
             ]
         },
@@ -496,6 +565,10 @@
             {
                 "id": "mockingbird/number",
                 "label": "Number"
+            },
+            {
+                "id": "mockingbird/color",
+                "label": "Color"
             }
         ]
     },
