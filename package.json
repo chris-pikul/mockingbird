@@ -55,183 +55,219 @@
         "commands": [
             {
                 "command": "mb.date-time.currentISOTimestamp",
-                "title": "Insert: Current ISO Timestamp",
-                "shortTitle": "ISO Timestamp"
+                "title": "Current ISO Timestamp",
+                "shortTitle": "ISO Timestamp",
+                "category": "Insert"
             },
             {
                 "command": "mb.date-time.currentISODate",
-                "title": "Insert: Current ISO Date",
-                "shortTitle": "ISO Date"
+                "title": "Current ISO Date",
+                "shortTitle": "ISO Date",
+                "category": "Insert"
             },
             {
                 "command": "mb.date-time.currentISOTime",
-                "title": "Insert: Current ISO Time",
-                "shortTitle": "ISO Time"
+                "title": "Current ISO Time",
+                "shortTitle": "ISO Time",
+                "category": "Insert"
             },
             {
                 "command": "mb.date-time.currentLocaleTimestamp",
-                "title": "Insert: Current Timestamp Using Local Locale",
-                "shortTitle": "Timestamp Local Locale"
+                "title": "Current Timestamp Using Local Locale",
+                "shortTitle": "Timestamp Local Locale",
+                "category": "Insert"
             },
             {
                 "command": "mb.date-time.currentLocaleDate",
-                "title": "Insert: Current Date Using Local Locale",
-                "shortTitle": "Date Local Locale"
+                "title": "Current Date Using Local Locale",
+                "shortTitle": "Date Local Locale",
+                "category": "Insert"
             },
             {
                 "command": "mb.date-time.currentLocaleTime",
-                "title": "Insert: Current Time Using Local Locale",
-                "shortTitle": "Date Local Locale"
+                "title": "Current Time Using Local Locale",
+                "shortTitle": "Date Local Locale",
+                "category": "Insert"
             },
             {
                 "command": "mb.date-time.currentFormatted",
-                "title": "Insert: Current Date/Time With Formatting",
-                "shortTitle": "Formatted Date/Time"
+                "title": "Current Date/Time With Formatting",
+                "shortTitle": "Formatted Date/Time",
+                "category": "Insert"
             },
             {
                 "command": "mb.number.pi",
-                "title": "Insert: Pi",
-                "shortTitle": "Pi"
+                "title": "Pi",
+                "shortTitle": "Pi",
+                "category": "Insert"
             },
             {
                 "command": "mb.number.e",
-                "title": "Insert: Euler's Number",
-                "shortTitle": "Euler"
+                "title": "Euler's Number",
+                "shortTitle": "Euler",
+                "category": "Insert"
             },
             {
                 "command": "mb.number.epsilon",
-                "title": "Insert: Epsilon (Really Small Number)",
-                "shortTitle": "Epsilon"
+                "title": "Epsilon (Really Small Number)",
+                "shortTitle": "Epsilon",
+                "category": "Insert"
             },
             {
                 "command": "mb.number.randomUnit",
-                "title": "Random: Unit Float (0..1)",
-                "shortTitle": "Random Unit"
+                "title": "Unit Float (0..1)",
+                "shortTitle": "Random Unit",
+                "category": "Random"
             },
             {
                 "command": "mb.number.randomPositiveFloat",
-                "title": "Random: Positive Float (0..MAX)",
-                "shortTitle": "Random Positive Float"
+                "title": "Positive Float (0..MAX)",
+                "shortTitle": "Random Positive Float",
+                "category": "Random"
             },
             {
                 "command": "mb.number.randomNegativeFloat",
-                "title": "Random: Negative Float (0..-MAX)",
-                "shortTitle": "Random Negative Float"
+                "title": "Negative Float (0..-MAX)",
+                "shortTitle": "Random Negative Float",
+                "category": "Random"
             },
             {
                 "command": "mb.number.randomFloat",
-                "title": "Random: Complex Float (-MAX/2..MAX/2)",
-                "shortTitle": "Random Complex Float"
+                "title": "Complex Float (-MAX/2..MAX/2)",
+                "shortTitle": "Random Complex Float",
+                "category": "Random"
             },
             {
                 "command": "mb.number.randomSimpleFloat",
-                "title": "Random: Simple Float",
-                "shortTitle": "Random Float"
+                "title": "Simple Float",
+                "shortTitle": "Random Float",
+                "category": "Random"
             },
             {
                 "command": "mb.number.randomFloatRange",
-                "title": "Random: Float in Range",
-                "shortTitle": "Random Float"
+                "title": "Float in Range",
+                "shortTitle": "Random Float",
+                "category": "Random"
             },
             {
                 "command": "mb.number.randomPositiveInteger",
-                "title": "Random: Positive Integer",
-                "shortTitle": "Random Positive Integer"
+                "title": "Positive Integer",
+                "shortTitle": "Random Positive Integer",
+                "category": "Random"
             },
             {
                 "command": "mb.number.randomNegativeInteger",
-                "title": "Random: Negative Integer",
-                "shortTitle": "Random Negative Integer"
+                "title": "Negative Integer",
+                "shortTitle": "Random Negative Integer",
+                "category": "Random"
             },
             {
                 "command": "mb.number.randomInteger",
-                "title": "Random: Integer",
-                "shortTitle": "Random Integer"
+                "title": "Integer",
+                "shortTitle": "Random Integer",
+                "category": "Random"
             },
             {
                 "command": "mb.number.randomInteger32",
-                "title": "Random: 32bit Integer",
-                "shortTitle": "Random Integer 32"
+                "title": "Integer (32bit)",
+                "shortTitle": "Random Integer 32",
+                "category": "Random"
             },
             {
                 "command": "mb.number.randomIntegerRange",
-                "title": "Random: Integer Range",
-                "shortTitle": "Random Integer Range"
+                "title": "Integer Range",
+                "shortTitle": "Random Integer Range",
+                "category": "Random"
             },
             {
                 "command": "mb.number.randomByte",
-                "title": "Random: Byte (Unsigned)",
-                "shortTitle": "Random Byte"
+                "title": "Byte (Unsigned)",
+                "shortTitle": "Random Byte",
+                "category": "Random"
             },
             {
                 "command": "mb.number.randomSignedByte",
-                "title": "Random: Byte (Signed)",
-                "shortTitle": "Random Signed Byte"
+                "title": "Byte (Signed)",
+                "shortTitle": "Random Signed Byte",
+                "category": "Random"
             },
             {
                 "command": "mb.number.randomShort",
-                "title": "Random: Short (16bit Integer)",
-                "shortTitle": "Random Short"
+                "title": "Short (16bit Integer)",
+                "shortTitle": "Random Short",
+                "category": "Random"
             },
             {
                 "command": "mb.number.randomSignedShort",
-                "title": "Random: Signed Short (16bit Integer)",
-                "shortTitle": "Random Signed Short"
+                "title": "Signed Short (16bit Integer)",
+                "shortTitle": "Random Signed Short",
+                "category": "Random"
             },
             {
                 "command": "mb.number.randomHexInteger16",
-                "title": "Random: Hexidecimal Integer (16bit)",
-                "shortTitle": "Random 16bit Hex"
+                "title": "Hexidecimal Integer (16bit)",
+                "shortTitle": "Random 16bit Hex",
+                "category": "Random"
             },
             {
                 "command": "mb.number.randomHexInteger24",
-                "title": "Random: Hexidecimal Integer (24bit)",
-                "shortTitle": "Random 24bit Hex"
+                "title": "Hexidecimal Integer (24bit)",
+                "shortTitle": "Random 24bit Hex",
+                "category": "Random"
             },
             {
                 "command": "mb.number.randomHexInteger32",
-                "title": "Random: Hexidecimal Integer (32bit)",
-                "shortTitle": "Random 32bit Hex"
+                "title": "Hexidecimal Integer (32bit)",
+                "shortTitle": "Random 32bit Hex",
+                "category": "Random"
             },
             {
                 "command": "mb.number.randomDigit",
-                "title": "Random: Digit (0-9)",
-                "shortTitle": "Random Digit"
+                "title": "Digit (0-9)",
+                "shortTitle": "Random Digit",
+                "category": "Random"
             },
             {
                 "command": "mb.number.randomOctalInteger16",
-                "title": "Random: Octal Integer (16bit)",
-                "shortTitle": "Random Octal 16"
+                "title": "Octal Integer (16bit)",
+                "shortTitle": "Random Octal 16",
+                "category": "Random"
             },
             {
                 "command": "mb.number.randomOctalInteger24",
-                "title": "Random: Octal Integer (24bit)",
-                "shortTitle": "Random Octal 24"
+                "title": "Octal Integer (24bit)",
+                "shortTitle": "Random Octal 24",
+                "category": "Random"
             },
             {
                 "command": "mb.number.randomOctalInteger32",
-                "title": "Random: Octal Integer (32bit)",
-                "shortTitle": "Random Octal 32"
+                "title": "Octal Integer (32bit)",
+                "shortTitle": "Random Octal 32",
+                "category": "Random"
             },
             {
                 "command": "mb.number.randomBinaryInteger16",
-                "title": "Random: Binary Integer (16bit)",
-                "shortTitle": "Random Binary 16"
+                "title": "Binary Integer (16bit)",
+                "shortTitle": "Random Binary 16",
+                "category": "Random"
             },
             {
                 "command": "mb.number.randomBinaryInteger24",
-                "title": "Random: Binary Integer (24bit)",
-                "shortTitle": "Random Binary 24"
+                "title": "Binary Integer (24bit)",
+                "shortTitle": "Random Binary 24",
+                "category": "Random"
             },
             {
                 "command": "mb.number.randomBinaryInteger32",
-                "title": "Random: Binary Integer (32bit)",
-                "shortTitle": "Random Binary 32"
+                "title": "Binary Integer (32bit)",
+                "shortTitle": "Random Binary 32",
+                "category": "Random"
             },
             {
                 "command": "mb.number.randomPrime",
-                "title": "Random: Prime",
-                "shortTitle": "Random Prime"
+                "title": "Prime",
+                "shortTitle": "Random Prime",
+                "category": "Random"
             }
         ],
         "menus": {
