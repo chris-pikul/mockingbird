@@ -1,10 +1,6 @@
 import Primes from './primes.json';
-import { parseRange, withDigits } from './utils';
+import { parseRange, rand, randInt, withDigits } from './utils';
 import { getConfigValue } from './vscode';
-
-function rand(mult: number): number {
-    return Math.random() * mult;
-}
 
 function randSigned(mult: number): number {
     return (Math.random() - 0.5) * 2 * mult;
@@ -44,10 +40,7 @@ export function randomSimpleFloat(): string {
 
 export function randomFloatRange(range: string): string {
     const [min, max] = parseRange(range);
-    const actMin = Math.min(min, max);
-    const actMax = Math.max(min, max);
-
-    return withDigits(Math.random() * (actMax - actMin) + actMin);
+    return withDigits(rand(min, max));
 }
 
 export function randomPositiveInteger(): string {
@@ -68,13 +61,11 @@ export function randomInteger32(): string {
 
 export function randomIntegerRange(range: string): string {
     const [min, max] = parseRange(range);
-    const actMin = Math.min(min, max);
-    const actMax = Math.max(min, max);
-    return Math.trunc(Math.random() * (actMax - actMin) + actMin).toString();
+    return randInt(min, max).toString();
 }
 
 export function randomByte(): string {
-    return Math.trunc(rand(0xff)).toString();
+    return randInt(0xff).toString();
 }
 
 export function randomSignedByte(): string {
@@ -82,7 +73,7 @@ export function randomSignedByte(): string {
 }
 
 export function randomShort(): string {
-    return Math.trunc(rand(0xffff)).toString();
+    return randInt(0xffff).toString();
 }
 
 export function randomSignedShort(): string {
@@ -91,58 +82,56 @@ export function randomSignedShort(): string {
 
 export function randomHexInteger16(): string {
     const prefix = getConfigValue<string>('numbers.hexPrefix');
-    return `${prefix}${Math.trunc(rand(0xffff)).toString(16).toUpperCase()}`;
+    return `${prefix}${randInt(0xffff).toString(16).toUpperCase()}`;
 }
 
 export function randomHexInteger24(): string {
     const prefix = getConfigValue<string>('numbers.hexPrefix');
-    return `${prefix}${Math.trunc(rand(0xffffff)).toString(16).toUpperCase()}`;
+    return `${prefix}${randInt(0xffffff).toString(16).toUpperCase()}`;
 }
 
 export function randomHexInteger32(): string {
     const prefix = getConfigValue<string>('numbers.hexPrefix');
-    return `${prefix}${Math.trunc(rand(0xffffffff))
-        .toString(16)
-        .toUpperCase()}`;
+    return `${prefix}${randInt(0xffffffff).toString(16).toUpperCase()}`;
 }
 
 export function randomDigit(): string {
-    return Math.trunc(Math.random() * 10).toString();
+    return randInt(10).toString();
 }
 
 export function randomOctalInteger16(): string {
     const prefix = getConfigValue<string>('numbers.octalPrefix');
-    return `${prefix}${Math.trunc(rand(0xffff)).toString(8)}`;
+    return `${prefix}${randInt(0xffff).toString(8)}`;
 }
 
 export function randomOctalInteger24(): string {
     const prefix = getConfigValue<string>('numbers.octalPrefix');
-    return `${prefix}${Math.trunc(rand(0xffffff)).toString(8)}`;
+    return `${prefix}${randInt(0xffffff).toString(8)}`;
 }
 
 export function randomOctalInteger32(): string {
     const prefix = getConfigValue<string>('numbers.octalPrefix');
-    return `${prefix}${Math.trunc(rand(0xffffffff)).toString(8)}`;
+    return `${prefix}${randInt(0xffffffff).toString(8)}`;
 }
 
 export function randomBinaryInteger8(): string {
     const prefix = getConfigValue<string>('numbers.binaryPrefix');
-    return `${prefix}${Math.trunc(rand(0xff)).toString(2)}`;
+    return `${prefix}${randInt(0xff).toString(2)}`;
 }
 
 export function randomBinaryInteger16(): string {
     const prefix = getConfigValue<string>('numbers.binaryPrefix');
-    return `${prefix}${Math.trunc(rand(0xffff)).toString(2)}`;
+    return `${prefix}${randInt(0xffff).toString(2)}`;
 }
 
 export function randomBinaryInteger24(): string {
     const prefix = getConfigValue<string>('numbers.binaryPrefix');
-    return `${prefix}${Math.trunc(rand(0xffffff)).toString(2)}`;
+    return `${prefix}${randInt(0xffffff).toString(2)}`;
 }
 
 export function randomBinaryInteger32(): string {
     const prefix = getConfigValue<string>('numbers.binaryPrefix');
-    return `${prefix}${Math.trunc(rand(0xffffffff)).toString(2)}`;
+    return `${prefix}${randInt(0xffffffff).toString(2)}`;
 }
 
 export function randomPrime(): string {

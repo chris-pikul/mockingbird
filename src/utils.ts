@@ -42,6 +42,43 @@ export function randIntRange(min: number = 0, max: number = 100): number {
 }
 
 /**
+ * Returns a random float with flexible argument options.
+ *
+ * If only 1 argument is provided, it returns a number between 0..Arg0.
+ * If 2 arguments are provided, it returns within Arg0..Arg1.
+ * If no arguments are given, it returns within 0..1
+ *
+ * @param arg0 A number
+ * @param arg1 A number
+ * @returns New floating point number
+ */
+export function rand(arg0?: number, arg1?: number): number {
+    if (typeof arg1 === 'number') {
+        if (typeof arg0 === 'number') return randRange(arg0, arg1);
+        return randRange(0, arg1);
+    } else if (typeof arg0 === 'number') {
+        return randRange(0, arg0);
+    }
+
+    return randRange();
+}
+
+/**
+ * Returns a random integer with flexible argument options.
+ *
+ * If only 1 argument is provided, it returns a number between 0..Arg0.
+ * If 2 arguments are provided, it returns within Arg0..Arg1.
+ * If no arguments are given, it returns within 0..1
+ *
+ * @param arg0 A number
+ * @param arg1 A number
+ * @returns New integer number
+ */
+export function randInt(arg0?: number, arg1?: number): number {
+    return Math.trunc(rand(arg0, arg1));
+}
+
+/**
  * Combines the variadic arguments into one string.
  *
  * @param sets... any number of strings
