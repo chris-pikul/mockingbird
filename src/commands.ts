@@ -32,6 +32,7 @@ import {
     randomBinaryInteger32,
     randomByte,
     randomDigit,
+    randomDigits,
     randomFloat,
     randomFloatRange,
     randomHexInteger16,
@@ -401,6 +402,19 @@ const commands: Command[] = [
         category: 'Random',
         title: 'Percentage',
         func: randomPercentage,
+    },
+    {
+        key: 'number.randomDigits',
+        category: 'Random',
+        title: 'Digits To Length',
+        shortTitle: 'Digits',
+        func: randomDigits,
+        prompt: {
+            message: 'Please enter the total length of random digits you want',
+            placeholder: '100',
+            validator: (input?: string) => !!(input && parseInt(input) > 0),
+            errorMessage: 'Please enter a positive integer',
+        },
     },
     {
         key: 'color.randomHex',

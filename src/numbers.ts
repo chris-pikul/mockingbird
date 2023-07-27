@@ -141,3 +141,10 @@ export function randomPrime(): string {
 export function randomPercentage(): string {
     return randPerc();
 }
+
+export function randomDigits(len: string): string {
+    const length = parseInt(len);
+    let result = '';
+    for (let i = 0; i < length; i++) result += randomDigit();
+    return result;
+}

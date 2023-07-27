@@ -327,6 +327,12 @@
                 "category": "Random"
             },
             {
+                "command": "mb.number.randomDigits",
+                "title": "Digits To Length",
+                "shortTitle": "Digits",
+                "category": "Random"
+            },
+            {
                 "command": "mb.color.randomHex",
                 "title": "Hex Color",
                 "category": "Random"
@@ -523,6 +529,9 @@
                 },
                 {
                     "command": "mb.number.randomPercentage"
+                },
+                {
+                    "command": "mb.number.randomDigits"
                 }
             ],
             "mockingbird/color": [
