@@ -135,6 +135,5 @@ export function randomBinaryInteger32(): string {
 }
 
 export function randomPrime(): string {
-    const ind = Math.trunc(Math.random() * Primes.length);
-    return Primes[ind].toString();
+    return Primes[randInt(Primes.length)].toString();
 }
