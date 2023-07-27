@@ -13,6 +13,7 @@ import {
     randomMonth,
     randomYear,
 } from './date-time';
+import { randomBool } from './misc';
 import {
     getE,
     getEpsilon,
@@ -47,6 +48,12 @@ import {
 import { Command } from './vscode';
 
 const commands: Command[] = [
+    {
+        key: 'others.randomBool',
+        category: 'Random',
+        title: 'Boolean',
+        func: randomBool,
+    },
     {
         key: 'date-time.currentISOTimestamp',
         category: 'Insert',

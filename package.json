@@ -59,6 +59,11 @@
         },
         "commands": [
             {
+                "command": "mb.others.randomBool",
+                "title": "Boolean",
+                "category": "Random"
+            },
+            {
                 "command": "mb.date-time.currentISOTimestamp",
                 "title": "Current ISO Timestamp",
                 "shortTitle": "ISO Timestamp",
@@ -327,10 +332,18 @@
             ],
             "mockingbird": [
                 {
+                    "submenu": "mockingbird/others"
+                },
+                {
                     "submenu": "mockingbird/date-time"
                 },
                 {
                     "submenu": "mockingbird/number"
+                }
+            ],
+            "mockingbird/others": [
+                {
+                    "command": "mb.others.randomBool"
                 }
             ],
             "mockingbird/date-time": [
@@ -471,6 +484,10 @@
             {
                 "id": "mockingbird",
                 "label": "Mockingbird"
+            },
+            {
+                "id": "mockingbird/others",
+                "label": "Others"
             },
             {
                 "id": "mockingbird/date-time",
