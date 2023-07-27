@@ -18,6 +18,11 @@
                     "default": true,
                     "description": "Enables the use of the context-menu to quickly insert data"
                 },
+                "mockingbird.date-time.randomTimezone": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Randomize the timezone in generated timestamps, if false it will use the local systems timezone"
+                },
                 "mockingbird.numbers.hexPrefix": {
                     "scope": "language-overridable",
                     "type": "string",
@@ -94,6 +99,48 @@
                 "title": "Current Date/Time With Formatting",
                 "shortTitle": "Formatted Date/Time",
                 "category": "Insert"
+            },
+            {
+                "command": "mb.date-time.randomYear",
+                "title": "Year (1900-Now)",
+                "shortTitle": "Random Year",
+                "category": "Random"
+            },
+            {
+                "command": "mb.date-time.randomYearCustom",
+                "title": "Year With Custom Range",
+                "shortTitle": "Random Year Custom",
+                "category": "Random"
+            },
+            {
+                "command": "mb.date-time.randomMonth",
+                "title": "Month (1..12)",
+                "shortTitle": "Random Month",
+                "category": "Random"
+            },
+            {
+                "command": "mb.date-time.randomDay",
+                "title": "Day (1..30)",
+                "shortTitle": "Random Day",
+                "category": "Random"
+            },
+            {
+                "command": "mb.date-time.randomISOTimestamp",
+                "title": "ISO Timestamp (1970..Now)",
+                "shortTitle": "Random ISO Timestamp",
+                "category": "Random"
+            },
+            {
+                "command": "mb.date-time.randomISODate",
+                "title": "ISO Date (1970..Now)",
+                "shortTitle": "Random ISO Date",
+                "category": "Random"
+            },
+            {
+                "command": "mb.date-time.randomISOTime",
+                "title": "ISO Time",
+                "shortTitle": "Random ISO Time",
+                "category": "Random"
             },
             {
                 "command": "mb.number.pi",
@@ -307,6 +354,27 @@
                 },
                 {
                     "command": "mb.date-time.currentFormatted"
+                },
+                {
+                    "command": "mb.date-time.randomYear"
+                },
+                {
+                    "command": "mb.date-time.randomYearCustom"
+                },
+                {
+                    "command": "mb.date-time.randomMonth"
+                },
+                {
+                    "command": "mb.date-time.randomDay"
+                },
+                {
+                    "command": "mb.date-time.randomISOTimestamp"
+                },
+                {
+                    "command": "mb.date-time.randomISODate"
+                },
+                {
+                    "command": "mb.date-time.randomISOTime"
                 }
             ],
             "mockingbird/number": [

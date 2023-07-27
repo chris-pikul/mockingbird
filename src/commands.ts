@@ -6,6 +6,12 @@ import {
     currentLocaleTime,
     currentLocaleTimestamp,
     currentTimestampFormatted,
+    randomDay,
+    randomISODate,
+    randomISOTime,
+    randomISOTimestamp,
+    randomMonth,
+    randomYear,
 } from './date-time';
 import {
     getE,
@@ -97,6 +103,64 @@ const commands: Command[] = [
             validator: (input?: string) => !!(input && input.length > 0),
             errorMessage: 'Please enter a formatting string',
         },
+    },
+    {
+        key: 'date-time.randomYear',
+        category: 'Random',
+        title: 'Year (1900-Now)',
+        shortTitle: 'Random Year',
+        func: randomYear,
+    },
+    {
+        key: 'date-time.randomYearCustom',
+        category: 'Random',
+        title: 'Year With Custom Range',
+        shortTitle: 'Random Year Custom',
+        func: randomYear,
+        prompt: {
+            message:
+                'Supply a range as a space separated minimum and maximum, the maximum is inclusive',
+            placeholder: '1900 2000',
+            defaultValue: `1900 ${new Date().getFullYear()}`,
+            validator: (input?: string) => !!(input && input.indexOf(' ') > 0),
+            errorMessage:
+                'Please enter a valid space-deliminated integer range',
+        },
+    },
+    {
+        key: 'date-time.randomMonth',
+        category: 'Random',
+        title: 'Month (1..12)',
+        shortTitle: 'Random Month',
+        func: randomMonth,
+    },
+    {
+        key: 'date-time.randomDay',
+        category: 'Random',
+        title: 'Day (1..30)',
+        shortTitle: 'Random Day',
+        func: randomDay,
+    },
+    {
+        key: 'date-time.randomISOTimestamp',
+        category: 'Random',
+        title: 'ISO Timestamp (1970..Now)',
+        shortTitle: 'Random ISO Timestamp',
+        func: randomISOTimestamp,
+    },
+    {
+        key: 'date-time.randomISODate',
+        category: 'Random',
+        title: 'ISO Date (1970..Now)',
+        shortTitle: 'Random ISO Date',
+        func: randomISODate,
+    },
+    {
+        key: 'date-time.randomISOTime',
+        category: 'Random',
+        title: 'ISO Time',
+        shortTitle: 'Random ISO Time',
+        func: randomISOTime,
     },
     {
         key: 'number.pi',
