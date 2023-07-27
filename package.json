@@ -17,6 +17,38 @@
                     "type": "boolean",
                     "default": true,
                     "description": "Enables the use of the context-menu to quickly insert data"
+                },
+                "mockingbird.numbers.hexPrefix": {
+                    "scope": "language-overridable",
+                    "type": "string",
+                    "title": "Hexidecimal Number Prefix",
+                    "description": "Prefix given to hexidecimal number generation",
+                    "examples": [
+                        "0x",
+                        "#"
+                    ],
+                    "default": "0x"
+                },
+                "mockingbird.numbers.octalPrefix": {
+                    "scope": "language-overridable",
+                    "type": "string",
+                    "title": "Octal Number Prefix",
+                    "description": "Prefix given to octal number generation",
+                    "examples": [
+                        "0o",
+                        "0"
+                    ],
+                    "default": "0o"
+                },
+                "mockingbird.numbers.binaryPrefix": {
+                    "scope": "language-overridable",
+                    "type": "string",
+                    "title": "Binary Number Prefix",
+                    "description": "Prefix given to binary number generation",
+                    "examples": [
+                        "0b"
+                    ],
+                    "default": "0b"
                 }
             }
         },
@@ -148,23 +180,53 @@
             },
             {
                 "command": "mb.number.randomHexInteger16",
-                "title": "Random: 16bit Hexidecimal Integer",
+                "title": "Random: Hexidecimal Integer (16bit)",
                 "shortTitle": "Random 16bit Hex"
             },
             {
                 "command": "mb.number.randomHexInteger24",
-                "title": "Random: 24bit Hexidecimal Integer",
+                "title": "Random: Hexidecimal Integer (24bit)",
                 "shortTitle": "Random 24bit Hex"
             },
             {
                 "command": "mb.number.randomHexInteger32",
-                "title": "Random: 32bit Hexidecimal Integer",
+                "title": "Random: Hexidecimal Integer (32bit)",
                 "shortTitle": "Random 32bit Hex"
             },
             {
                 "command": "mb.number.randomDigit",
                 "title": "Random: Digit (0-9)",
                 "shortTitle": "Random Digit"
+            },
+            {
+                "command": "mb.number.randomOctalInteger16",
+                "title": "Random: Octal Integer (16bit)",
+                "shortTitle": "Random Octal 16"
+            },
+            {
+                "command": "mb.number.randomOctalInteger24",
+                "title": "Random: Octal Integer (24bit)",
+                "shortTitle": "Random Octal 24"
+            },
+            {
+                "command": "mb.number.randomOctalInteger32",
+                "title": "Random: Octal Integer (32bit)",
+                "shortTitle": "Random Octal 32"
+            },
+            {
+                "command": "mb.number.randomBinaryInteger16",
+                "title": "Random: Binary Integer (16bit)",
+                "shortTitle": "Random Binary 16"
+            },
+            {
+                "command": "mb.number.randomBinaryInteger24",
+                "title": "Random: Binary Integer (24bit)",
+                "shortTitle": "Random Binary 24"
+            },
+            {
+                "command": "mb.number.randomBinaryInteger32",
+                "title": "Random: Binary Integer (32bit)",
+                "shortTitle": "Random Binary 32"
             }
         ],
         "menus": {
@@ -272,6 +334,24 @@
                 },
                 {
                     "command": "mb.number.randomDigit"
+                },
+                {
+                    "command": "mb.number.randomOctalInteger16"
+                },
+                {
+                    "command": "mb.number.randomOctalInteger24"
+                },
+                {
+                    "command": "mb.number.randomOctalInteger32"
+                },
+                {
+                    "command": "mb.number.randomBinaryInteger16"
+                },
+                {
+                    "command": "mb.number.randomBinaryInteger24"
+                },
+                {
+                    "command": "mb.number.randomBinaryInteger32"
                 }
             ]
         },
