@@ -1,5 +1,13 @@
 import { parseRange, withDigits } from './utils';
 
+function rand(mult: number): number {
+    return Math.random() * mult;
+}
+
+function randSigned(mult: number): number {
+    return (Math.random() - 0.5) * 2 * mult;
+}
+
 export function getPI(): string {
     return withDigits(Math.PI);
 }
@@ -17,21 +25,19 @@ export function randomUnit(): string {
 }
 
 export function randomPositiveFloat(): string {
-    return withDigits(Math.random() * Number.MAX_SAFE_INTEGER);
+    return withDigits(rand(Number.MAX_SAFE_INTEGER));
 }
 
 export function randomNegativeFloat(): string {
-    return withDigits(Math.random() * Number.MIN_SAFE_INTEGER);
+    return withDigits(rand(Number.MIN_SAFE_INTEGER));
 }
 
 export function randomFloat(): string {
-    return ((Math.random() - 0.5) * 2 * Number.MAX_SAFE_INTEGER).toPrecision(6);
+    return randSigned(Number.MAX_SAFE_INTEGER).toString();
 }
 
 export function randomSimpleFloat(): string {
-    return withDigits(
-        Math.floor((Math.random() - 0.5) * 2 * 0xffffff * 1000000) / 1000000,
-    );
+    return withDigits(randSigned(Number.MAX_SAFE_INTEGER));
 }
 
 export function randomFloatRange(range: string): string {
@@ -43,17 +49,19 @@ export function randomFloatRange(range: string): string {
 }
 
 export function randomPositiveInteger(): string {
-    return Math.trunc(Math.random() * Number.MAX_SAFE_INTEGER).toString();
+    return Math.trunc(rand(Number.MAX_SAFE_INTEGER)).toString();
 }
 
 export function randomNegativeInteger(): string {
-    return Math.trunc(Math.random() * Number.MIN_SAFE_INTEGER).toString();
+    return Math.trunc(rand(Number.MIN_SAFE_INTEGER)).toString();
 }
 
 export function randomInteger(): string {
-    return Math.trunc(
-        (Math.random() - 0.5) * 2 * Number.MAX_SAFE_INTEGER,
-    ).toString();
+    return Math.trunc(randSigned(Number.MAX_SAFE_INTEGER)).toString();
+}
+
+export function randomInteger32(): string {
+    return Math.trunc(randSigned(0xffffffff)).toString();
 }
 
 export function randomIntegerRange(range: string): string {
@@ -64,27 +72,33 @@ export function randomIntegerRange(range: string): string {
 }
 
 export function randomByte(): string {
-    return Math.trunc(Math.random() * 0xff).toString();
+    return Math.trunc(rand(0xff)).toString();
 }
 
 export function randomSignedByte(): string {
-    return Math.trunc((Math.random() - 0.5) * 0xff).toString();
+    return Math.trunc(randSigned(0xff)).toString();
+}
+
+export function randomShort(): string {
+    return Math.trunc(rand(0xffff)).toString();
+}
+
+export function randomSignedShort(): string {
+    return Math.trunc(randSigned(0xffff)).toString();
 }
 
 export function randomHexInteger16(): string {
-    return `0x${Math.trunc(Math.random() * 0xffff)
-        .toString(16)
-        .toUpperCase()}`;
+    return `0x${Math.trunc(rand(0xffff)).toString(16).toUpperCase()}`;
 }
 
 export function randomHexInteger24(): string {
-    return `0x${Math.trunc(Math.random() * 0xffffff)
-        .toString(16)
-        .toUpperCase()}`;
+    return `0x${Math.trunc(rand(0xffffff)).toString(16).toUpperCase()}`;
 }
 
 export function randomHexInteger32(): string {
-    return `0x${Math.trunc(Math.random() * 0xffffffff)
-        .toString(16)
-        .toUpperCase()}`;
+    return `0x${Math.trunc(rand(0xffffffff)).toString(16).toUpperCase()}`;
+}
+
+export function randomDigit(): string {
+    return Math.trunc(Math.random() * 10).toString();
 }

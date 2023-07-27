@@ -117,6 +117,11 @@
                 "shortTitle": "Random Integer"
             },
             {
+                "command": "mb.number.randomInteger32",
+                "title": "Random: 32bit Integer",
+                "shortTitle": "Random Integer 32"
+            },
+            {
                 "command": "mb.number.randomIntegerRange",
                 "title": "Random: Integer Range",
                 "shortTitle": "Random Integer Range"
@@ -132,6 +137,16 @@
                 "shortTitle": "Random Signed Byte"
             },
             {
+                "command": "mb.number.randomShort",
+                "title": "Random: Short (16bit Integer)",
+                "shortTitle": "Random Short"
+            },
+            {
+                "command": "mb.number.randomSignedShort",
+                "title": "Random: Signed Short (16bit Integer)",
+                "shortTitle": "Random Signed Short"
+            },
+            {
                 "command": "mb.number.randomHexInteger16",
                 "title": "Random: 16bit Hexidecimal Integer",
                 "shortTitle": "Random 16bit Hex"
@@ -145,6 +160,11 @@
                 "command": "mb.number.randomHexInteger32",
                 "title": "Random: 32bit Hexidecimal Integer",
                 "shortTitle": "Random 32bit Hex"
+            },
+            {
+                "command": "mb.number.randomDigit",
+                "title": "Random: Digit (0-9)",
+                "shortTitle": "Random Digit"
             }
         ],
         "menus": {
@@ -224,6 +244,9 @@
                     "command": "mb.number.randomInteger"
                 },
                 {
+                    "command": "mb.number.randomInteger32"
+                },
+                {
                     "command": "mb.number.randomIntegerRange"
                 },
                 {
@@ -233,6 +256,12 @@
                     "command": "mb.number.randomSignedByte"
                 },
                 {
+                    "command": "mb.number.randomShort"
+                },
+                {
+                    "command": "mb.number.randomSignedShort"
+                },
+                {
                     "command": "mb.number.randomHexInteger16"
                 },
                 {
@@ -240,6 +269,9 @@
                 },
                 {
                     "command": "mb.number.randomHexInteger32"
+                },
+                {
+                    "command": "mb.number.randomDigit"
                 }
             ]
         },

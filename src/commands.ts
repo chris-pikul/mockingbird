@@ -12,18 +12,22 @@ import {
     getEpsilon,
     getPI,
     randomByte,
+    randomDigit,
     randomFloat,
     randomFloatRange,
     randomHexInteger16,
     randomHexInteger24,
     randomHexInteger32,
     randomInteger,
+    randomInteger32,
     randomIntegerRange,
     randomNegativeFloat,
     randomNegativeInteger,
     randomPositiveFloat,
     randomPositiveInteger,
+    randomShort,
     randomSignedByte,
+    randomSignedShort,
     randomSimpleFloat,
     randomUnit,
 } from './numbers';
@@ -160,6 +164,12 @@ const commands: Command[] = [
         func: randomInteger,
     },
     {
+        key: 'number.randomInteger32',
+        title: 'Random: 32bit Integer',
+        shortTitle: 'Random Integer 32',
+        func: randomInteger32,
+    },
+    {
         key: 'number.randomIntegerRange',
         title: 'Random: Integer Range',
         shortTitle: 'Random Integer Range',
@@ -185,6 +195,18 @@ const commands: Command[] = [
         func: randomSignedByte,
     },
     {
+        key: 'number.randomShort',
+        title: 'Random: Short (16bit Integer)',
+        shortTitle: 'Random Short',
+        func: randomShort,
+    },
+    {
+        key: 'number.randomSignedShort',
+        title: 'Random: Signed Short (16bit Integer)',
+        shortTitle: 'Random Signed Short',
+        func: randomSignedShort,
+    },
+    {
         key: 'number.randomHexInteger16',
         title: 'Random: 16bit Hexidecimal Integer',
         shortTitle: 'Random 16bit Hex',
@@ -201,6 +223,12 @@ const commands: Command[] = [
         title: 'Random: 32bit Hexidecimal Integer',
         shortTitle: 'Random 32bit Hex',
         func: randomHexInteger32,
+    },
+    {
+        key: 'number.randomDigit',
+        title: 'Random: Digit (0-9)',
+        shortTitle: 'Random Digit',
+        func: randomDigit,
     },
 ];
 export default commands;
