@@ -56,6 +56,14 @@ import {
     randomSimpleFloat,
     randomUnit,
 } from './numbers';
+import {
+    randomASCIICharacter,
+    randomASCIISymbol,
+    randomLatinLetter,
+    randomLatinLetterLower,
+    randomLatinLetterUpper,
+    randomLatinNumber,
+} from './text';
 import { Command } from './vscode';
 
 const commands: Command[] = [
@@ -457,6 +465,48 @@ const commands: Command[] = [
         category: 'Random',
         title: 'CMYK Color',
         func: randomColorCMYK,
+    },
+    {
+        key: 'text.latinLetterUpper',
+        category: 'Random Text',
+        title: 'Latin Upper-case Letter',
+        func: randomLatinLetterUpper,
+    },
+    {
+        key: 'text.latinLetterLower',
+        category: 'Random Text',
+        title: 'Latin Lower-case Letter',
+        func: randomLatinLetterLower,
+    },
+    {
+        key: 'text.latinLetter',
+        category: 'Random Text',
+        title: 'Latin Letter (A-Z case-insensitive)',
+        func: randomLatinLetter,
+    },
+    {
+        key: 'text.latinNumber',
+        category: 'Random Text',
+        title: 'Latin Number/Digit',
+        func: randomLatinNumber,
+    },
+    {
+        key: 'text.latinCharacter',
+        category: 'Random Text',
+        title: 'Latin Character (A-Z, a-z, 0-9)',
+        func: randomLatinLetterUpper,
+    },
+    {
+        key: 'text.asciiSymbol',
+        category: 'Random Text',
+        title: 'Latin/ASCII Symbol',
+        func: randomASCIISymbol,
+    },
+    {
+        key: 'text.asciiCharacter',
+        category: 'Random Text',
+        title: 'ASCII Character (A-Z, a-z, 0-9, symbols)',
+        func: randomASCIICharacter,
     },
 ];
 export default commands;

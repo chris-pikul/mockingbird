@@ -366,6 +366,41 @@
                 "command": "mb.color.randomCMYK",
                 "title": "CMYK Color",
                 "category": "Random"
+            },
+            {
+                "command": "mb.text.latinLetterUpper",
+                "title": "Latin Upper-case Letter",
+                "category": "Random Text"
+            },
+            {
+                "command": "mb.text.latinLetterLower",
+                "title": "Latin Lower-case Letter",
+                "category": "Random Text"
+            },
+            {
+                "command": "mb.text.latinLetter",
+                "title": "Latin Letter (A-Z case-insensitive)",
+                "category": "Random Text"
+            },
+            {
+                "command": "mb.text.latinNumber",
+                "title": "Latin Number/Digit",
+                "category": "Random Text"
+            },
+            {
+                "command": "mb.text.latinCharacter",
+                "title": "Latin Character (A-Z, a-z, 0-9)",
+                "category": "Random Text"
+            },
+            {
+                "command": "mb.text.asciiSymbol",
+                "title": "Latin/ASCII Symbol",
+                "category": "Random Text"
+            },
+            {
+                "command": "mb.text.asciiCharacter",
+                "title": "ASCII Character (A-Z, a-z, 0-9, symbols)",
+                "category": "Random Text"
             }
         ],
         "menus": {
@@ -388,6 +423,9 @@
                 },
                 {
                     "submenu": "mockingbird/color"
+                },
+                {
+                    "submenu": "mockingbird/text"
                 }
             ],
             "mockingbird/others": [
@@ -556,6 +594,29 @@
                 {
                     "command": "mb.color.randomCMYK"
                 }
+            ],
+            "mockingbird/text": [
+                {
+                    "command": "mb.text.latinLetterUpper"
+                },
+                {
+                    "command": "mb.text.latinLetterLower"
+                },
+                {
+                    "command": "mb.text.latinLetter"
+                },
+                {
+                    "command": "mb.text.latinNumber"
+                },
+                {
+                    "command": "mb.text.latinCharacter"
+                },
+                {
+                    "command": "mb.text.asciiSymbol"
+                },
+                {
+                    "command": "mb.text.asciiCharacter"
+                }
             ]
         },
         "submenus": [
@@ -578,6 +639,10 @@
             {
                 "id": "mockingbird/color",
                 "label": "Color"
+            },
+            {
+                "id": "mockingbird/text",
+                "label": "Text"
             }
         ]
     },
