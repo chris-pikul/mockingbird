@@ -96,6 +96,46 @@ export function randInt(arg0?: number, arg1?: number): number {
     return Math.trunc(rand(arg0, arg1));
 }
 
+export type RandRange = [number, number];
+
+/**
+ * Takes variadic amount of range tuples `[min, max]` and finds a random index
+ * that uniformaly sits within the given ranges.
+ *
+ * Useful if you want a random number between a set of ranges that have gaps
+ * between them (think Unicode blocks).
+ *
+ * @param ranges... `[min, max]` tuples.
+ * @returns Number that lies within one of the given ranges' range.
+ */
+export function randFromRanges(...ranges: RandRange[]): number {
+    const cleanRanges = ranges.map(([min, max]) => [
+        Math.min(min, max),
+        Math.max(min, max),
+    ]);
+    const totalRange = cleanRanges.reduce(
+        (acc, [min, max]) => acc + (max - min),
+        0,
+    );
+    const target = randInt(totalRange + 1);
+
+    let walkTotal = 0;
+    for (let i = 0; i < cleanRanges.length; i++) {
+        const [min, max] = cleanRanges[i];
+        const size = max - min;
+
+        if (target >= walkTotal && target <= walkTotal + size)
+            return min + (target - walkTotal);
+
+        walkTotal += size;
+    }
+
+    console.error(
+        `Attempted to find random value ${target} within ranges but failed to find match`,
+    );
+    return ranges[0][0];
+}
+
 /**
  * Combines the variadic arguments into one string.
  *

@@ -436,6 +436,18 @@
                 "command": "mb.text.latin-ascii.asciiCharacterLength",
                 "title": "ASCII Character (A-Z, a-z, 0-9, symbols) To Length",
                 "category": "Random Text"
+            },
+            {
+                "command": "mb.text.emoji",
+                "title": "Emoji (Standard Block)",
+                "shortTitle": "Emoji",
+                "category": "Random Text"
+            },
+            {
+                "command": "mb.text.emojiPicto",
+                "title": "Emoji (Extended Blocks)",
+                "shortTitle": "Emoji",
+                "category": "Random Text"
             }
         ],
         "menus": {
@@ -633,6 +645,12 @@
             "mockingbird/text": [
                 {
                     "submenu": "mockingbird/text/latin-ascii"
+                },
+                {
+                    "command": "mb.text.emoji"
+                },
+                {
+                    "command": "mb.text.emojiPicto"
                 }
             ],
             "mockingbird/text/latin-ascii": [

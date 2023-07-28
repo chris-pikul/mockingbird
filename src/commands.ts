@@ -62,6 +62,8 @@ import {
     randomASCIICharacterLength,
     randomASCIISymbol,
     randomASCIISymbolLength,
+    randomEmoji,
+    randomEmojiPicto,
     randomLatinLetter,
     randomLatinLetterLength,
     randomLatinLetterLower,
@@ -563,6 +565,20 @@ const commands: Command[] = [
         title: 'ASCII Character (A-Z, a-z, 0-9, symbols) To Length',
         func: randomASCIICharacterLength,
         prompt: PROMPT_LENGTH,
+    },
+    {
+        key: 'text.emoji',
+        category: 'Random Text',
+        title: 'Emoji (Standard Block)',
+        shortTitle: 'Emoji',
+        func: randomEmoji,
+    },
+    {
+        key: 'text.emojiPicto',
+        category: 'Random Text',
+        title: 'Emoji (Extended Blocks)',
+        shortTitle: 'Emoji',
+        func: randomEmojiPicto,
     },
 ];
 export default commands;
