@@ -119,3 +119,22 @@ export function buildRandomCharFromSet(...sets: string[]): () => string {
 
     return () => alpha[randIntRange(0, alpha.length)];
 }
+
+/**
+ * Constructs a new closure that takes in a length argument and repeats the
+ * given generator function for that length to build a new string and return
+ * it.
+ *
+ * @param func Generator function to run
+ * @returns New string accepting a length string parameter
+ */
+export function buildLengthRepeater(
+    func: () => string,
+): (length?: string) => string {
+    return (length?: string) => {
+        const len = Math.max(parseInt(length ?? '1'), 1);
+        let result = '';
+        for (let i = 0; i < len; i++) result += func();
+        return result;
+    };
+}

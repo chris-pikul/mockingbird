@@ -56,13 +56,20 @@ import {
     randomSimpleFloat,
     randomUnit,
 } from './numbers';
+import { PROMPT_LENGTH } from './prompts';
 import {
     randomASCIICharacter,
+    randomASCIICharacterLength,
     randomASCIISymbol,
+    randomASCIISymbolLength,
     randomLatinLetter,
+    randomLatinLetterLength,
     randomLatinLetterLower,
+    randomLatinLetterLowerLength,
     randomLatinLetterUpper,
+    randomLatinLetterUpperLength,
     randomLatinNumber,
+    randomLatinNumberLength,
 } from './text';
 import { Command } from './vscode';
 
@@ -473,16 +480,37 @@ const commands: Command[] = [
         func: randomLatinLetterUpper,
     },
     {
+        key: 'text.latinLetterUpperLength',
+        category: 'Random Text',
+        title: 'Latin Upper-case Letter To Length',
+        func: randomLatinLetterUpperLength,
+        prompt: PROMPT_LENGTH,
+    },
+    {
         key: 'text.latinLetterLower',
         category: 'Random Text',
         title: 'Latin Lower-case Letter',
         func: randomLatinLetterLower,
     },
     {
+        key: 'text.latinLetterLowerLength',
+        category: 'Random Text',
+        title: 'Latin Lower-case Letter To Length',
+        func: randomLatinLetterLowerLength,
+        prompt: PROMPT_LENGTH,
+    },
+    {
         key: 'text.latinLetter',
         category: 'Random Text',
-        title: 'Latin Letter (A-Z case-insensitive)',
+        title: 'Latin Letter (A-Z, a-z)',
         func: randomLatinLetter,
+    },
+    {
+        key: 'text.latinLetterLength',
+        category: 'Random Text',
+        title: 'Latin Letter (A-Z, a-z) To Length',
+        func: randomLatinLetterLength,
+        prompt: PROMPT_LENGTH,
     },
     {
         key: 'text.latinNumber',
@@ -491,10 +519,24 @@ const commands: Command[] = [
         func: randomLatinNumber,
     },
     {
+        key: 'text.latinNumberLength',
+        category: 'Random Text',
+        title: 'Latin Number/Digit To Length',
+        func: randomLatinNumberLength,
+        prompt: PROMPT_LENGTH,
+    },
+    {
         key: 'text.latinCharacter',
         category: 'Random Text',
         title: 'Latin Character (A-Z, a-z, 0-9)',
         func: randomLatinLetterUpper,
+    },
+    {
+        key: 'text.latinCharacterLength',
+        category: 'Random Text',
+        title: 'Latin Character (A-Z, a-z, 0-9) To Length',
+        func: randomLatinLetterUpperLength,
+        prompt: PROMPT_LENGTH,
     },
     {
         key: 'text.asciiSymbol',
@@ -503,10 +545,24 @@ const commands: Command[] = [
         func: randomASCIISymbol,
     },
     {
+        key: 'text.asciiSymbolLength',
+        category: 'Random Text',
+        title: 'Latin/ASCII Symbol To Length',
+        func: randomASCIISymbolLength,
+        prompt: PROMPT_LENGTH,
+    },
+    {
         key: 'text.asciiCharacter',
         category: 'Random Text',
         title: 'ASCII Character (A-Z, a-z, 0-9, symbols)',
         func: randomASCIICharacter,
+    },
+    {
+        key: 'text.asciiCharacterLength',
+        category: 'Random Text',
+        title: 'ASCII Character (A-Z, a-z, 0-9, symbols) To Length',
+        func: randomASCIICharacterLength,
+        prompt: PROMPT_LENGTH,
     },
 ];
 export default commands;

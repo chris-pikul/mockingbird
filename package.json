@@ -373,13 +373,28 @@
                 "category": "Random Text"
             },
             {
+                "command": "mb.text.latinLetterUpperLength",
+                "title": "Latin Upper-case Letter To Length",
+                "category": "Random Text"
+            },
+            {
                 "command": "mb.text.latinLetterLower",
                 "title": "Latin Lower-case Letter",
                 "category": "Random Text"
             },
             {
+                "command": "mb.text.latinLetterLowerLength",
+                "title": "Latin Lower-case Letter To Length",
+                "category": "Random Text"
+            },
+            {
                 "command": "mb.text.latinLetter",
-                "title": "Latin Letter (A-Z case-insensitive)",
+                "title": "Latin Letter (A-Z, a-z)",
+                "category": "Random Text"
+            },
+            {
+                "command": "mb.text.latinLetterLength",
+                "title": "Latin Letter (A-Z, a-z) To Length",
                 "category": "Random Text"
             },
             {
@@ -388,8 +403,18 @@
                 "category": "Random Text"
             },
             {
+                "command": "mb.text.latinNumberLength",
+                "title": "Latin Number/Digit To Length",
+                "category": "Random Text"
+            },
+            {
                 "command": "mb.text.latinCharacter",
                 "title": "Latin Character (A-Z, a-z, 0-9)",
+                "category": "Random Text"
+            },
+            {
+                "command": "mb.text.latinCharacterLength",
+                "title": "Latin Character (A-Z, a-z, 0-9) To Length",
                 "category": "Random Text"
             },
             {
@@ -398,8 +423,18 @@
                 "category": "Random Text"
             },
             {
+                "command": "mb.text.asciiSymbolLength",
+                "title": "Latin/ASCII Symbol To Length",
+                "category": "Random Text"
+            },
+            {
                 "command": "mb.text.asciiCharacter",
                 "title": "ASCII Character (A-Z, a-z, 0-9, symbols)",
+                "category": "Random Text"
+            },
+            {
+                "command": "mb.text.asciiCharacterLength",
+                "title": "ASCII Character (A-Z, a-z, 0-9, symbols) To Length",
                 "category": "Random Text"
             }
         ],
@@ -600,22 +635,43 @@
                     "command": "mb.text.latinLetterUpper"
                 },
                 {
+                    "command": "mb.text.latinLetterUpperLength"
+                },
+                {
                     "command": "mb.text.latinLetterLower"
+                },
+                {
+                    "command": "mb.text.latinLetterLowerLength"
                 },
                 {
                     "command": "mb.text.latinLetter"
                 },
                 {
+                    "command": "mb.text.latinLetterLength"
+                },
+                {
                     "command": "mb.text.latinNumber"
+                },
+                {
+                    "command": "mb.text.latinNumberLength"
                 },
                 {
                     "command": "mb.text.latinCharacter"
                 },
                 {
+                    "command": "mb.text.latinCharacterLength"
+                },
+                {
                     "command": "mb.text.asciiSymbol"
                 },
                 {
+                    "command": "mb.text.asciiSymbolLength"
+                },
+                {
                     "command": "mb.text.asciiCharacter"
+                },
+                {
+                    "command": "mb.text.asciiCharacterLength"
                 }
             ]
         },
