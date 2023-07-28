@@ -368,72 +368,72 @@
                 "category": "Random Color"
             },
             {
-                "command": "mb.text.latinLetterUpper",
+                "command": "mb.text.latin-ascii.letterUpper",
                 "title": "Latin Upper-case Letter",
                 "category": "Random Text"
             },
             {
-                "command": "mb.text.latinLetterUpperLength",
+                "command": "mb.text.latin-ascii.latinLetterUpperLength",
                 "title": "Latin Upper-case Letter To Length",
                 "category": "Random Text"
             },
             {
-                "command": "mb.text.latinLetterLower",
+                "command": "mb.text.latin-ascii.latinLetterLower",
                 "title": "Latin Lower-case Letter",
                 "category": "Random Text"
             },
             {
-                "command": "mb.text.latinLetterLowerLength",
+                "command": "mb.text.latin-ascii.latinLetterLowerLength",
                 "title": "Latin Lower-case Letter To Length",
                 "category": "Random Text"
             },
             {
-                "command": "mb.text.latinLetter",
+                "command": "mb.text.latin-ascii.latinLetter",
                 "title": "Latin Letter (A-Z, a-z)",
                 "category": "Random Text"
             },
             {
-                "command": "mb.text.latinLetterLength",
+                "command": "mb.text.latin-ascii.latinLetterLength",
                 "title": "Latin Letter (A-Z, a-z) To Length",
                 "category": "Random Text"
             },
             {
-                "command": "mb.text.latinNumber",
+                "command": "mb.text.latin-ascii.latinNumber",
                 "title": "Latin Number/Digit",
                 "category": "Random Text"
             },
             {
-                "command": "mb.text.latinNumberLength",
+                "command": "mb.text.latin-ascii.latinNumberLength",
                 "title": "Latin Number/Digit To Length",
                 "category": "Random Text"
             },
             {
-                "command": "mb.text.latinCharacter",
+                "command": "mb.text.latin-ascii.latinCharacter",
                 "title": "Latin Character (A-Z, a-z, 0-9)",
                 "category": "Random Text"
             },
             {
-                "command": "mb.text.latinCharacterLength",
+                "command": "mb.text.latin-ascii.latinCharacterLength",
                 "title": "Latin Character (A-Z, a-z, 0-9) To Length",
                 "category": "Random Text"
             },
             {
-                "command": "mb.text.asciiSymbol",
+                "command": "mb.text.latin-ascii.asciiSymbol",
                 "title": "Latin/ASCII Symbol",
                 "category": "Random Text"
             },
             {
-                "command": "mb.text.asciiSymbolLength",
+                "command": "mb.text.latin-ascii.asciiSymbolLength",
                 "title": "Latin/ASCII Symbol To Length",
                 "category": "Random Text"
             },
             {
-                "command": "mb.text.asciiCharacter",
+                "command": "mb.text.latin-ascii.asciiCharacter",
                 "title": "ASCII Character (A-Z, a-z, 0-9, symbols)",
                 "category": "Random Text"
             },
             {
-                "command": "mb.text.asciiCharacterLength",
+                "command": "mb.text.latin-ascii.asciiCharacterLength",
                 "title": "ASCII Character (A-Z, a-z, 0-9, symbols) To Length",
                 "category": "Random Text"
             }
@@ -632,46 +632,51 @@
             ],
             "mockingbird/text": [
                 {
-                    "command": "mb.text.latinLetterUpper"
+                    "submenu": "mockingbird/text/latin-ascii"
+                }
+            ],
+            "mockingbird/text/latin-ascii": [
+                {
+                    "command": "mb.text.latin-ascii.letterUpper"
                 },
                 {
-                    "command": "mb.text.latinLetterUpperLength"
+                    "command": "mb.text.latin-ascii.latinLetterUpperLength"
                 },
                 {
-                    "command": "mb.text.latinLetterLower"
+                    "command": "mb.text.latin-ascii.latinLetterLower"
                 },
                 {
-                    "command": "mb.text.latinLetterLowerLength"
+                    "command": "mb.text.latin-ascii.latinLetterLowerLength"
                 },
                 {
-                    "command": "mb.text.latinLetter"
+                    "command": "mb.text.latin-ascii.latinLetter"
                 },
                 {
-                    "command": "mb.text.latinLetterLength"
+                    "command": "mb.text.latin-ascii.latinLetterLength"
                 },
                 {
-                    "command": "mb.text.latinNumber"
+                    "command": "mb.text.latin-ascii.latinNumber"
                 },
                 {
-                    "command": "mb.text.latinNumberLength"
+                    "command": "mb.text.latin-ascii.latinNumberLength"
                 },
                 {
-                    "command": "mb.text.latinCharacter"
+                    "command": "mb.text.latin-ascii.latinCharacter"
                 },
                 {
-                    "command": "mb.text.latinCharacterLength"
+                    "command": "mb.text.latin-ascii.latinCharacterLength"
                 },
                 {
-                    "command": "mb.text.asciiSymbol"
+                    "command": "mb.text.latin-ascii.asciiSymbol"
                 },
                 {
-                    "command": "mb.text.asciiSymbolLength"
+                    "command": "mb.text.latin-ascii.asciiSymbolLength"
                 },
                 {
-                    "command": "mb.text.asciiCharacter"
+                    "command": "mb.text.latin-ascii.asciiCharacter"
                 },
                 {
-                    "command": "mb.text.asciiCharacterLength"
+                    "command": "mb.text.latin-ascii.asciiCharacterLength"
                 }
             ]
         },
@@ -686,7 +691,7 @@
             },
             {
                 "id": "mockingbird/date-time",
-                "label": "Date Time"
+                "label": "Date & Time"
             },
             {
                 "id": "mockingbird/number",
@@ -699,6 +704,10 @@
             {
                 "id": "mockingbird/text",
                 "label": "Text"
+            },
+            {
+                "id": "mockingbird/text/latin-ascii",
+                "label": "Latin & ASCII"
             }
         ]
     },

@@ -59,7 +59,11 @@ function toTitle(str) {
         .split('-')
         .filter((part) => part.length >= 2)
         .map((part) => part.charAt(0).toUpperCase() + part.substring(1))
-        .join(' ');
+        .map((part) => {
+            if (part === 'Ascii') return 'ASCII';
+            return part;
+        })
+        .join(' & ');
 }
 
 function processCommand(cmd) {
