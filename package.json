@@ -6,10 +6,35 @@
     "engines": {
         "vscode": "^1.80.0"
     },
+    "author": {
+        "name": "Chris Pikul",
+        "email": "ChrisPikul510@gmail.com"
+    },
     "categories": [
-        "Other"
+        "Other",
+        "Testing",
+        "Snippets"
     ],
     "main": "./dist/extension.js",
+    "license": "Apache-2.0",
+    "keywords": ["random", "generation", "mock", "data", "placeholder"],
+    "galleryBanner": {
+        "theme": "dark",
+        "color": "#A0A4B0"
+    },
+    "extensionKind": [
+        "ui",
+        "workspace"
+    ],
+    "icon": "static/logo512.png",
+    "homepage": "https://github.com/chris-pikul/mockingbird/blob/main/README.md",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/chris-pikul/mockingbird.git"
+    },
+    "bugs": {
+        "url": "https://github.com/chris-pikul/mockingbird/issues"
+    },
     "contributes": {
         "configuration": {
             "properties": {
