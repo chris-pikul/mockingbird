@@ -17,7 +17,13 @@
     ],
     "main": "./dist/extension.js",
     "license": "Apache-2.0",
-    "keywords": ["random", "generation", "mock", "data", "placeholder"],
+    "keywords": [
+        "random",
+        "generation",
+        "mock",
+        "data",
+        "placeholder"
+    ],
     "galleryBanner": {
         "theme": "dark",
         "color": "#A0A4B0"
