@@ -16,11 +16,9 @@ Example: Given the pattern `/[a-z0-9]{3,16}@[a-z0-9]{3,32}\.(?:com|net|org)/i`, 
 
 <details>
     <summary>Example Output</summary>
-    <pre>
-0M1cMByJsC8j@aSqqoNXbognNtR2nwAjVe.NET
+    <pre>0M1cMByJsC8j@aSqqoNXbognNtR2nwAjVe.NET
 Wco0nh2A44@i5s9.com
-Vtp@U3GTp.neT
-    </pre>
+Vtp@U3GTp.neT</pre>
 </details>
 
 ### Patterns
