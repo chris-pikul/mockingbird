@@ -22,7 +22,7 @@ import {
     randomMonth,
     randomYear,
 } from './date-time';
-import { randomBool } from './misc';
+import { fromRegex, randomBool } from './misc';
 import {
     getE,
     getEpsilon,
@@ -86,6 +86,20 @@ const commands: Command[] = [
         category: 'Random',
         title: 'Boolean',
         func: randomBool,
+    },
+    {
+        key: 'others.fromRegex',
+        category: 'Random',
+        title: 'Generate Using Regular Expression',
+        shortTitle: 'Regex',
+        func: fromRegex,
+        prompt: {
+            message:
+                'Enter a regular expression to generate random data using, you can provide a standard syntax including `/d{2,10} w/i` using flags, or just the pattern as a string',
+            placeholder: '/hello [A-Z][a-z]{3,10}/',
+            validator: (input?: string) => !!(input && input.length > 0),
+            errorMessage: 'Please enter a non-empty regular expression',
+        },
     },
     {
         key: 'date-time.currentISOTimestamp',

@@ -64,6 +64,12 @@
                 "category": "Random"
             },
             {
+                "command": "mb.others.fromRegex",
+                "title": "Generate Using Regular Expression",
+                "shortTitle": "Regex",
+                "category": "Random"
+            },
+            {
                 "command": "mb.date-time.currentISOTimestamp",
                 "title": "Current ISO Timestamp",
                 "shortTitle": "ISO Timestamp",
@@ -514,6 +520,9 @@
             "mockingbird/others": [
                 {
                     "command": "mb.others.randomBool"
+                },
+                {
+                    "command": "mb.others.fromRegex"
                 }
             ],
             "mockingbird/date-time": [
@@ -821,6 +830,7 @@
     },
     "dependencies": {
         "date-fns": "^2.30.0",
-        "lorem-ipsum": "^2.0.8"
+        "lorem-ipsum": "^2.0.8",
+        "randexp": "^0.5.3"
     }
 }
