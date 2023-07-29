@@ -56,14 +56,15 @@ async function compileCommands() {
 
 function toTitle(str) {
     return str
-        .split('-')
+        .split('_')
         .filter((part) => part.length >= 2)
         .map((part) => part.charAt(0).toUpperCase() + part.substring(1))
         .map((part) => {
             if (part === 'Ascii') return 'ASCII';
             return part;
         })
-        .join(' & ');
+        .map((part) => part.replace('-', ' & '))
+        .join(' ');
 }
 
 function processCommand(cmd) {

@@ -1,3 +1,5 @@
+import { LoremIpsum } from 'lorem-ipsum';
+
 import {
     RandRange,
     buildLengthRepeater,
@@ -10,6 +12,17 @@ const LATIN_LETTERS_UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const LATIN_LETTERS_LOWER = 'abcdefghijklmnopqrstuvwxyz';
 const LATIN_NUMBERS = '0123456789';
 const ASCII_SYMBOLS = '!@#$%^&*()_+-=[]\\{}|;\':",./<>?`~';
+
+const lorem = new LoremIpsum({
+    wordsPerSentence: {
+        min: 4,
+        max: 12,
+    },
+    sentencesPerParagraph: {
+        min: 3,
+        max: 6,
+    },
+});
 
 const EMOJI_RANGES: RandRange[] = [
     [0x1f600, 0x1f64f],
@@ -75,4 +88,19 @@ export function randomEmoji(): string {
 export function randomEmojiPicto(): string {
     const code = randFromRanges(...EMOJI_RANGES);
     return String.fromCodePoint(code);
+}
+
+export function loremIpsumWords(length?: string): string {
+    const len = length ? parseInt(length) : 1;
+    return lorem.generateWords(len);
+}
+
+export function loremIpsumSentances(length?: string): string {
+    const len = length ? parseInt(length) : 1;
+    return lorem.generateSentences(len);
+}
+
+export function loremIpsumParagraphs(length?: string): string {
+    const len = length ? parseInt(length) : 1;
+    return lorem.generateParagraphs(len);
 }

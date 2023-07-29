@@ -448,6 +448,42 @@
                 "title": "Emoji (Extended Blocks)",
                 "shortTitle": "Emoji",
                 "category": "Random Text"
+            },
+            {
+                "command": "mb.text.lorem_ipsum.word",
+                "title": "Lorem Ipsum Word (Single)",
+                "shortTitle": "Word",
+                "category": "Random Text"
+            },
+            {
+                "command": "mb.text.lorem_ipsum.words",
+                "title": "Lorem Ipsum Words To Length",
+                "shortTitle": "Words",
+                "category": "Random Text"
+            },
+            {
+                "command": "mb.text.lorem_ipsum.sentance",
+                "title": "Lorem Ipsum Sentance (Single)",
+                "shortTitle": "Sentance",
+                "category": "Random Text"
+            },
+            {
+                "command": "mb.text.lorem_ipsum.sentances",
+                "title": "Lorem Ipsum Sentances To Length",
+                "shortTitle": "Sentances",
+                "category": "Random Text"
+            },
+            {
+                "command": "mb.text.lorem_ipsum.paragraph",
+                "title": "Lorem Ipsum Paragraph (Single)",
+                "shortTitle": "Paragraph",
+                "category": "Random Text"
+            },
+            {
+                "command": "mb.text.lorem_ipsum.paragraphs",
+                "title": "Lorem Ipsum Paragraphs To Length",
+                "shortTitle": "Paragraphs",
+                "category": "Random Text"
             }
         ],
         "menus": {
@@ -647,6 +683,9 @@
                     "submenu": "mockingbird/text/latin-ascii"
                 },
                 {
+                    "submenu": "mockingbird/text/lorem_ipsum"
+                },
+                {
                     "command": "mb.text.emoji"
                 },
                 {
@@ -696,6 +735,26 @@
                 {
                     "command": "mb.text.latin-ascii.asciiCharacterLength"
                 }
+            ],
+            "mockingbird/text/lorem_ipsum": [
+                {
+                    "command": "mb.text.lorem_ipsum.word"
+                },
+                {
+                    "command": "mb.text.lorem_ipsum.words"
+                },
+                {
+                    "command": "mb.text.lorem_ipsum.sentance"
+                },
+                {
+                    "command": "mb.text.lorem_ipsum.sentances"
+                },
+                {
+                    "command": "mb.text.lorem_ipsum.paragraph"
+                },
+                {
+                    "command": "mb.text.lorem_ipsum.paragraphs"
+                }
             ]
         },
         "submenus": [
@@ -709,7 +768,7 @@
             },
             {
                 "id": "mockingbird/date-time",
-                "label": "Date & Time"
+                "label": "Date & time"
             },
             {
                 "id": "mockingbird/number",
@@ -725,7 +784,11 @@
             },
             {
                 "id": "mockingbird/text/latin-ascii",
-                "label": "Latin & ASCII"
+                "label": "Latin & ascii"
+            },
+            {
+                "id": "mockingbird/text/lorem_ipsum",
+                "label": "Lorem Ipsum"
             }
         ]
     },
@@ -757,6 +820,7 @@
         "webpack-cli": "^5.1.1"
     },
     "dependencies": {
-        "date-fns": "^2.30.0"
+        "date-fns": "^2.30.0",
+        "lorem-ipsum": "^2.0.8"
     }
 }

@@ -58,6 +58,9 @@ import {
 } from './numbers';
 import { PROMPT_LENGTH } from './prompts';
 import {
+    loremIpsumParagraphs,
+    loremIpsumSentances,
+    loremIpsumWords,
     randomASCIICharacter,
     randomASCIICharacterLength,
     randomASCIISymbol,
@@ -581,6 +584,51 @@ const commands: Command[] = [
         title: 'Emoji (Extended Blocks)',
         shortTitle: 'Emoji',
         func: randomEmojiPicto,
+    },
+    {
+        key: 'text.lorem_ipsum.word',
+        category: 'Random Text',
+        title: 'Lorem Ipsum Word (Single)',
+        shortTitle: 'Word',
+        func: loremIpsumWords,
+    },
+    {
+        key: 'text.lorem_ipsum.words',
+        category: 'Random Text',
+        title: 'Lorem Ipsum Words To Length',
+        shortTitle: 'Words',
+        func: loremIpsumWords,
+        prompt: PROMPT_LENGTH,
+    },
+    {
+        key: 'text.lorem_ipsum.sentance',
+        category: 'Random Text',
+        title: 'Lorem Ipsum Sentance (Single)',
+        shortTitle: 'Sentance',
+        func: loremIpsumSentances,
+    },
+    {
+        key: 'text.lorem_ipsum.sentances',
+        category: 'Random Text',
+        title: 'Lorem Ipsum Sentances To Length',
+        shortTitle: 'Sentances',
+        func: loremIpsumSentances,
+        prompt: PROMPT_LENGTH,
+    },
+    {
+        key: 'text.lorem_ipsum.paragraph',
+        category: 'Random Text',
+        title: 'Lorem Ipsum Paragraph (Single)',
+        shortTitle: 'Paragraph',
+        func: loremIpsumParagraphs,
+    },
+    {
+        key: 'text.lorem_ipsum.paragraphs',
+        category: 'Random Text',
+        title: 'Lorem Ipsum Paragraphs To Length',
+        shortTitle: 'Paragraphs',
+        func: loremIpsumParagraphs,
+        prompt: PROMPT_LENGTH,
     },
 ];
 export default commands;
