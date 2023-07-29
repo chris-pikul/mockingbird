@@ -1,71 +1,35 @@
-# mockingbird README
+# Mockingbird
 
-This is the README for your extension "mockingbird". After writing up a brief description, we recommend including the following sections.
+Have you ever needed randomly generated data? Maybe you are building mock data for API testing, or you need to check that your UI will look correct when real data comes in. Perhaps you just want to build unit tests that have reasonable test data. Either way, that's what Mockingbird is for.
+
+Mockingbird generates random data of all sorts. And not just numbers and random characters: you can also generate _Lorem Ipsum_ text, reverse regular expression (data that passes a given RegEx), names, identifiers, JSON pattern templates, and more!
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
 This extension contributes the following settings:
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+* `mockingbird.contextMenu.enabled`: Enable/disable using the context menu (right click) for quick data insertion.
+* `mockingbird.date-time.randomTimezone`: Enable/disable using a random timezone when generating random date/time strings.
+* `mockingbird.numbers.hexPrefix`: Prefix to use when generating hexidecimal numbers. By default, this is `0x`, resulting in something like `0xF821`.
+* `mockingbird.numbers.octalPrefix`: Prefix to use when generating octal numbers. By default, this is `0o`, resulting in something like `0o5781`.
+* `mockingbird.numbers.binaryPrefix`: Prefix to use when generating binary numbers. By default, this is `0b`, resulting in something like `0b10011010`.
+* `mockingbird.text.lorem_ipsum.sentenceWordsMin`: When generating Lorem Ipsum, specifies the minimum number of words in a sentence. Defaults to 3.
+* `mockingbird.text.lorem_ipsum.sentenceWordsMax`: When generating Lorem Ipsum, specifies the maximum number of words in a sentence. Defaults to 10.
+* `mockingbird.text.lorem_ipsum.paragraphSentencesMin`: When generating Lorem Ipsum, specifies the minimum number of sentences in a paragraph. Defaults to 2.
+* `mockingbird.text.lorem_ipsum.paragraphSentencesMax`: When generating Lorem Ipsum, specifies the maximum number of sentences in a paragraph.
 
-## Known Issues
+## Available Commands
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+Here is the list of all commands this extension provides:
 
-## Release Notes
 
-Users appreciate release notes as you update your extension.
+## Contributing
 
-### 1.0.0
+If you have a feature suggestion, or something you want to implement yourself, I'm open to ideas and PRs. The repository is on [GitHub](https://github.com/chris-pikul/mockingbird). If it's just a request, you can use the [Issues](https://github.com/chris-pikul/mockingbird/issues) page.
 
-Initial release of ...
+## License
 
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Licensed under Apache 2.0, see the license file at [LICENSE](./LICENSE) for the full text. Copyright 2023 Chris Pikul.
