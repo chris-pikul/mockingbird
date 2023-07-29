@@ -1,4 +1,4 @@
-import { LoremIpsum } from 'lorem-ipsum';
+import { loremIpsum } from 'lorem-ipsum';
 
 import {
     RandRange,
@@ -7,22 +7,12 @@ import {
     randFromRanges,
     randInt,
 } from './utils';
+import { getConfigValue } from './vscode';
 
 const LATIN_LETTERS_UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const LATIN_LETTERS_LOWER = 'abcdefghijklmnopqrstuvwxyz';
 const LATIN_NUMBERS = '0123456789';
 const ASCII_SYMBOLS = '!@#$%^&*()_+-=[]\\{}|;\':",./<>?`~';
-
-const lorem = new LoremIpsum({
-    wordsPerSentence: {
-        min: 4,
-        max: 12,
-    },
-    sentencesPerParagraph: {
-        min: 3,
-        max: 6,
-    },
-});
 
 const EMOJI_RANGES: RandRange[] = [
     [0x1f600, 0x1f64f],
@@ -90,17 +80,52 @@ export function randomEmojiPicto(): string {
     return String.fromCodePoint(code);
 }
 
-export function loremIpsumWords(length?: string): string {
-    const len = length ? parseInt(length) : 1;
-    return lorem.generateWords(len);
+function generateLoremIpsum(
+    count: number,
+    units: 'words' | 'sentences' | 'paragraphs',
+    isHTML = false,
+): string {
+    return loremIpsum({
+        count,
+        units,
+        format: isHTML ? 'html' : 'plain',
+        sentenceLowerBound: getConfigValue('text.lorem_ipsum.sentenceWordsMin'),
+        sentenceUpperBound: getConfigValue('text.lorem_ipsum.sentenceWordsMax'),
+        paragraphLowerBound: getConfigValue(
+            'text.lorem_ipsum.paragraphSentencesMin',
+        ),
+        paragraphUpperBound: getConfigValue(
+            'text.lorem_ipsum.paragraphSentencesMax',
+        ),
+    });
 }
 
-export function loremIpsumSentances(length?: string): string {
+export function loremIpsumWords(length?: string): string {
     const len = length ? parseInt(length) : 1;
-    return lorem.generateSentences(len);
+    return generateLoremIpsum(len, 'words');
+}
+
+export function loremIpsumSentences(length?: string): string {
+    const len = length ? parseInt(length) : 1;
+    return generateLoremIpsum(len, 'sentences');
 }
 
 export function loremIpsumParagraphs(length?: string): string {
     const len = length ? parseInt(length) : 1;
-    return lorem.generateParagraphs(len);
+    return generateLoremIpsum(len, 'paragraphs');
+}
+
+export function loremIpsumHTMLWords(length?: string): string {
+    const len = length ? parseInt(length) : 1;
+    return generateLoremIpsum(len, 'words', true);
+}
+
+export function loremIpsumHTMLSentences(length?: string): string {
+    const len = length ? parseInt(length) : 1;
+    return generateLoremIpsum(len, 'sentences', true);
+}
+
+export function loremIpsumHTMLParagraphs(length?: string): string {
+    const len = length ? parseInt(length) : 1;
+    return generateLoremIpsum(len, 'paragraphs', true);
 }

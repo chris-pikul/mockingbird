@@ -54,6 +54,34 @@
                         "0b"
                     ],
                     "default": "0b"
+                },
+                "mockingbird.text.lorem_ipsum.sentenceWordsMin": {
+                    "type": "integer",
+                    "title": "Minimum Words In Sentences",
+                    "description": "Minimum number of words that can be generated when building a Lorem Ipsum sentence.",
+                    "default": 3,
+                    "minimum": 1
+                },
+                "mockingbird.text.lorem_ipsum.sentenceWordsMax": {
+                    "type": "integer",
+                    "title": "Maximum Words In Sentences",
+                    "description": "Maximum number of words that can be generated when building a Lorem Ipsum sentence.",
+                    "default": 10,
+                    "minimum": 2
+                },
+                "mockingbird.text.lorem_ipsum.paragraphSentencesMin": {
+                    "type": "integer",
+                    "title": "Minimum Sentences In a Paragraph",
+                    "description": "Minimum number of sentences that can be generated when building a Lorem Ipsum paragraph.",
+                    "default": 2,
+                    "minimum": 1
+                },
+                "mockingbird.text.lorem_ipsum.paragraphSentencesMax": {
+                    "type": "integer",
+                    "title": "Maximum Sentences In a Paragraph",
+                    "description": "Maximum number of sentences that can be generated when building a Lorem Ipsum paragraph.",
+                    "default": 6,
+                    "minimum": 2
                 }
             }
         },
@@ -468,15 +496,15 @@
                 "category": "Random Text"
             },
             {
-                "command": "mb.text.lorem_ipsum.sentance",
-                "title": "Lorem Ipsum Sentance (Single)",
-                "shortTitle": "Sentance",
+                "command": "mb.text.lorem_ipsum.sentence",
+                "title": "Lorem Ipsum Sentence (Single)",
+                "shortTitle": "Sentence",
                 "category": "Random Text"
             },
             {
-                "command": "mb.text.lorem_ipsum.sentances",
-                "title": "Lorem Ipsum Sentances To Length",
-                "shortTitle": "Sentances",
+                "command": "mb.text.lorem_ipsum.sentences",
+                "title": "Lorem Ipsum Sentences To Length",
+                "shortTitle": "Sentences",
                 "category": "Random Text"
             },
             {
@@ -488,6 +516,42 @@
             {
                 "command": "mb.text.lorem_ipsum.paragraphs",
                 "title": "Lorem Ipsum Paragraphs To Length",
+                "shortTitle": "Paragraphs",
+                "category": "Random Text"
+            },
+            {
+                "command": "mb.text.lorem_ipsum.wordHTML",
+                "title": "Lorem Ipsum HTML Word (Single)",
+                "shortTitle": "Word",
+                "category": "Random Text"
+            },
+            {
+                "command": "mb.text.lorem_ipsum.wordsHTML",
+                "title": "Lorem Ipsum HTML Words To Length",
+                "shortTitle": "Words",
+                "category": "Random Text"
+            },
+            {
+                "command": "mb.text.lorem_ipsum.sentenceHTML",
+                "title": "Lorem Ipsum HTML Sentence (Single)",
+                "shortTitle": "Sentence",
+                "category": "Random Text"
+            },
+            {
+                "command": "mb.text.lorem_ipsum.sentencesHTML",
+                "title": "Lorem Ipsum HTML Sentences To Length",
+                "shortTitle": "Sentences",
+                "category": "Random Text"
+            },
+            {
+                "command": "mb.text.lorem_ipsum.paragraphHTML",
+                "title": "Lorem Ipsum HTML Paragraph (Single)",
+                "shortTitle": "Paragraph",
+                "category": "Random Text"
+            },
+            {
+                "command": "mb.text.lorem_ipsum.paragraphsHTML",
+                "title": "Lorem Ipsum HTML Paragraphs To Length",
                 "shortTitle": "Paragraphs",
                 "category": "Random Text"
             }
@@ -753,16 +817,34 @@
                     "command": "mb.text.lorem_ipsum.words"
                 },
                 {
-                    "command": "mb.text.lorem_ipsum.sentance"
+                    "command": "mb.text.lorem_ipsum.sentence"
                 },
                 {
-                    "command": "mb.text.lorem_ipsum.sentances"
+                    "command": "mb.text.lorem_ipsum.sentences"
                 },
                 {
                     "command": "mb.text.lorem_ipsum.paragraph"
                 },
                 {
                     "command": "mb.text.lorem_ipsum.paragraphs"
+                },
+                {
+                    "command": "mb.text.lorem_ipsum.wordHTML"
+                },
+                {
+                    "command": "mb.text.lorem_ipsum.wordsHTML"
+                },
+                {
+                    "command": "mb.text.lorem_ipsum.sentenceHTML"
+                },
+                {
+                    "command": "mb.text.lorem_ipsum.sentencesHTML"
+                },
+                {
+                    "command": "mb.text.lorem_ipsum.paragraphHTML"
+                },
+                {
+                    "command": "mb.text.lorem_ipsum.paragraphsHTML"
                 }
             ]
         },
