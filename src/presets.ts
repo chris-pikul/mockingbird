@@ -4,7 +4,6 @@ import { fromRegex } from './misc';
 import { getSelection, insertWithGenerator, showError } from './vscode';
 
 export type RegExPreset = {
-    key: string;
     name: string;
     pattern: string;
 };
@@ -24,7 +23,6 @@ export function saveRegexPreset(name?: string): void {
     const key = name.toLowerCase().replace(/[^\w\d]*/gi, '');
 
     const preset: RegExPreset = {
-        key,
         name,
         pattern: selection,
     };
