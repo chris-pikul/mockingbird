@@ -1,5 +1,7 @@
 * `mb.others.randomBool` Random: Boolean
-* `mb.others.fromRegex` Random: Generate Using Regular Expression
+* `mb.regular_expression.fromRegex` Random: Generate Using Regular Expression
+* `mb.regular_expression.saveRegex` Random: Save Selection as Regular Expression Preset
+* `mb.regular_expression.useRegex` Random: Use Regular Expression Preset
 * `mb.date-time.currentISOTimestamp` Insert Date/Time: Current ISO Timestamp
 * `mb.date-time.currentISODate` Insert Date/Time: Current ISO Date
 * `mb.date-time.currentISOTime` Insert Date/Time: Current ISO Time

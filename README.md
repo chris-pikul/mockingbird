@@ -20,6 +20,10 @@ Example: Given the pattern `/[a-z0-9]{3,16}@[a-z0-9]{3,32}\.(?:com|net|org)/i`, 
 Wco0nh2A44@i5s9.com
 Vtp@U3GTp.neT</pre>
 </details>
+<br>
+
+For extra flexibility there are commands to create new presets that are saved to your settings
+and recall them later.
 
 ### Patterns
 
@@ -95,7 +99,9 @@ This extension contributes the following settings:
 Here is the list of all commands this extension provides:
 
 * `mb.others.randomBool` Random: Boolean
-* `mb.others.fromRegex` Random: Generate Using Regular Expression
+* `mb.regular_expression.fromRegex` Random: Generate Using Regular Expression
+* `mb.regular_expression.saveRegex` Random: Save Selection as Regular Expression Preset
+* `mb.regular_expression.useRegex` Random: Use Regular Expression Preset
 * `mb.date-time.currentISOTimestamp` Insert Date/Time: Current ISO Timestamp
 * `mb.date-time.currentISODate` Insert Date/Time: Current ISO Date
 * `mb.date-time.currentISOTime` Insert Date/Time: Current ISO Time

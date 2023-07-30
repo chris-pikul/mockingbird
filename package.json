@@ -43,6 +43,7 @@
     },
     "contributes": {
         "configuration": {
+            "title": "Mockingbird",
             "properties": {
                 "mockingbird.contextMenu.enabled": {
                     "type": "boolean",
@@ -113,6 +114,12 @@
                     "description": "Maximum number of sentences that can be generated when building a Lorem Ipsum paragraph.",
                     "default": 6,
                     "minimum": 2
+                },
+                "mockingbird.presets.regularExpression": {
+                    "type": "object",
+                    "title": "Regular Expression Presets",
+                    "markdownDescription": "Used as a database of available Regular Expression presets that you have created. It is prefered that you use the provided favorites editor to change this value. Otherwise, the schema is presented in the [documentation](https://github.com/chris-pikul/mockingbird).",
+                    "default": {}
                 }
             }
         },
@@ -123,9 +130,21 @@
                 "category": "Random"
             },
             {
-                "command": "mb.others.fromRegex",
+                "command": "mb.regular_expression.fromRegex",
                 "title": "Generate Using Regular Expression",
-                "shortTitle": "Regex",
+                "shortTitle": "RegEx",
+                "category": "Random"
+            },
+            {
+                "command": "mb.regular_expression.saveRegex",
+                "title": "Save Selection as Regular Expression Preset",
+                "shortTitle": "Save RegEx",
+                "category": "Random"
+            },
+            {
+                "command": "mb.regular_expression.useRegex",
+                "title": "Use Regular Expression Preset",
+                "shortTitle": "Use RegEx",
                 "category": "Random"
             },
             {
@@ -600,6 +619,9 @@
                     "submenu": "mockingbird/others"
                 },
                 {
+                    "submenu": "mockingbird/regular_expression"
+                },
+                {
                     "submenu": "mockingbird/date-time"
                 },
                 {
@@ -615,9 +637,17 @@
             "mockingbird/others": [
                 {
                     "command": "mb.others.randomBool"
+                }
+            ],
+            "mockingbird/regular_expression": [
+                {
+                    "command": "mb.regular_expression.fromRegex"
                 },
                 {
-                    "command": "mb.others.fromRegex"
+                    "command": "mb.regular_expression.saveRegex"
+                },
+                {
+                    "command": "mb.regular_expression.useRegex"
                 }
             ],
             "mockingbird/date-time": [
@@ -887,6 +917,10 @@
             {
                 "id": "mockingbird/others",
                 "label": "Others"
+            },
+            {
+                "id": "mockingbird/regular_expression",
+                "label": "Regular Expression"
             },
             {
                 "id": "mockingbird/date-time",

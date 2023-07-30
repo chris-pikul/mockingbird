@@ -56,7 +56,8 @@ import {
     randomSimpleFloat,
     randomUnit,
 } from './numbers';
-import { PROMPT_LENGTH } from './prompts';
+import { saveRegexPreset, useRegexPreset } from './presets';
+import { PROMPT_LENGTH, PROMPT_SAVE_REGEX } from './prompts';
 import {
     loremIpsumHTMLParagraphs,
     loremIpsumHTMLSentences,
@@ -91,10 +92,10 @@ const commands: Command[] = [
         func: randomBool,
     },
     {
-        key: 'others.fromRegex',
+        key: 'regular_expression.fromRegex',
         category: 'Random',
         title: 'Generate Using Regular Expression',
-        shortTitle: 'Regex',
+        shortTitle: 'RegEx',
         func: fromRegex,
         prompt: {
             message:
@@ -103,6 +104,23 @@ const commands: Command[] = [
             validator: (input?: string) => !!(input && input.length > 0),
             errorMessage: 'Please enter a non-empty regular expression',
         },
+    },
+    {
+        key: 'regular_expression.saveRegex',
+        category: 'Random',
+        title: 'Save Selection as Regular Expression Preset',
+        shortTitle: 'Save RegEx',
+        func: saveRegexPreset,
+        prompt: PROMPT_SAVE_REGEX,
+        isCommand: true,
+    },
+    {
+        key: 'regular_expression.useRegex',
+        category: 'Random',
+        title: 'Use Regular Expression Preset',
+        shortTitle: 'Use RegEx',
+        func: useRegexPreset,
+        isCommand: true,
     },
     {
         key: 'date-time.currentISOTimestamp',

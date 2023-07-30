@@ -6,6 +6,11 @@
 import * as vscode from 'vscode';
 
 /**
+ * A function that does not insert anything
+ */
+export type CommandFunction = (...args: any[]) => void;
+
+/**
  * A function that returns a string for generating new text
  */
 export type OutputFunction = (...args: any[]) => string;
@@ -30,8 +35,10 @@ export type Command = {
     category?: string;
     title: string;
     shortTitle?: string;
-    func: OutputFunction;
+    func: CommandFunction | OutputFunction;
     prompt?: CommandPrompt;
+    prompts?: CommandPrompt[];
+    isCommand?: boolean;
 };
 
 /**
@@ -124,6 +131,21 @@ export function insertWithGenerator(
         });
 }
 
+export function executeCommand(cmd: Command, ...args: any[]): void {
+    if (cmd.isCommand) (cmd.func as CommandFunction).apply(cmd, args);
+    else insertWithGenerator(cmd.func as OutputFunction, ...args);
+}
+
+export function getSelection(): string | undefined {
+    const editor = vscode.window.activeTextEditor;
+    if (!editor) {
+        showError('No active text editor is available');
+        return;
+    }
+
+    return editor.document.getText(editor.selection);
+}
+
 /**
  * Registers a new command that will generate new source text.
  *
@@ -139,12 +161,12 @@ export function registerGeneratorCommand(
 ) {
     const handle = vscode.commands.registerTextEditorCommand(
         makeCommandKey(cmd.key),
-        () => insertWithGenerator(cmd.func),
+        () => executeCommand(cmd),
     );
     context.subscriptions.push(handle);
 }
 
-export function registerPromptGeneratorCommand(
+export function registerPromptCommand(
     context: vscode.ExtensionContext,
     cmd: Command,
 ) {
@@ -173,7 +195,61 @@ export function registerPromptGeneratorCommand(
                         return null;
                     },
                 })
-                .then((value?: string) => insertWithGenerator(cmd.func, value));
+                .then((value?: string) => executeCommand(cmd, value));
+        },
+    );
+    context.subscriptions.push(handle);
+}
+
+export function registerChainPromptCommand(
+    context: vscode.ExtensionContext,
+    cmd: Command,
+) {
+    if (typeof cmd.prompts === 'undefined' || !Array.isArray(cmd.prompts))
+        throw new Error('Command is missing prompts array options');
+
+    const handle = vscode.commands.registerTextEditorCommand(
+        makeCommandKey(cmd.key),
+        () => {
+            if (!cmd.prompts) return;
+            if (cmd.prompts.length === 0) return executeCommand(cmd);
+
+            const results: (string | undefined)[] = new Array(
+                cmd.prompts.length,
+            );
+            let ind = 0;
+            const { length } = cmd.prompts;
+
+            const prompt = (opts: CommandPrompt) => {
+                vscode.window
+                    .showInputBox({
+                        title: cmd.shortTitle,
+                        prompt: opts.message,
+                        placeHolder: opts.placeholder,
+                        value: opts.defaultValue,
+                        validateInput: (input: string) => {
+                            if (opts.validator) {
+                                const result = opts.validator(input);
+                                if (typeof result === 'string') return result;
+                                else if (
+                                    typeof result === 'boolean' &&
+                                    result === false
+                                )
+                                    return 'The value you entered is invalid, please try again';
+                            }
+                            return null;
+                        },
+                    })
+                    .then((value?: string) => {
+                        results[ind] = value;
+                        ind++;
+
+                        if (ind < length && cmd.prompts)
+                            prompt(cmd.prompts[ind]);
+                        else executeCommand(cmd, ...results);
+                    });
+            };
+            prompt(cmd.prompts[ind]);
         },
     );
     context.subscriptions.push(handle);
@@ -194,7 +270,8 @@ export function registerCommand(
     context: vscode.ExtensionContext,
     cmd: Command,
 ) {
-    if (cmd.prompt) registerPromptGeneratorCommand(context, cmd);
+    if (cmd.prompt) registerPromptCommand(context, cmd);
+    else if (cmd.prompts) registerChainPromptCommand(context, cmd);
     else if (typeof cmd.func === 'function')
         registerGeneratorCommand(context, cmd);
     else console.error(`Invalid command "${cmd.key}"!`);
