@@ -27,15 +27,16 @@ and recall them later.
 
 ### Patterns
 
-__This feature is WIP, and below is the idea of how it WILL work__
-
 For other cases that don't fit with the provided generators, you can customize the output by building a pattern string. Unlike the [Regular Expression](#regular-expressions) feature, these are a bit more readable and useful for when static and dynamic text intersect.
 
-They use a formatting string that takes double-brace `{{directive}}` style formatting strings. Within the formatting directive you can specify the data type generator to use for part. Additionally, any generator can be repeated if needed using an array style `[]` within the formatting tag.
+They use a formatting string that takes double-brace `{{directive}}` style formatting strings. Within the formatting directive you can specify the data type generator to use for part.
 
 Example: `Hello {{name}}, your birthday is on {{localeDate}}, your favorite color is {{namedColor}} and you have {{int(0, 10)}} cats.`
 
 Outputs: `Hello Johnathan Smith, your birthday is on 2/4/1981, your favorite color is mauve and you have 3 cats.`
+
+See the documentation at [Patterns](https://github.com/chris-pikul/blob/main/PATTERNS.md) for
+more information.
 
 ### Templates
 

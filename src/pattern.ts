@@ -1,5 +1,6 @@
 import { window } from 'vscode';
 
+import { directiveDB } from './pattern-funcs';
 import { getContext } from './state';
 import { getSelection, showError } from './vscode';
 
@@ -8,12 +9,6 @@ const regexTemplate = /(?<!\\){{(.+?)}}/g;
 export type PatternArg = number | boolean | string;
 
 export type PatternFunction = (...args: any[]) => string;
-
-const directiveDB: Record<string, PatternFunction> = {
-    name: () => 'Bob',
-    function: (min: number, max: number) =>
-        (Math.random() * (max - min) + min).toString(),
-} as const;
 
 function convertArgument(arg: string): PatternArg {
     if (arg.charAt(0) === '"') {
