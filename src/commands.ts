@@ -56,6 +56,7 @@ import {
     randomSimpleFloat,
     randomUnit,
 } from './numbers';
+import { cachePattern, useCachedPattern } from './pattern';
 import { PROMPT_LENGTH, PROMPT_SAVE_REGEX } from './prompts';
 import { fromRegex, saveRegexPreset, useRegexPreset } from './regex';
 import {
@@ -93,7 +94,7 @@ const commands: Command[] = [
     },
     {
         key: 'regular_expression.fromRegex',
-        category: 'Random',
+        category: 'Regular Expression',
         title: 'Generate Using Regular Expression',
         shortTitle: 'RegEx',
         func: fromRegex,
@@ -107,7 +108,7 @@ const commands: Command[] = [
     },
     {
         key: 'regular_expression.saveRegex',
-        category: 'Random',
+        category: 'Regular Expression',
         title: 'Save Selection as Regular Expression Preset',
         shortTitle: 'Save RegEx',
         func: saveRegexPreset,
@@ -116,11 +117,34 @@ const commands: Command[] = [
     },
     {
         key: 'regular_expression.useRegex',
-        category: 'Random',
+        category: 'Regular Expression',
         title: 'Use Regular Expression Preset',
         shortTitle: 'Use RegEx',
         func: useRegexPreset,
         isCommand: true,
+    },
+    {
+        key: 'pattern.cacheSet',
+        category: 'Pattern',
+        title: 'Cache Selection As Pattern',
+        shortTitle: 'Cache Pattern',
+        func: cachePattern,
+        isCommand: true,
+    },
+    {
+        key: 'pattern.cacheUse',
+        category: 'Pattern',
+        title: 'Use Cached Pattern',
+        shortTitle: 'Use Pattern',
+        func: useCachedPattern,
+    },
+    {
+        key: 'pattern.cacheUseLength',
+        category: 'Pattern',
+        title: 'Use Cached Pattern Multiple Times',
+        shortTitle: 'Use Pattern Multiple',
+        func: useCachedPattern,
+        prompt: PROMPT_LENGTH,
     },
     {
         key: 'date-time.currentISOTimestamp',

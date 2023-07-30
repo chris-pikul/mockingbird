@@ -133,19 +133,37 @@
                 "command": "mb.regular_expression.fromRegex",
                 "title": "Generate Using Regular Expression",
                 "shortTitle": "RegEx",
-                "category": "Random"
+                "category": "Regular Expression"
             },
             {
                 "command": "mb.regular_expression.saveRegex",
                 "title": "Save Selection as Regular Expression Preset",
                 "shortTitle": "Save RegEx",
-                "category": "Random"
+                "category": "Regular Expression"
             },
             {
                 "command": "mb.regular_expression.useRegex",
                 "title": "Use Regular Expression Preset",
                 "shortTitle": "Use RegEx",
-                "category": "Random"
+                "category": "Regular Expression"
+            },
+            {
+                "command": "mb.pattern.cacheSet",
+                "title": "Cache Selection As Pattern",
+                "shortTitle": "Cache Pattern",
+                "category": "Pattern"
+            },
+            {
+                "command": "mb.pattern.cacheUse",
+                "title": "Use Cached Pattern",
+                "shortTitle": "Use Pattern",
+                "category": "Pattern"
+            },
+            {
+                "command": "mb.pattern.cacheUseLength",
+                "title": "Use Cached Pattern Multiple Times",
+                "shortTitle": "Use Pattern Multiple",
+                "category": "Pattern"
             },
             {
                 "command": "mb.date-time.currentISOTimestamp",
@@ -622,6 +640,9 @@
                     "submenu": "mockingbird/regular_expression"
                 },
                 {
+                    "submenu": "mockingbird/pattern"
+                },
+                {
                     "submenu": "mockingbird/date-time"
                 },
                 {
@@ -648,6 +669,17 @@
                 },
                 {
                     "command": "mb.regular_expression.useRegex"
+                }
+            ],
+            "mockingbird/pattern": [
+                {
+                    "command": "mb.pattern.cacheSet"
+                },
+                {
+                    "command": "mb.pattern.cacheUse"
+                },
+                {
+                    "command": "mb.pattern.cacheUseLength"
                 }
             ],
             "mockingbird/date-time": [
@@ -921,6 +953,10 @@
             {
                 "id": "mockingbird/regular_expression",
                 "label": "Regular Expression"
+            },
+            {
+                "id": "mockingbird/pattern",
+                "label": "Pattern"
             },
             {
                 "id": "mockingbird/date-time",
