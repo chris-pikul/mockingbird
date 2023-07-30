@@ -1,6 +1,6 @@
+import { randexp } from 'randexp';
 import { QuickPickItem, window, workspace } from 'vscode';
 
-import { fromRegex } from './misc';
 import { getSelection, insertWithGenerator, showError } from './vscode';
 
 export type RegExPreset = {
@@ -9,6 +9,38 @@ export type RegExPreset = {
 };
 
 export type RegExPresetQuickPick = QuickPickItem & RegExPreset;
+
+export function fromRegex(pattern?: string): string {
+    if (!pattern) return '';
+
+    let patrn = pattern.trim();
+    let flags = '';
+
+    if (patrn.charAt(0) === '/') {
+        const lastInd = patrn.lastIndexOf('/');
+        console.log(lastInd);
+
+        if (lastInd > 1) {
+            if (lastInd < patrn.length - 1)
+                flags = patrn.substring(lastInd + 1);
+            patrn = patrn.substring(1, lastInd);
+        }
+    }
+
+    let results = '';
+    try {
+        results = randexp(patrn, flags);
+    } catch (err: unknown) {
+        console.error(
+            `Error generating from RegEx using pattern "${patrn}" and flags "${flags}" from original input "${pattern}"`,
+        );
+        showError(
+            `Cannot generate text using the RegEx you supplied`,
+            err as string,
+        );
+    }
+    return results;
+}
 
 export function saveRegexPreset(name?: string): void {
     if (!name) return;

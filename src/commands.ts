@@ -22,7 +22,7 @@ import {
     randomMonth,
     randomYear,
 } from './date-time';
-import { fromRegex, randomBool } from './misc';
+import { randomBool } from './misc';
 import {
     getE,
     getEpsilon,
@@ -56,8 +56,8 @@ import {
     randomSimpleFloat,
     randomUnit,
 } from './numbers';
-import { saveRegexPreset, useRegexPreset } from './presets';
 import { PROMPT_LENGTH, PROMPT_SAVE_REGEX } from './prompts';
+import { fromRegex, saveRegexPreset, useRegexPreset } from './regex';
 import {
     loremIpsumHTMLParagraphs,
     loremIpsumHTMLSentences,
