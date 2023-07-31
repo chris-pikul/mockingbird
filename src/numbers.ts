@@ -148,3 +148,11 @@ export function randomDigits(len: string): string {
     for (let i = 0; i < length; i++) result += randomDigit();
     return result;
 }
+
+export function degree(): string {
+    return randInt(0, 360).toString();
+}
+
+export function radians(): string {
+    return withDigits(rand(0, 2 * Math.PI), 2);
+}

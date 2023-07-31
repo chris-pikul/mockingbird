@@ -24,9 +24,11 @@ import {
 } from './date-time';
 import { randomBool } from './misc';
 import {
+    degree,
     getE,
     getEpsilon,
     getPI,
+    radians,
     randomBinaryInteger16,
     randomBinaryInteger24,
     randomBinaryInteger32,
@@ -496,6 +498,18 @@ const commands: Command[] = [
             validator: (input?: string) => !!(input && parseInt(input) > 0),
             errorMessage: 'Please enter a positive integer',
         },
+    },
+    {
+        key: 'number.degree',
+        category: 'Random Number',
+        title: 'Degree (whole number)',
+        func: degree,
+    },
+    {
+        key: 'number.radian',
+        category: 'Random Number',
+        title: 'Radian (2-digit precision)',
+        func: radians,
     },
     {
         key: 'color.randomHex',

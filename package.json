@@ -435,6 +435,16 @@
                 "category": "Random Number"
             },
             {
+                "command": "mb.number.degree",
+                "title": "Degree (whole number)",
+                "category": "Random Number"
+            },
+            {
+                "command": "mb.number.radian",
+                "title": "Radian (2-digit precision)",
+                "category": "Random Number"
+            },
+            {
                 "command": "mb.color.randomHex",
                 "title": "Hex Color",
                 "category": "Random Color"
@@ -819,6 +829,12 @@
                 },
                 {
                     "command": "mb.number.randomDigits"
+                },
+                {
+                    "command": "mb.number.degree"
+                },
+                {
+                    "command": "mb.number.radian"
                 }
             ],
             "mockingbird/color": [

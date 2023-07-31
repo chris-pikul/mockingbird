@@ -62,6 +62,8 @@ To do this, you can write the template out in a file view, select it, and use th
 - __Binary__: Make binary numbers with a customizable prefix. Allows for 16-bit, 24-bit, and 32-bit.
 - __Primes__: Using a table of the first 100,000 prime numbers, can insert a random one.
 - __Percentage__: Make a random whole percentage between 0 and 100.
+- __Degree__: Random whole-number degree between 0..360 (non-inclusive).
+- __Radian__: Random radian to 2-digit precision.
 
 ### Color
 
