@@ -68,7 +68,7 @@ export function usePattern(pattern: string): string {
     }
 
     // Add remainder
-    result += pattern.substring(lastEnd + 1);
+    result += pattern.substring(lastEnd);
 
     return result;
 }
