@@ -1,4 +1,4 @@
-import Primes from './primes.json';
+import Primes from './data/primes.json';
 import { parseRange, rand, randInt, randPerc, withDigits } from './utils';
 import { getConfigValue } from './vscode';
 
