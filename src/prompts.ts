@@ -18,3 +18,11 @@ export const PROMPT_SAVE_REGEX: CommandPrompt = {
     validator: (input?: string) => !!(input && input.length > 1),
     errorMessage: 'Please provide a name consisting of at least 2 characters',
 } as const;
+
+export const PROMPT_PATTERN: CommandPrompt = {
+    message: 'Enter your pattern bellow and it will be used to generate once.',
+    placeholder: 'The room is {{colorName}}',
+    validator: (input?: string) => !!(input && input.length > 1),
+    errorMessage:
+        'Please provide a pattern consisting of at least 2 characters',
+} as const;

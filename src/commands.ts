@@ -62,8 +62,8 @@ import {
     randomSimpleFloat,
     randomUnit,
 } from './numbers';
-import { cachePattern, useCachedPattern } from './pattern';
-import { PROMPT_LENGTH, PROMPT_SAVE_REGEX } from './prompts';
+import { cachePattern, providePattern, useCachedPattern } from './pattern';
+import { PROMPT_LENGTH, PROMPT_PATTERN, PROMPT_SAVE_REGEX } from './prompts';
 import { fromRegex, saveRegexPreset, useRegexPreset } from './regex';
 import {
     loremIpsumHTMLParagraphs,
@@ -136,6 +136,14 @@ const commands: Command[] = [
         shortTitle: 'Cache Pattern',
         func: cachePattern,
         isCommand: true,
+    },
+    {
+        key: 'pattern.input',
+        category: 'Pattern',
+        title: 'Pattern From Input',
+        shortTitle: 'Input Pattern',
+        func: providePattern,
+        prompt: PROMPT_PATTERN,
     },
     {
         key: 'pattern.cacheUse',

@@ -73,6 +73,15 @@ export function usePattern(pattern: string): string {
     return result;
 }
 
+export function providePattern(pattern?: string): string {
+    if (!pattern) {
+        showError(`Must provide a pattern to use!`);
+        return '';
+    }
+
+    return usePattern(pattern);
+}
+
 export function cachePattern(): void {
     const context = getContext();
     if (!context) return showError('No available extension context!');

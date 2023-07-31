@@ -154,6 +154,12 @@
                 "category": "Pattern"
             },
             {
+                "command": "mb.pattern.input",
+                "title": "Pattern From Input",
+                "shortTitle": "Input Pattern",
+                "category": "Pattern"
+            },
+            {
                 "command": "mb.pattern.cacheUse",
                 "title": "Use Cached Pattern",
                 "shortTitle": "Use Pattern",
@@ -707,6 +713,9 @@
             "mockingbird/pattern": [
                 {
                     "command": "mb.pattern.cacheSet"
+                },
+                {
+                    "command": "mb.pattern.input"
                 },
                 {
                     "command": "mb.pattern.cacheUse"
