@@ -663,6 +663,21 @@
                 "category": "Random Text"
             },
             {
+                "command": "mb.text.adjective",
+                "title": "English Adjective",
+                "category": "Random Text"
+            },
+            {
+                "command": "mb.text.adverb",
+                "title": "English Adverb",
+                "category": "Random Text"
+            },
+            {
+                "command": "mb.text.noun",
+                "title": "English Noun",
+                "category": "Random Text"
+            },
+            {
                 "command": "mb.person.firstName",
                 "title": "First Name",
                 "category": "Random Person"
@@ -724,7 +739,19 @@
             },
             {
                 "command": "mb.person.email",
-                "title": "Email Address (Known Providers",
+                "title": "Email Address (Known Providers)",
+                "category": "Random Person"
+            },
+            {
+                "command": "mb.person.age",
+                "title": "Age (Normal Distribution)",
+                "shortTitle": "Age",
+                "category": "Random Person"
+            },
+            {
+                "command": "mb.person.ageMin",
+                "title": "Age With Minimum (Normal Distribution)",
+                "shortTitle": "Minimum Age",
                 "category": "Random Person"
             }
         ],
@@ -984,6 +1011,15 @@
                 },
                 {
                     "command": "mb.text.emojiPicto"
+                },
+                {
+                    "command": "mb.text.adjective"
+                },
+                {
+                    "command": "mb.text.adverb"
+                },
+                {
+                    "command": "mb.text.noun"
                 }
             ],
             "mockingbird/text/latin-ascii": [
@@ -1089,6 +1125,12 @@
                 },
                 {
                     "command": "mb.person.email"
+                },
+                {
+                    "command": "mb.person.age"
+                },
+                {
+                    "command": "mb.person.ageMin"
                 }
             ],
             "mockingbird/person/phone_number": [

@@ -241,3 +241,67 @@ export function buildLengthRepeater(
         return result;
     };
 }
+
+const SQRT_2PI = Math.sqrt(Math.PI * 2);
+
+/**
+ * Samples a normal distribution (Gaussian) using the provided sample point and
+ * mean/deviation parameters
+ *
+ * @returns Number
+ */
+export function normal(
+    sample: number,
+    mean: number,
+    deviation: number,
+): number {
+    return (
+        (1 / (deviation * SQRT_2PI)) *
+        Math.pow(Math.E, -0.5 * Math.pow((sample - mean) / deviation, 2))
+    );
+}
+
+/**
+ * Random number using Box-Mueller transform for normal distribution.
+ *
+ * @see https://stackoverflow.com/a/49434653
+ * @returns Number between 0..1
+ */
+export function randBM(): number {
+    let u = 0;
+    let v = 0;
+    while (u === 0) u = Math.random();
+    while (v === 0) v = Math.random();
+    let num = Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
+    num = num / 10.0 + 0.5;
+    if (num > 1 || num < 0) return randBM();
+    return num;
+}
+
+/**
+ * Random number using Box-Mueller transform for normal distribution.
+ *
+ * @see https://stackoverflow.com/a/49434653
+ * @returns Number between 0..1
+ */
+export function randBMRange(min: number, max: number, skew = 1): number {
+    let u = 0;
+    let v = 0;
+    while (u === 0) u = Math.random();
+    while (v === 0) v = Math.random();
+    let num = Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
+
+    num = num / 10.0 + 0.5;
+    if (num > 1 || num < 0) {
+        num = randBMRange(min, max, skew);
+    } else {
+        num = Math.pow(num, skew);
+        num *= max - min;
+        num += min;
+    }
+    return num;
+}
+
+export function clamp(min: number, value: number, max: number): number {
+    return Math.max(min, Math.min(value, max));
+}

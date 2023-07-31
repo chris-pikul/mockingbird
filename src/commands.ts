@@ -64,6 +64,7 @@ import {
 } from './numbers';
 import { cachePattern, providePattern, useCachedPattern } from './pattern';
 import {
+    age,
     email,
     firstName,
     fullName,
@@ -900,6 +901,21 @@ const commands: Command[] = [
         category: 'Random Person',
         title: 'Email Address (Known Providers)',
         func: email,
+    },
+    {
+        key: 'person.age',
+        category: 'Random Person',
+        title: 'Age (Normal Distribution)',
+        shortTitle: 'Age',
+        func: age,
+    },
+    {
+        key: 'person.ageMin',
+        category: 'Random Person',
+        title: 'Age With Minimum (Normal Distribution)',
+        shortTitle: 'Minimum Age',
+        func: age,
+        prompt: PROMPT_LENGTH,
     },
 ];
 export default commands;

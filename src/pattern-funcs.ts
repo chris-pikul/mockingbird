@@ -13,6 +13,7 @@ import { randomBool } from './misc';
 import { degree, radians, randomDigits } from './numbers';
 import { PatternFunction } from './pattern';
 import {
+    age,
     email,
     firstName,
     fullName,
@@ -100,4 +101,5 @@ export const directiveDB: Record<string, PatternFunction> = {
     phoneeu: phoneNumberEU,
     e164: phoneNumberE164,
     email,
+    age,
 } as const;

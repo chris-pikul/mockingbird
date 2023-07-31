@@ -4,10 +4,12 @@ import LastNames from './data/lastNames.json';
 import { randomDigit, randomDigits } from './numbers';
 import { englishAdverb, englishNoun, randomLatinLetterUpper } from './text';
 import {
+    clamp,
     executeOneOf,
     executeOptionally,
     executeRepeated,
     pick,
+    randBMRange,
     randFromArray,
     randInt,
 } from './utils';
@@ -85,4 +87,9 @@ export function email(): string {
     )}${englishNoun()}${executeOptionally(() =>
         executeRepeated(randomDigit, 1, 10),
     )}@${randFromArray(EmailProviders)}`;
+}
+
+export function age(value?: string): string {
+    const min = value ? parseInt(value) : 1;
+    return clamp(min, Math.trunc(randBMRange(-10, 150, 2)), 105).toString();
 }

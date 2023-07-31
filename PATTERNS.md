@@ -69,3 +69,4 @@ Only `boolean`, `number`, and `string` arguments are accepted at this moment.
 * `phoneEU` - Phone number in EU format, being one of the above countries
 * `e164` - Phone number in international E.164 format
 * `email` - Valid email using known providers
+* `age(min = 1)` - Age using Normal Distribution, can supply a minimum age
