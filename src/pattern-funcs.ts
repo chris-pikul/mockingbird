@@ -12,7 +12,19 @@ import {
 import { randomBool } from './misc';
 import { degree, radians, randomDigits } from './numbers';
 import { PatternFunction } from './pattern';
-import { firstName, fullName, lastName, middleName } from './person';
+import {
+    firstName,
+    fullName,
+    lastName,
+    middleName,
+    phoneNumberDE,
+    phoneNumberE164,
+    phoneNumberEU,
+    phoneNumberFR,
+    phoneNumberIT,
+    phoneNumberUK,
+    phoneNumberUS,
+} from './person';
 import { fromRegex } from './regex';
 import {
     loremIpsumParagraphs,
@@ -73,4 +85,11 @@ export const directiveDB: Record<string, PatternFunction> = {
     lastname: () => lastName(),
     middlename: () => middleName(),
     fullname: () => fullName(),
+    phoneus: phoneNumberUS,
+    phoneuk: phoneNumberUK,
+    phonede: phoneNumberDE,
+    phonefr: phoneNumberFR,
+    phoneit: phoneNumberIT,
+    phoneeu: phoneNumberEU,
+    e164: phoneNumberE164,
 } as const;

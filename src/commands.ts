@@ -69,6 +69,13 @@ import {
     lastName,
     middleInitial,
     middleName,
+    phoneNumberDE,
+    phoneNumberE164,
+    phoneNumberEU,
+    phoneNumberFR,
+    phoneNumberIT,
+    phoneNumberUK,
+    phoneNumberUS,
 } from './person';
 import { PROMPT_LENGTH, PROMPT_PATTERN, PROMPT_SAVE_REGEX } from './prompts';
 import { fromRegex, saveRegexPreset, useRegexPreset } from './regex';
@@ -823,6 +830,48 @@ const commands: Command[] = [
         category: 'Random Person',
         title: 'Full Name',
         func: fullName,
+    },
+    {
+        key: 'person.phone_number.phoneNumberUS',
+        category: 'Random Person',
+        title: 'Phone Number (US)',
+        func: phoneNumberUS,
+    },
+    {
+        key: 'person.phone_number.phoneNumberUK',
+        category: 'Random Person',
+        title: 'Phone Number (UK)',
+        func: phoneNumberUK,
+    },
+    {
+        key: 'person.phone_number.phoneNumberDE',
+        category: 'Random Person',
+        title: 'Phone Number (DE)',
+        func: phoneNumberDE,
+    },
+    {
+        key: 'person.phone_number.phoneNumberFR',
+        category: 'Random Person',
+        title: 'Phone Number (FR)',
+        func: phoneNumberFR,
+    },
+    {
+        key: 'person.phone_number.phoneNumberIT',
+        category: 'Random Person',
+        title: 'Phone Number (IT)',
+        func: phoneNumberIT,
+    },
+    {
+        key: 'person.phone_number.phoneNumberEU',
+        category: 'Random Person',
+        title: 'Phone Number (EU)',
+        func: phoneNumberEU,
+    },
+    {
+        key: 'person.phone_number.phoneNumberE164',
+        category: 'Random Person',
+        title: 'Phone Number (E.164)',
+        func: phoneNumberE164,
     },
 ];
 export default commands;

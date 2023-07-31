@@ -686,6 +686,41 @@
                 "command": "mb.person.fullName",
                 "title": "Full Name",
                 "category": "Random Person"
+            },
+            {
+                "command": "mb.person.phone_number.phoneNumberUS",
+                "title": "Phone Number (US)",
+                "category": "Random Person"
+            },
+            {
+                "command": "mb.person.phone_number.phoneNumberUK",
+                "title": "Phone Number (UK)",
+                "category": "Random Person"
+            },
+            {
+                "command": "mb.person.phone_number.phoneNumberDE",
+                "title": "Phone Number (DE)",
+                "category": "Random Person"
+            },
+            {
+                "command": "mb.person.phone_number.phoneNumberFR",
+                "title": "Phone Number (FR)",
+                "category": "Random Person"
+            },
+            {
+                "command": "mb.person.phone_number.phoneNumberIT",
+                "title": "Phone Number (IT)",
+                "category": "Random Person"
+            },
+            {
+                "command": "mb.person.phone_number.phoneNumberEU",
+                "title": "Phone Number (EU)",
+                "category": "Random Person"
+            },
+            {
+                "command": "mb.person.phone_number.phoneNumberE164",
+                "title": "Phone Number (E.164)",
+                "category": "Random Person"
             }
         ],
         "menus": {
@@ -1030,6 +1065,9 @@
             ],
             "mockingbird/person": [
                 {
+                    "submenu": "mockingbird/person/phone_number"
+                },
+                {
                     "command": "mb.person.firstName"
                 },
                 {
@@ -1043,6 +1081,29 @@
                 },
                 {
                     "command": "mb.person.fullName"
+                }
+            ],
+            "mockingbird/person/phone_number": [
+                {
+                    "command": "mb.person.phone_number.phoneNumberUS"
+                },
+                {
+                    "command": "mb.person.phone_number.phoneNumberUK"
+                },
+                {
+                    "command": "mb.person.phone_number.phoneNumberDE"
+                },
+                {
+                    "command": "mb.person.phone_number.phoneNumberFR"
+                },
+                {
+                    "command": "mb.person.phone_number.phoneNumberIT"
+                },
+                {
+                    "command": "mb.person.phone_number.phoneNumberEU"
+                },
+                {
+                    "command": "mb.person.phone_number.phoneNumberE164"
                 }
             ]
         },
@@ -1090,6 +1151,10 @@
             {
                 "id": "mockingbird/person",
                 "label": "Person"
+            },
+            {
+                "id": "mockingbird/person/phone_number",
+                "label": "Phone Number"
             }
         ]
     },

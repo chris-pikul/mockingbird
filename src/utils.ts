@@ -1,3 +1,5 @@
+import { OutputFunction } from './vscode';
+
 export function withDigits(value: number, digits = 6): string {
     return (
         Math.floor(value * Math.pow(10, digits)) / Math.pow(10, digits)
@@ -144,6 +146,37 @@ export function randFromRanges(...ranges: RandRange[]): number {
  */
 export function randFromArray<T = string>(arr: T[]): T {
     return arr[randInt(arr.length)];
+}
+
+/**
+ * Given variadic arguments of functions, will execute one of them randomly.
+ *
+ * @param args... Output functions returning a string
+ * @returns String from running one of the supplied functions.
+ */
+export function executeOneOf(...args: OutputFunction[]): string {
+    return randFromArray(args)();
+}
+
+/**
+ * Execute the given function a number of times and concat the results then
+ * return them.
+ *
+ * @param func Function to execute that returns a string
+ * @param arg0 Optional minimum number of executions
+ * @param arg1 Optional maximum number of executions
+ * @returns Concated string of function results
+ */
+export function executeRepeated<T extends OutputFunction>(
+    func: T,
+    arg0?: number,
+    arg1?: number,
+): string {
+    let results: string = '';
+
+    for (let i = 0; i < randInt(arg0, arg1); i++) results += func();
+
+    return results;
 }
 
 /**

@@ -1,7 +1,8 @@
 import FirstNames from './data/firstNames.json';
 import LastNames from './data/lastNames.json';
+import { randomDigit, randomDigits } from './numbers';
 import { randomLatinLetterUpper } from './text';
-import { randFromArray, randInt } from './utils';
+import { executeOneOf, executeRepeated, randFromArray, randInt } from './utils';
 
 const allNames = [...FirstNames, ...LastNames];
 
@@ -30,4 +31,42 @@ export function fullName(): string {
     }
 
     return `${firstName()} ${lastName()}`;
+}
+
+export function phoneNumberUS(): string {
+    return `(${randInt(1, 10)}${randomDigits('2')})${randInt(
+        1,
+        10,
+    )}${randomDigits('2')}-${randomDigits('4')}`;
+}
+
+export function phoneNumberUK(): string {
+    return `+44 0${randInt(20, 999)} ${randomDigits('4')} ${randomDigits('4')}`;
+}
+
+export function phoneNumberDE(): string {
+    return `+49 ${randomDigits('3')} ${randomDigits('3')} ${randomDigits('4')}`;
+}
+
+export function phoneNumberFR(): string {
+    return `+33 ${randInt(1, 10)} ${randomDigits('2')} ${randomDigits(
+        '2',
+    )} ${randomDigits('2')} ${randomDigits('2')}`;
+}
+
+export function phoneNumberIT(): string {
+    return `+39 ${randomDigits('2')} ${randomDigits('4')} ${randomDigits('4')}`;
+}
+
+export function phoneNumberEU(): string {
+    return executeOneOf(
+        phoneNumberUK,
+        phoneNumberDE,
+        phoneNumberFR,
+        phoneNumberIT,
+    );
+}
+
+export function phoneNumberE164(): string {
+    return `+${randInt(1, 10)}${executeRepeated(randomDigit, 5, 15)}`;
 }

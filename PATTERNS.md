@@ -54,3 +54,14 @@ Only `boolean`, `number`, and `string` arguments are accepted at this moment.
 * `sentence(len = 1)` - Lorem Ipsum sentences to length
 * `paragraph(len = 1)` - Lorem Ipsum paragraphs to length
 * `regex(pattern)` - Execute a reverse Regular Expression using the given pattern
+* `firstName` - Common first name
+* `lastName` - Common last name
+* `middleName` - Middle name generated from random first/last name
+* `fullName` - Generates a random full name with optional middle names
+* `phoneUS` - Phone number in US format
+* `phoneUK` - Phone number in UK format
+* `phoneDE` - Phone number in DE format
+* `phoneFR` - Phone number in FR format
+* `phoneIT` - Phone number in IT format
+* `phoneEU` - Phone number in EU format, being one of the above countries
+* `e164` - Phone number in international E.164 format
