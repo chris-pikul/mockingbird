@@ -1,7 +1,11 @@
 * `mb.others.randomBool` Random: Boolean
-* `mb.regular_expression.fromRegex` Random: Generate Using Regular Expression
-* `mb.regular_expression.saveRegex` Random: Save Selection as Regular Expression Preset
-* `mb.regular_expression.useRegex` Random: Use Regular Expression Preset
+* `mb.regular_expression.fromRegex` Regular Expression: Generate Using Regular Expression
+* `mb.regular_expression.saveRegex` Regular Expression: Save Selection as Regular Expression Preset
+* `mb.regular_expression.useRegex` Regular Expression: Use Regular Expression Preset
+* `mb.pattern.cacheSet` Pattern: Cache Selection As Pattern
+* `mb.pattern.input` Pattern: Pattern From Input
+* `mb.pattern.cacheUse` Pattern: Use Cached Pattern
+* `mb.pattern.cacheUseLength` Pattern: Use Cached Pattern Multiple Times
 * `mb.date-time.currentISOTimestamp` Insert Date/Time: Current ISO Timestamp
 * `mb.date-time.currentISODate` Insert Date/Time: Current ISO Date
 * `mb.date-time.currentISOTime` Insert Date/Time: Current ISO Time
@@ -47,13 +51,19 @@
 * `mb.number.randomPrime` Random Number: Prime
 * `mb.number.randomPercentage` Random Number: Percentage
 * `mb.number.randomDigits` Random Number: Digits To Length
+* `mb.number.degree` Random Number: Degree (whole number)
+* `mb.number.radian` Random Number: Radian (2-digit precision)
 * `mb.color.randomHex` Random Color: Hex Color
 * `mb.color.randomHexSimple` Random Color: Hex Color (Simple Limited-Precision)
+* `mb.color.randomHexUseful` Random Color: Hex Color (Known Colors)
 * `mb.color.randomRGB` Random Color: RGB Color
 * `mb.color.randomRGBA` Random Color: RGBA Color
 * `mb.color.randomHSL` Random Color: HSL Color
 * `mb.color.randomHSB` Random Color: HSB Color
 * `mb.color.randomCMYK` Random Color: CMYK Color
+* `mb.color.htmlHex` Random Color: Hex Color From HTML/CSS Colors
+* `mb.color.htmlName` Random Color: Named Color From HTML/CSS
+* `mb.color.name` Random Color: Color Name
 * `mb.text.latin-ascii.letterUpper` Random Text: Latin Upper-case Letter
 * `mb.text.latin-ascii.latinLetterUpperLength` Random Text: Latin Upper-case Letter To Length
 * `mb.text.latin-ascii.latinLetterLower` Random Text: Latin Lower-case Letter
@@ -82,3 +92,22 @@
 * `mb.text.lorem_ipsum.sentencesHTML` Random Text: Lorem Ipsum HTML Sentences To Length
 * `mb.text.lorem_ipsum.paragraphHTML` Random Text: Lorem Ipsum HTML Paragraph (Single)
 * `mb.text.lorem_ipsum.paragraphsHTML` Random Text: Lorem Ipsum HTML Paragraphs To Length
+* `mb.text.adjective` Random Text: English Adjective
+* `mb.text.adverb` Random Text: English Adverb
+* `mb.text.noun` Random Text: English Noun
+* `mb.person.firstName` Random Person: First Name
+* `mb.person.lastName` Random Person: Last Name
+* `mb.person.anyName` Random Person: Any Name
+* `mb.person.middleInitial` Random Person: Middle Initial
+* `mb.person.fullName` Random Person: Full Name
+* `mb.person.phone_number.phoneNumberUS` Random Person: Phone Number (US)
+* `mb.person.phone_number.phoneNumberUK` Random Person: Phone Number (UK)
+* `mb.person.phone_number.phoneNumberDE` Random Person: Phone Number (DE)
+* `mb.person.phone_number.phoneNumberFR` Random Person: Phone Number (FR)
+* `mb.person.phone_number.phoneNumberIT` Random Person: Phone Number (IT)
+* `mb.person.phone_number.phoneNumberEU` Random Person: Phone Number (EU)
+* `mb.person.phone_number.phoneNumberE164` Random Person: Phone Number (E.164)
+* `mb.person.email` Random Person: Email Address (Known Providers)
+* `mb.person.age` Random Person: Age (Normal Distribution)
+* `mb.person.ageMin` Random Person: Age With Minimum (Normal Distribution)
+* `mb.person.ssn` Random Person: Social Security Number (US)
