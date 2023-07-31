@@ -3,10 +3,14 @@ import {
     randomColorHSB,
     randomColorHSL,
     randomColorHex,
+    randomColorHexUseful,
+    randomColorName,
     randomColorRGB,
+    randomHTMLColorName,
+    randomHTMLHexColor,
 } from './colors';
 import { randomBool } from './misc';
-import { randomDigits } from './numbers';
+import { degree, radians, randomDigits } from './numbers';
 import { PatternFunction } from './pattern';
 import { fromRegex } from './regex';
 import {
@@ -46,14 +50,20 @@ export const directiveDB: Record<string, PatternFunction> = {
             .toString(16)
             .padStart(8, '0'),
     digit: (len: number = 1) => randomDigits(len.toString()),
+    degree: () => degree(),
+    radian: () => radians(),
     letter: (len: number = 1) => randomLatinLetterLength(len.toString()),
     symbol: (len: number = 1) => randomASCIISymbolLength(len.toString()),
     character: (len: number = 1) => randomASCIICharacterLength(len.toString()),
+    color: () => randomColorHexUseful(),
     colorhex: () => randomColorHex(),
     colorrgb: () => randomColorRGB(),
     colorhsl: () => randomColorHSL(),
     colorhsb: () => randomColorHSB(),
     colorcmyk: () => randomColorCMYK(),
+    htmlColor: () => randomHTMLHexColor(),
+    htmlColorName: () => randomHTMLColorName(),
+    colorName: () => randomColorName(),
     word: (len: number = 1) => loremIpsumWords(len.toString()),
     sentence: (len: number = 1) => loremIpsumSentences(len.toString()),
     paragraph: (len: number = 1) => loremIpsumParagraphs(len.toString()),

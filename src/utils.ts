@@ -137,6 +137,16 @@ export function randFromRanges(...ranges: RandRange[]): number {
 }
 
 /**
+ * Returns a random entry from the given array.
+ *
+ * @param arr Array of items
+ * @returns Item from array
+ */
+export function randFromArray<T = string>(arr: T[]): T {
+    return arr[randInt(arr.length)];
+}
+
+/**
  * Combines the variadic arguments into one string.
  *
  * @param sets... any number of strings

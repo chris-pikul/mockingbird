@@ -4,8 +4,12 @@ import {
     randomColorHSL,
     randomColorHex,
     randomColorHexSimple,
+    randomColorHexUseful,
+    randomColorName,
     randomColorRGB,
     randomColorRGBA,
+    randomHTMLColorName,
+    randomHTMLHexColor,
 } from './colors';
 import {
     currentISODate,
@@ -524,6 +528,12 @@ const commands: Command[] = [
         func: randomColorHexSimple,
     },
     {
+        key: 'color.randomHexUseful',
+        category: 'Random Color',
+        title: 'Hex Color (Known Colors)',
+        func: randomColorHexUseful,
+    },
+    {
         key: 'color.randomRGB',
         category: 'Random Color',
         title: 'RGB Color',
@@ -552,6 +562,27 @@ const commands: Command[] = [
         category: 'Random Color',
         title: 'CMYK Color',
         func: randomColorCMYK,
+    },
+    {
+        key: 'color.htmlHex',
+        category: 'Random Color',
+        title: 'Hex Color From HTML/CSS Colors',
+        shortTitle: 'HTML Hex Color',
+        func: randomHTMLHexColor,
+    },
+    {
+        key: 'color.htmlName',
+        category: 'Random Color',
+        title: 'Named Color From HTML/CSS',
+        shortTitle: 'Named Color',
+        func: randomHTMLColorName,
+    },
+    {
+        key: 'color.name',
+        category: 'Random Color',
+        title: 'Color Name',
+        shortTitle: 'Color Name',
+        func: randomColorName,
     },
     {
         key: 'text.latin-ascii.letterUpper',

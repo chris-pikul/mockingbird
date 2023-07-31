@@ -455,6 +455,11 @@
                 "category": "Random Color"
             },
             {
+                "command": "mb.color.randomHexUseful",
+                "title": "Hex Color (Known Colors)",
+                "category": "Random Color"
+            },
+            {
                 "command": "mb.color.randomRGB",
                 "title": "RGB Color",
                 "category": "Random Color"
@@ -477,6 +482,24 @@
             {
                 "command": "mb.color.randomCMYK",
                 "title": "CMYK Color",
+                "category": "Random Color"
+            },
+            {
+                "command": "mb.color.htmlHex",
+                "title": "Hex Color From HTML/CSS Colors",
+                "shortTitle": "HTML Hex Color",
+                "category": "Random Color"
+            },
+            {
+                "command": "mb.color.htmlName",
+                "title": "Named Color From HTML/CSS",
+                "shortTitle": "Named Color",
+                "category": "Random Color"
+            },
+            {
+                "command": "mb.color.name",
+                "title": "Color Name",
+                "shortTitle": "Color Name",
                 "category": "Random Color"
             },
             {
@@ -845,6 +868,9 @@
                     "command": "mb.color.randomHexSimple"
                 },
                 {
+                    "command": "mb.color.randomHexUseful"
+                },
+                {
                     "command": "mb.color.randomRGB"
                 },
                 {
@@ -858,6 +884,15 @@
                 },
                 {
                     "command": "mb.color.randomCMYK"
+                },
+                {
+                    "command": "mb.color.htmlHex"
+                },
+                {
+                    "command": "mb.color.htmlName"
+                },
+                {
+                    "command": "mb.color.name"
                 }
             ],
             "mockingbird/text": [

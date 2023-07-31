@@ -35,15 +35,21 @@ Only `boolean`, `number`, and `string` arguments are accepted at this moment.
 * `hex16` - 16-bit hexidecimal number
 * `hex24` - 24-bit hexidecimal number
 * `hex32` - 32-bit hexidecimal number
+* `degree` - Whole-number degree 0..360
+* `radian` - Radian with up to 2-digits precision
 * `digit(len = 1)` - Latin digits to length
 * `letter(len = 1)` - Latin letters to length (case-insensitive)
 * `symbol(len = 1)` - ASCII symbols to length
 * `character(len = 1)` - ASCII/Latin characters to length
+* `color` - Random hex color from a premade list
 * `colorHEX` - Random hex color
 * `colorRGB` - Random RGB color
 * `colorHSL` - Random HSL color
 * `colorHSB` - Random HSB color
 * `colorCMYK` - Random CMYK color
+* `htmlColor` - Hexidecimal color from the HTML/CSS named colors table
+* `htmlColorName` - Color name from the HTML/CSS named colors table
+* `colorName` - Name of a color from a premade list
 * `word(len = 1)` - Lorem Ipsum words to length
 * `sentence(len = 1)` - Lorem Ipsum sentences to length
 * `paragraph(len = 1)` - Lorem Ipsum paragraphs to length
