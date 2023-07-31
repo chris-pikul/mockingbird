@@ -721,6 +721,11 @@
                 "command": "mb.person.phone_number.phoneNumberE164",
                 "title": "Phone Number (E.164)",
                 "category": "Random Person"
+            },
+            {
+                "command": "mb.person.email",
+                "title": "Email Address (Known Providers",
+                "category": "Random Person"
             }
         ],
         "menus": {
@@ -1081,6 +1086,9 @@
                 },
                 {
                     "command": "mb.person.fullName"
+                },
+                {
+                    "command": "mb.person.email"
                 }
             ],
             "mockingbird/person/phone_number": [

@@ -1,3 +1,4 @@
+import EmailProviders from './data/email-providers.json';
 import FirstNames from './data/firstNames.json';
 import LastNames from './data/lastNames.json';
 import { randomDigit, randomDigits } from './numbers';
@@ -69,4 +70,8 @@ export function phoneNumberEU(): string {
 
 export function phoneNumberE164(): string {
     return `+${randInt(1, 10)}${executeRepeated(randomDigit, 5, 15)}`;
+}
+
+export function email(): string {
+    return `test@${randFromArray(EmailProviders)}`;
 }

@@ -64,6 +64,7 @@ import {
 } from './numbers';
 import { cachePattern, providePattern, useCachedPattern } from './pattern';
 import {
+    email,
     firstName,
     fullName,
     lastName,
@@ -872,6 +873,12 @@ const commands: Command[] = [
         category: 'Random Person',
         title: 'Phone Number (E.164)',
         func: phoneNumberE164,
+    },
+    {
+        key: 'person.email',
+        category: 'Random Person',
+        title: 'Email Address (Known Providers',
+        func: email,
     },
 ];
 export default commands;
