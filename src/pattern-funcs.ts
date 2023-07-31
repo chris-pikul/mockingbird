@@ -12,6 +12,7 @@ import {
 import { randomBool } from './misc';
 import { degree, radians, randomDigits } from './numbers';
 import { PatternFunction } from './pattern';
+import { firstName, fullName, lastName, middleName } from './person';
 import { fromRegex } from './regex';
 import {
     loremIpsumParagraphs,
@@ -68,4 +69,8 @@ export const directiveDB: Record<string, PatternFunction> = {
     sentence: (len: number = 1) => loremIpsumSentences(len.toString()),
     paragraph: (len: number = 1) => loremIpsumParagraphs(len.toString()),
     regex: (pattern: string) => fromRegex(pattern),
+    firstname: () => firstName(),
+    lastname: () => lastName(),
+    middlename: () => middleName(),
+    fullname: () => fullName(),
 } as const;

@@ -63,6 +63,13 @@ import {
     randomUnit,
 } from './numbers';
 import { cachePattern, providePattern, useCachedPattern } from './pattern';
+import {
+    firstName,
+    fullName,
+    lastName,
+    middleInitial,
+    middleName,
+} from './person';
 import { PROMPT_LENGTH, PROMPT_PATTERN, PROMPT_SAVE_REGEX } from './prompts';
 import { fromRegex, saveRegexPreset, useRegexPreset } from './regex';
 import {
@@ -786,6 +793,36 @@ const commands: Command[] = [
         shortTitle: 'Paragraphs',
         func: loremIpsumHTMLParagraphs,
         prompt: PROMPT_LENGTH,
+    },
+    {
+        key: 'person.firstName',
+        category: 'Random Person',
+        title: 'First Name',
+        func: firstName,
+    },
+    {
+        key: 'person.lastName',
+        category: 'Random Person',
+        title: 'Last Name',
+        func: lastName,
+    },
+    {
+        key: 'person.anyName',
+        category: 'Random Person',
+        title: 'Any Name',
+        func: middleName,
+    },
+    {
+        key: 'person.middleInitial',
+        category: 'Random Person',
+        title: 'Middle Initial',
+        func: middleInitial,
+    },
+    {
+        key: 'person.fullName',
+        category: 'Random Person',
+        title: 'Full Name',
+        func: fullName,
     },
 ];
 export default commands;

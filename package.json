@@ -661,6 +661,31 @@
                 "title": "Lorem Ipsum HTML Paragraphs To Length",
                 "shortTitle": "Paragraphs",
                 "category": "Random Text"
+            },
+            {
+                "command": "mb.person.firstName",
+                "title": "First Name",
+                "category": "Random Person"
+            },
+            {
+                "command": "mb.person.lastName",
+                "title": "Last Name",
+                "category": "Random Person"
+            },
+            {
+                "command": "mb.person.anyName",
+                "title": "Any Name",
+                "category": "Random Person"
+            },
+            {
+                "command": "mb.person.middleInitial",
+                "title": "Middle Initial",
+                "category": "Random Person"
+            },
+            {
+                "command": "mb.person.fullName",
+                "title": "Full Name",
+                "category": "Random Person"
             }
         ],
         "menus": {
@@ -692,6 +717,9 @@
                 },
                 {
                     "submenu": "mockingbird/text"
+                },
+                {
+                    "submenu": "mockingbird/person"
                 }
             ],
             "mockingbird/others": [
@@ -999,6 +1027,23 @@
                 {
                     "command": "mb.text.lorem_ipsum.paragraphsHTML"
                 }
+            ],
+            "mockingbird/person": [
+                {
+                    "command": "mb.person.firstName"
+                },
+                {
+                    "command": "mb.person.lastName"
+                },
+                {
+                    "command": "mb.person.anyName"
+                },
+                {
+                    "command": "mb.person.middleInitial"
+                },
+                {
+                    "command": "mb.person.fullName"
+                }
             ]
         },
         "submenus": [
@@ -1041,6 +1086,10 @@
             {
                 "id": "mockingbird/text/lorem_ipsum",
                 "label": "Lorem Ipsum"
+            },
+            {
+                "id": "mockingbird/person",
+                "label": "Person"
             }
         ]
     },
