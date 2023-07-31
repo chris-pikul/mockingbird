@@ -93,3 +93,7 @@ export function age(value?: string): string {
     const min = value ? parseInt(value) : 1;
     return clamp(min, Math.trunc(randBMRange(-10, 150, 2)), 105).toString();
 }
+
+export function ssn(): string {
+    return `${randomDigits('3')}-${randomDigits('2')}-${randomDigits('4')}`;
+}

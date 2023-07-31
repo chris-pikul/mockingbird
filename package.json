@@ -753,6 +753,12 @@
                 "title": "Age With Minimum (Normal Distribution)",
                 "shortTitle": "Minimum Age",
                 "category": "Random Person"
+            },
+            {
+                "command": "mb.person.ssn",
+                "title": "Social Security Number (US)",
+                "shortTitle": "SSN",
+                "category": "Random Person"
             }
         ],
         "menus": {
@@ -1131,6 +1137,9 @@
                 },
                 {
                     "command": "mb.person.ageMin"
+                },
+                {
+                    "command": "mb.person.ssn"
                 }
             ],
             "mockingbird/person/phone_number": [

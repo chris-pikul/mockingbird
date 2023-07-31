@@ -78,6 +78,7 @@ import {
     phoneNumberIT,
     phoneNumberUK,
     phoneNumberUS,
+    ssn,
 } from './person';
 import { PROMPT_LENGTH, PROMPT_PATTERN, PROMPT_SAVE_REGEX } from './prompts';
 import { fromRegex, saveRegexPreset, useRegexPreset } from './regex';
@@ -916,6 +917,13 @@ const commands: Command[] = [
         shortTitle: 'Minimum Age',
         func: age,
         prompt: PROMPT_LENGTH,
+    },
+    {
+        key: 'person.ssn',
+        category: 'Random Person',
+        title: 'Social Security Number (US)',
+        shortTitle: 'SSN',
+        func: ssn,
     },
 ];
 export default commands;

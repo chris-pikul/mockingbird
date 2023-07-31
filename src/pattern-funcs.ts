@@ -26,6 +26,7 @@ import {
     phoneNumberIT,
     phoneNumberUK,
     phoneNumberUS,
+    ssn,
 } from './person';
 import { fromRegex } from './regex';
 import {
@@ -102,4 +103,5 @@ export const directiveDB: Record<string, PatternFunction> = {
     e164: phoneNumberE164,
     email,
     age,
+    ssn,
 } as const;

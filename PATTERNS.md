@@ -70,3 +70,4 @@ Only `boolean`, `number`, and `string` arguments are accepted at this moment.
 * `e164` - Phone number in international E.164 format
 * `email` - Valid email using known providers
 * `age(min = 1)` - Age using Normal Distribution, can supply a minimum age
+* `ssn` - US Social Security Number
