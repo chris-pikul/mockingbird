@@ -1,3 +1,4 @@
+import { randomBool } from './misc';
 import { OutputFunction } from './vscode';
 
 export function withDigits(value: number, digits = 6): string {
@@ -177,6 +178,25 @@ export function executeRepeated<T extends OutputFunction>(
     for (let i = 0; i < randInt(arg0, arg1); i++) results += func();
 
     return results;
+}
+
+/**
+ * Optionally execute the function and return. Could happen, could not.
+ * @param func Function to execute that returns a string
+ * @returns Results from the function, or an empty string
+ */
+export function executeOptionally<T extends OutputFunction>(func: T): string {
+    if (randomBool()) return func();
+    return '';
+}
+
+/**
+ * Return one of the given options in the variadic arguments
+ * @param args... Strings to pick from
+ * @returns One of the provided strings
+ */
+export function pick(...args: string[]): string {
+    return randFromArray(args);
 }
 
 /**

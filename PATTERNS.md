@@ -53,6 +53,9 @@ Only `boolean`, `number`, and `string` arguments are accepted at this moment.
 * `word(len = 1)` - Lorem Ipsum words to length
 * `sentence(len = 1)` - Lorem Ipsum sentences to length
 * `paragraph(len = 1)` - Lorem Ipsum paragraphs to length
+* `adjective` - English Adjective
+* `adverb` - English Adverb
+* `noun` - English Noun
 * `regex(pattern)` - Execute a reverse Regular Expression using the given pattern
 * `firstName` - Common first name
 * `lastName` - Common last name
@@ -65,3 +68,4 @@ Only `boolean`, `number`, and `string` arguments are accepted at this moment.
 * `phoneIT` - Phone number in IT format
 * `phoneEU` - Phone number in EU format, being one of the above countries
 * `e164` - Phone number in international E.164 format
+* `email` - Valid email using known providers

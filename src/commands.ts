@@ -81,6 +81,9 @@ import {
 import { PROMPT_LENGTH, PROMPT_PATTERN, PROMPT_SAVE_REGEX } from './prompts';
 import { fromRegex, saveRegexPreset, useRegexPreset } from './regex';
 import {
+    englishAdjective,
+    englishAdverb,
+    englishNoun,
     loremIpsumHTMLParagraphs,
     loremIpsumHTMLSentences,
     loremIpsumHTMLWords,
@@ -803,6 +806,24 @@ const commands: Command[] = [
         prompt: PROMPT_LENGTH,
     },
     {
+        key: 'text.adjective',
+        category: 'Random Text',
+        title: 'English Adjective',
+        func: englishAdjective,
+    },
+    {
+        key: 'text.adverb',
+        category: 'Random Text',
+        title: 'English Adverb',
+        func: englishAdverb,
+    },
+    {
+        key: 'text.noun',
+        category: 'Random Text',
+        title: 'English Noun',
+        func: englishNoun,
+    },
+    {
         key: 'person.firstName',
         category: 'Random Person',
         title: 'First Name',
@@ -877,7 +898,7 @@ const commands: Command[] = [
     {
         key: 'person.email',
         category: 'Random Person',
-        title: 'Email Address (Known Providers',
+        title: 'Email Address (Known Providers)',
         func: email,
     },
 ];

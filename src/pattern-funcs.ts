@@ -13,6 +13,7 @@ import { randomBool } from './misc';
 import { degree, radians, randomDigits } from './numbers';
 import { PatternFunction } from './pattern';
 import {
+    email,
     firstName,
     fullName,
     lastName,
@@ -27,6 +28,9 @@ import {
 } from './person';
 import { fromRegex } from './regex';
 import {
+    englishAdjective,
+    englishAdverb,
+    englishNoun,
     loremIpsumParagraphs,
     loremIpsumSentences,
     loremIpsumWords,
@@ -80,6 +84,9 @@ export const directiveDB: Record<string, PatternFunction> = {
     word: (len: number = 1) => loremIpsumWords(len.toString()),
     sentence: (len: number = 1) => loremIpsumSentences(len.toString()),
     paragraph: (len: number = 1) => loremIpsumParagraphs(len.toString()),
+    adjective: englishAdjective,
+    adverb: englishAdverb,
+    noun: englishNoun,
     regex: (pattern: string) => fromRegex(pattern),
     firstname: () => firstName(),
     lastname: () => lastName(),
@@ -92,4 +99,5 @@ export const directiveDB: Record<string, PatternFunction> = {
     phoneit: phoneNumberIT,
     phoneeu: phoneNumberEU,
     e164: phoneNumberE164,
+    email,
 } as const;

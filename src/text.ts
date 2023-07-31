@@ -1,9 +1,13 @@
 import { loremIpsum } from 'lorem-ipsum';
 
+import Adjectives from './data/adjectives.json';
+import Adverbs from './data/adverbs.json';
+import Nouns from './data/nouns.json';
 import {
     RandRange,
     buildLengthRepeater,
     buildRandomCharFromSet,
+    randFromArray,
     randFromRanges,
     randInt,
 } from './utils';
@@ -128,4 +132,16 @@ export function loremIpsumHTMLSentences(length?: string): string {
 export function loremIpsumHTMLParagraphs(length?: string): string {
     const len = length ? parseInt(length) : 1;
     return generateLoremIpsum(len, 'paragraphs', true);
+}
+
+export function englishAdjective(): string {
+    return randFromArray(Adjectives);
+}
+
+export function englishAdverb(): string {
+    return randFromArray(Adverbs);
+}
+
+export function englishNoun(): string {
+    return randFromArray(Nouns);
 }

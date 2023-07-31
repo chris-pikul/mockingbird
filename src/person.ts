@@ -2,8 +2,15 @@ import EmailProviders from './data/email-providers.json';
 import FirstNames from './data/firstNames.json';
 import LastNames from './data/lastNames.json';
 import { randomDigit, randomDigits } from './numbers';
-import { randomLatinLetterUpper } from './text';
-import { executeOneOf, executeRepeated, randFromArray, randInt } from './utils';
+import { englishAdverb, englishNoun, randomLatinLetterUpper } from './text';
+import {
+    executeOneOf,
+    executeOptionally,
+    executeRepeated,
+    pick,
+    randFromArray,
+    randInt,
+} from './utils';
 
 const allNames = [...FirstNames, ...LastNames];
 
@@ -73,5 +80,9 @@ export function phoneNumberE164(): string {
 }
 
 export function email(): string {
-    return `test@${randFromArray(EmailProviders)}`;
+    return `${executeOptionally(englishAdverb)}${executeOptionally(() =>
+        pick('_', '-', '.', ''),
+    )}${englishNoun()}${executeOptionally(() =>
+        executeRepeated(randomDigit, 1, 10),
+    )}@${randFromArray(EmailProviders)}`;
 }
