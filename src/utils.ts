@@ -7,6 +7,24 @@ export function withDigits(value: number, digits = 6): string {
     ).toString();
 }
 
+/**
+ * Parses an optional length argument into a number. The resulting number
+ * must always be above 0.
+ *
+ * @param length Length argument
+ * @param def Default value
+ * @returns Number above 0
+ */
+export function parseLength(length?: number | string, def = 1): number {
+    if (length) {
+        if (typeof length === 'number') return Math.max(1, length);
+        const toNum = parseInt(length);
+        return Number.isFinite(toNum) ? Math.max(1, toNum) : def;
+    }
+
+    return def;
+}
+
 export function parseRange(input: string): [number, number] {
     const clean = input.trim();
     const spaceInd = clean.indexOf(' ');
@@ -137,6 +155,10 @@ export function randFromRanges(...ranges: RandRange[]): number {
         `Attempted to find random value ${target} within ranges but failed to find match`,
     );
     return ranges[0][0];
+}
+
+export function randChar(alpha: string): string {
+    return alpha.charAt(randInt(alpha.length));
 }
 
 /**

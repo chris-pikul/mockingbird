@@ -9,8 +9,9 @@ import {
     randomHTMLColorName,
     randomHTMLHexColor,
 } from './colors';
+import { bigserial, guid, serial, urid, uuid } from './identifiers';
 import { randomBool } from './misc';
-import { degree, radians, randomDigits } from './numbers';
+import { degree, hex, radians, randomDigits } from './numbers';
 import { PatternFunction } from './pattern';
 import {
     age,
@@ -68,6 +69,7 @@ export const directiveDB: Record<string, PatternFunction> = {
         randInt(0, 0xffffffff + 1)
             .toString(16)
             .padStart(8, '0'),
+    hex: (len: number = 1) => hex(len),
     digit: (len: number = 1) => randomDigits(len.toString()),
     degree: () => degree(),
     radian: () => radians(),
@@ -104,4 +106,9 @@ export const directiveDB: Record<string, PatternFunction> = {
     email,
     age,
     ssn,
+    serial,
+    bigserial,
+    guid,
+    uuid,
+    urid,
 } as const;

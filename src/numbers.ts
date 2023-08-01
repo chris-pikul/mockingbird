@@ -1,6 +1,17 @@
 import Primes from './data/primes.json';
-import { parseRange, rand, randInt, randPerc, withDigits } from './utils';
+import {
+    executeRepeated,
+    parseLength,
+    parseRange,
+    rand,
+    randChar,
+    randInt,
+    randPerc,
+    withDigits,
+} from './utils';
 import { getConfigValue } from './vscode';
+
+const hexAlpha = '0123456789ABCDEF';
 
 function randSigned(mult: number): number {
     return (Math.random() - 0.5) * 2 * mult;
@@ -93,6 +104,11 @@ export function randomHexInteger24(): string {
 export function randomHexInteger32(): string {
     const prefix = getConfigValue<string>('numbers.hexPrefix');
     return `${prefix}${randInt(0xffffffff).toString(16).toUpperCase()}`;
+}
+
+export function hex(length?: number | string): string {
+    const len = parseLength(length);
+    return executeRepeated(() => randChar(hexAlpha), len);
 }
 
 export function randomDigit(): string {

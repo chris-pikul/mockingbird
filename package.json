@@ -382,6 +382,12 @@
                 "category": "Random Number"
             },
             {
+                "command": "mb.number.hexCharacters",
+                "title": "Hexidecimal Characters To Length",
+                "shortTitle": "Random Hex",
+                "category": "Random Number"
+            },
+            {
                 "command": "mb.number.randomDigit",
                 "title": "Digit (0-9)",
                 "shortTitle": "Random Digit",
@@ -759,6 +765,31 @@
                 "title": "Social Security Number (US)",
                 "shortTitle": "SSN",
                 "category": "Random Person"
+            },
+            {
+                "command": "mb.identifier.serial",
+                "title": "Serial (32bit Integer)",
+                "category": "Random Identifier"
+            },
+            {
+                "command": "mb.identifier.bigserial",
+                "title": "Big Serial (64bit Integer)",
+                "category": "Random Identifier"
+            },
+            {
+                "command": "mb.identifier.guid",
+                "title": "GUID",
+                "category": "Random Identifier"
+            },
+            {
+                "command": "mb.identifier.uuid",
+                "title": "UUID",
+                "category": "Random Identifier"
+            },
+            {
+                "command": "mb.identifier.urid",
+                "title": "URID",
+                "category": "Random Identifier"
             }
         ],
         "menus": {
@@ -793,6 +824,9 @@
                 },
                 {
                     "submenu": "mockingbird/person"
+                },
+                {
+                    "submenu": "mockingbird/identifier"
                 }
             ],
             "mockingbird/others": [
@@ -932,6 +966,9 @@
                 },
                 {
                     "command": "mb.number.randomHexInteger32"
+                },
+                {
+                    "command": "mb.number.hexCharacters"
                 },
                 {
                     "command": "mb.number.randomDigit"
@@ -1164,6 +1201,23 @@
                 {
                     "command": "mb.person.phone_number.phoneNumberE164"
                 }
+            ],
+            "mockingbird/identifier": [
+                {
+                    "command": "mb.identifier.serial"
+                },
+                {
+                    "command": "mb.identifier.bigserial"
+                },
+                {
+                    "command": "mb.identifier.guid"
+                },
+                {
+                    "command": "mb.identifier.uuid"
+                },
+                {
+                    "command": "mb.identifier.urid"
+                }
             ]
         },
         "submenus": [
@@ -1214,6 +1268,10 @@
             {
                 "id": "mockingbird/person/phone_number",
                 "label": "Phone Number"
+            },
+            {
+                "id": "mockingbird/identifier",
+                "label": "Identifier"
             }
         ]
     },
@@ -1246,6 +1304,7 @@
         "webpack-cli": "^5.1.1"
     },
     "dependencies": {
+        "base32-encode": "^2.0.0",
         "date-fns": "^2.30.0",
         "lorem-ipsum": "^2.0.8",
         "randexp": "^0.5.3"

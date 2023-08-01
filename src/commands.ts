@@ -26,12 +26,14 @@ import {
     randomMonth,
     randomYear,
 } from './date-time';
+import { bigserial, guid, serial, urid, uuid } from './identifiers';
 import { randomBool } from './misc';
 import {
     degree,
     getE,
     getEpsilon,
     getPI,
+    hex,
     radians,
     randomBinaryInteger16,
     randomBinaryInteger24,
@@ -455,6 +457,13 @@ const commands: Command[] = [
         title: 'Hexidecimal Integer (32bit)',
         shortTitle: 'Random 32bit Hex',
         func: randomHexInteger32,
+    },
+    {
+        key: 'number.hexCharacters',
+        category: 'Random Number',
+        title: 'Hexidecimal Characters To Length',
+        shortTitle: 'Random Hex',
+        func: hex,
     },
     {
         key: 'number.randomDigit',
@@ -924,6 +933,36 @@ const commands: Command[] = [
         title: 'Social Security Number (US)',
         shortTitle: 'SSN',
         func: ssn,
+    },
+    {
+        key: 'identifier.serial',
+        category: 'Random Identifier',
+        title: 'Serial (32bit Integer)',
+        func: serial,
+    },
+    {
+        key: 'identifier.bigserial',
+        category: 'Random Identifier',
+        title: 'Big Serial (64bit Integer)',
+        func: bigserial,
+    },
+    {
+        key: 'identifier.guid',
+        category: 'Random Identifier',
+        title: 'GUID',
+        func: guid,
+    },
+    {
+        key: 'identifier.uuid',
+        category: 'Random Identifier',
+        title: 'UUID',
+        func: uuid,
+    },
+    {
+        key: 'identifier.urid',
+        category: 'Random Identifier',
+        title: 'URID',
+        func: urid,
     },
 ];
 export default commands;

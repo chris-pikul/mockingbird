@@ -35,6 +35,7 @@ Only `boolean`, `number`, and `string` arguments are accepted at this moment.
 * `hex16` - 16-bit hexidecimal number
 * `hex24` - 24-bit hexidecimal number
 * `hex32` - 32-bit hexidecimal number
+* `hex` - Hexidecimal characters to length
 * `degree` - Whole-number degree 0..360
 * `radian` - Radian with up to 2-digits precision
 * `digit(len = 1)` - Latin digits to length
@@ -71,3 +72,8 @@ Only `boolean`, `number`, and `string` arguments are accepted at this moment.
 * `email` - Valid email using known providers
 * `age(min = 1)` - Age using Normal Distribution, can supply a minimum age
 * `ssn` - US Social Security Number
+* `serial` - 32-bit Integer
+* `bigserial` - 64-bit Integer
+* `guid` - Globally Unique Identifier (Microsoft)
+* `uuid` - Universally Unique Identifier version 4
+* `urid` - Modified UUID that is compressed using Base-32
