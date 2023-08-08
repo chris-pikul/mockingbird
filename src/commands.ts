@@ -27,6 +27,7 @@ import {
     randomYear,
 } from './date-time';
 import { bigserial, guid, serial, urid, uuid } from './identifiers';
+import { gpsDD, gpsDMM, gpsDMS, latitude, longitude } from './locations';
 import { randomBool } from './misc';
 import {
     degree,
@@ -963,6 +964,39 @@ const commands: Command[] = [
         category: 'Random Identifier',
         title: 'URID',
         func: urid,
+    },
+    {
+        key: 'location.longitude',
+        category: 'Random Location',
+        title: 'Longitude',
+        func: longitude,
+    },
+    {
+        key: 'location.latitude',
+        category: 'Random Location',
+        title: 'Latitude',
+        func: latitude,
+    },
+    {
+        key: 'location.gpsDMS',
+        category: 'Random Location',
+        title: 'GPS Coordinate (DMS)',
+        shortTitle: 'GPS DMS',
+        func: gpsDMS,
+    },
+    {
+        key: 'location.gpsDMM',
+        category: 'Random Location',
+        title: 'GPS Coordinate (DMM)',
+        shortTitle: 'GPS DMM',
+        func: gpsDMM,
+    },
+    {
+        key: 'location.gpsDD',
+        category: 'Random Location',
+        title: 'GPS Coordinate (DD)',
+        shortTitle: 'GPS DD',
+        func: gpsDD,
     },
 ];
 export default commands;

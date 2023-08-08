@@ -10,6 +10,7 @@ import {
     randomHTMLHexColor,
 } from './colors';
 import { bigserial, guid, serial, urid, uuid } from './identifiers';
+import { gpsDD, gpsDMM, gpsDMS, latitude, longitude } from './locations';
 import { randomBool } from './misc';
 import { degree, hex, radians, randomDigits } from './numbers';
 import { PatternFunction } from './pattern';
@@ -111,4 +112,10 @@ export const directiveDB: Record<string, PatternFunction> = {
     guid,
     uuid,
     urid,
+    longitude,
+    latitude,
+    gps: () => gpsDMS(),
+    gpsdms: () => gpsDMS(),
+    gpsdmm: () => gpsDMM(),
+    gpsdd: () => gpsDD(),
 } as const;

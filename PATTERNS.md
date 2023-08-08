@@ -77,3 +77,9 @@ Only `boolean`, `number`, and `string` arguments are accepted at this moment.
 * `guid` - Globally Unique Identifier (Microsoft)
 * `uuid` - Universally Unique Identifier version 4
 * `urid` - Modified UUID that is compressed using Base-32
+* `longitude` - Longitude degrees -180..180
+* `latitude` - Latitude degrees -90..90
+* `gps` - GPS Coordinates in Degrees-Minutes-Seconds
+* `gpsDMS` - GPS Coordinates in Degrees-Minutes-Seconds
+* `gpsDMM` - GPS Coordinates in Degrees and Decimal Minutes
+* `gpsDD` - GPS Coordinates in Decimal Degrees

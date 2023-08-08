@@ -89,6 +89,8 @@ To do this, you can write the template out in a file view, select it, and use th
 - __Age__: Generate an age using Normal Distribution for realistic results
 - __SSN__: US Social Security Numbers
 
+### 
+
 ### Miscellaneous
 
 - __Boolean__: Generate a random "true" or "false".

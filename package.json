@@ -790,6 +790,34 @@
                 "command": "mb.identifier.urid",
                 "title": "URID",
                 "category": "Random Identifier"
+            },
+            {
+                "command": "mb.location.longitude",
+                "title": "Longitude",
+                "category": "Random Location"
+            },
+            {
+                "command": "mb.location.latitude",
+                "title": "Latitude",
+                "category": "Random Location"
+            },
+            {
+                "command": "mb.location.gpsDMS",
+                "title": "GPS Coordinate (DMS)",
+                "shortTitle": "GPS DMS",
+                "category": "Random Location"
+            },
+            {
+                "command": "mb.location.gpsDMM",
+                "title": "GPS Coordinate (DMM)",
+                "shortTitle": "GPS DMM",
+                "category": "Random Location"
+            },
+            {
+                "command": "mb.location.gpsDD",
+                "title": "GPS Coordinate (DD)",
+                "shortTitle": "GPS DD",
+                "category": "Random Location"
             }
         ],
         "menus": {
@@ -827,6 +855,9 @@
                 },
                 {
                     "submenu": "mockingbird/identifier"
+                },
+                {
+                    "submenu": "mockingbird/location"
                 }
             ],
             "mockingbird/others": [
@@ -1218,6 +1249,23 @@
                 {
                     "command": "mb.identifier.urid"
                 }
+            ],
+            "mockingbird/location": [
+                {
+                    "command": "mb.location.longitude"
+                },
+                {
+                    "command": "mb.location.latitude"
+                },
+                {
+                    "command": "mb.location.gpsDMS"
+                },
+                {
+                    "command": "mb.location.gpsDMM"
+                },
+                {
+                    "command": "mb.location.gpsDD"
+                }
             ]
         },
         "submenus": [
@@ -1272,6 +1320,10 @@
             {
                 "id": "mockingbird/identifier",
                 "label": "Identifier"
+            },
+            {
+                "id": "mockingbird/location",
+                "label": "Location"
             }
         ]
     },
