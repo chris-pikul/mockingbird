@@ -2,10 +2,11 @@
     "name": "mockingbird",
     "displayName": "Mockingbird",
     "description": "Generate data for mocks and testing with ease",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "engines": {
         "vscode": "^1.80.0"
     },
+    "publisher": "chris-pikul",
     "author": {
         "name": "Chris Pikul",
         "email": "ChrisPikul510@gmail.com"
