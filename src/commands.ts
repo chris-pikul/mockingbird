@@ -27,7 +27,20 @@ import {
     randomYear,
 } from './date-time';
 import { bigserial, guid, serial, urid, uuid } from './identifiers';
-import { gpsDD, gpsDMM, gpsDMS, latitude, longitude } from './locations';
+import {
+    city,
+    countryCode,
+    countryName,
+    gpsDD,
+    gpsDMM,
+    gpsDMS,
+    latitude,
+    longitude,
+    postZip,
+    stateCode,
+    stateName,
+    usStreetAddress,
+} from './locations';
 import { randomBool } from './misc';
 import {
     degree,
@@ -997,6 +1010,50 @@ const commands: Command[] = [
         title: 'GPS Coordinate (DD)',
         shortTitle: 'GPS DD',
         func: gpsDD,
+    },
+    {
+        key: 'location.city',
+        category: 'Random Location',
+        title: 'City (US)',
+        func: city,
+    },
+    {
+        key: 'location.stateCode',
+        category: 'Random Location',
+        title: 'State Code (US)',
+        func: stateCode,
+    },
+    {
+        key: 'location.stateName',
+        category: 'Random Location',
+        title: 'State Name (US)',
+        func: stateName,
+    },
+    {
+        key: 'location.countryCode',
+        category: 'Random Location',
+        title: 'Country Code (ISO 2-letter)',
+        shortTitle: 'Country Code',
+        func: countryCode,
+    },
+    {
+        key: 'location.countryName',
+        category: 'Random Location',
+        title: 'Country Name',
+        shortTitle: 'Country',
+        func: countryName,
+    },
+    {
+        key: 'location.postZip',
+        category: 'Random Location',
+        title: 'US Zip Code',
+        func: postZip,
+    },
+    {
+        key: 'location.streetAddress',
+        category: 'Random Location',
+        title: 'US Street Address',
+        func: usStreetAddress,
     },
 ];
 export default commands;

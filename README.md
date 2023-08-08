@@ -89,7 +89,13 @@ To do this, you can write the template out in a file view, select it, and use th
 - __Age__: Generate an age using Normal Distribution for realistic results
 - __SSN__: US Social Security Numbers
 
-### 
+### Locations
+- __GPS__: Longitude, latitude, different notations, anywhere on the planet.
+- __Cities__: Grab a random city name from the US
+- __States__: Use the state code, or the full name
+- __Countries__: ISO 2-letter codes, and the written name
+- __Zip Code__: US Postal zip code (5 digits)
+- __Street Address__: Make a fake US street address
 
 ### Miscellaneous
 

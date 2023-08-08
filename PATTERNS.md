@@ -83,3 +83,10 @@ Only `boolean`, `number`, and `string` arguments are accepted at this moment.
 * `gpsDMS` - GPS Coordinates in Degrees-Minutes-Seconds
 * `gpsDMM` - GPS Coordinates in Degrees and Decimal Minutes
 * `gpsDD` - GPS Coordinates in Decimal Degrees
+* `city` - Random US City
+* `stateCode` - 2-letter US state code
+* `state` - Full state name
+* `countryCode` - ISO 2-letter country code
+* `country` - Full country name
+* `zip` - US Postal Zip Code
+* `streetAddress` - Fake US street address

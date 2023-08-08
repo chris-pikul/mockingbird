@@ -818,6 +818,43 @@
                 "title": "GPS Coordinate (DD)",
                 "shortTitle": "GPS DD",
                 "category": "Random Location"
+            },
+            {
+                "command": "mb.location.city",
+                "title": "City (US)",
+                "category": "Random Location"
+            },
+            {
+                "command": "mb.location.stateCode",
+                "title": "State Code (US)",
+                "category": "Random Location"
+            },
+            {
+                "command": "mb.location.stateName",
+                "title": "State Name (US)",
+                "category": "Random Location"
+            },
+            {
+                "command": "mb.location.countryCode",
+                "title": "Country Code (ISO 2-letter)",
+                "shortTitle": "Country Code",
+                "category": "Random Location"
+            },
+            {
+                "command": "mb.location.countryName",
+                "title": "Country Name",
+                "shortTitle": "Country",
+                "category": "Random Location"
+            },
+            {
+                "command": "mb.location.postZip",
+                "title": "US Zip Code",
+                "category": "Random Location"
+            },
+            {
+                "command": "mb.location.streetAddress",
+                "title": "US Street Address",
+                "category": "Random Location"
             }
         ],
         "menus": {
@@ -1265,6 +1302,27 @@
                 },
                 {
                     "command": "mb.location.gpsDD"
+                },
+                {
+                    "command": "mb.location.city"
+                },
+                {
+                    "command": "mb.location.stateCode"
+                },
+                {
+                    "command": "mb.location.stateName"
+                },
+                {
+                    "command": "mb.location.countryCode"
+                },
+                {
+                    "command": "mb.location.countryName"
+                },
+                {
+                    "command": "mb.location.postZip"
+                },
+                {
+                    "command": "mb.location.streetAddress"
                 }
             ]
         },
