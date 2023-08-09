@@ -35,7 +35,7 @@ Example: `Hello {{name}}, your birthday is on {{localeDate}}, your favorite colo
 
 Outputs: `Hello Johnathan Smith, your birthday is on 2/4/1981, your favorite color is mauve and you have 3 cats.`
 
-See the documentation at [Patterns](https://github.com/chris-pikul/blob/main/PATTERNS.md) for
+See the documentation at [Patterns](https://github.com/chris-pikul/mockingbird/blob/main/PATTERNS.md) for
 more information.
 
 ### Templates
