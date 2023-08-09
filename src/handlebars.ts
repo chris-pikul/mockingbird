@@ -1,3 +1,4 @@
+import { formatISO } from 'date-fns';
 import Handlebars, { Exception } from 'handlebars';
 import { window } from 'vscode';
 
@@ -31,6 +32,39 @@ const options: CompileOptions = {
     strict: true,
 };
 
+function makeContext(): Record<string, any> {
+    const date = new Date();
+    return {
+        now: {
+            timestamp: {
+                iso: formatISO(date, {
+                    format: 'extended',
+                    representation: 'complete',
+                }),
+                locale: date.toLocaleString(),
+                unix: Date.now(),
+            },
+            date: {
+                iso: formatISO(date, {
+                    format: 'extended',
+                    representation: 'date',
+                }),
+                locale: date.toLocaleDateString(),
+            },
+            time: {
+                iso: formatISO(date, {
+                    format: 'extended',
+                    representation: 'time',
+                }),
+                locale: date.toLocaleTimeString(),
+            },
+        },
+        pi: Math.PI,
+        e: Math.E,
+        epsilon: Number.EPSILON,
+    };
+}
+
 function bindHelper(name: string, func: OutputFunction) {
     const cleanName = name.trim().toLowerCase();
     Handlebars.registerHelper(cleanName, func);
@@ -57,11 +91,15 @@ export function instantiateHandlebars() {
 export function executeTemplateImmediate(template: string): string {
     try {
         const templ = Handlebars.compile(template, options);
-        return templ({});
+        return templ(makeContext());
     } catch (err: unknown) {
         if (err instanceof Exception) {
+            const badName = err.message.substring(
+                1,
+                err.message.indexOf('"', 1),
+            );
             showError(
-                `Failed to execute your template.\nMessage: ${err.message}\nDescription: ${err.description}\nName: ${err.name}`,
+                `Failed to execute your template. Helper "${badName}" does not exist!`,
             );
         } else {
             console.error('Unknown error occured trying to execute template');
@@ -84,8 +122,12 @@ export function cacheTemplate(): void {
             Handlebars.precompile(selection, options);
         } catch (err: unknown) {
             if (err instanceof Exception) {
+                const badName = err.message.substring(
+                    1,
+                    err.message.indexOf('"', 1),
+                );
                 showError(
-                    `Failed to parse your template.\nMessage: ${err.message}\nDescription: ${err.description}\nName: ${err.name}`,
+                    `Failed to parse your template. Helper "${badName}" does not exist!`,
                 );
             } else {
                 console.error('Unknown error occured trying to cache template');
@@ -119,15 +161,19 @@ export function useCachedTemplate(length?: string): string {
             const len = length ? Math.max(parseInt(length), 1) : 1;
             let result = '';
             for (let i = 0; i < len; i++) {
-                result += template({});
+                result += template(makeContext());
 
                 if (i < len - 1) result += '\n';
             }
             return result;
         } catch (err: unknown) {
             if (err instanceof Exception) {
+                const badName = err.message.substring(
+                    1,
+                    err.message.indexOf('"', 1),
+                );
                 showError(
-                    `Failed to parse your template.\nMessage: ${err.message}\nDescription: ${err.description}\nName: ${err.name}`,
+                    `Failed to execute your template. Helper "${badName}" does not exist!`,
                 );
             } else {
                 console.error(
@@ -138,10 +184,11 @@ export function useCachedTemplate(length?: string): string {
                 );
             }
         }
+    } else {
+        showError(
+            'No template was cached, please select template text and use the "Cache Selection As Template" command',
+        );
     }
 
-    showError(
-        'No template was cached, please select template text and use the "Cache Selection As Template" command',
-    );
     return '';
 }
