@@ -133,6 +133,7 @@ const commands: Command[] = [
         category: 'Random',
         title: 'Boolean',
         func: randomBool,
+        templateName: ['bool', 'boolean'],
     },
     {
         key: 'regular_expression.fromRegex',
@@ -147,6 +148,7 @@ const commands: Command[] = [
             validator: (input?: string) => !!(input && input.length > 0),
             errorMessage: 'Please enter a non-empty regular expression',
         },
+        templateName: ['regex', 'regexp'],
     },
     {
         key: 'regular_expression.saveRegex',
@@ -202,6 +204,7 @@ const commands: Command[] = [
         title: 'Current ISO Timestamp',
         shortTitle: 'ISO Timestamp',
         func: currentISOTimestamp,
+        templateName: 'current-timestamp',
     },
     {
         key: 'date-time.currentISODate',
@@ -209,6 +212,7 @@ const commands: Command[] = [
         title: 'Current ISO Date',
         shortTitle: 'ISO Date',
         func: currentISODate,
+        templateName: 'current-date',
     },
     {
         key: 'date-time.currentISOTime',
@@ -216,6 +220,7 @@ const commands: Command[] = [
         title: 'Current ISO Time',
         shortTitle: 'ISO Time',
         func: currentISOTime,
+        templateName: 'current-time',
     },
     {
         key: 'date-time.currentLocaleTimestamp',
@@ -223,6 +228,7 @@ const commands: Command[] = [
         title: 'Current Timestamp Using Local Locale',
         shortTitle: 'Timestamp Local Locale',
         func: currentLocaleTimestamp,
+        templateName: 'locale-timestamp',
     },
     {
         key: 'date-time.currentLocaleDate',
@@ -230,6 +236,7 @@ const commands: Command[] = [
         title: 'Current Date Using Local Locale',
         shortTitle: 'Date Local Locale',
         func: currentLocaleDate,
+        templateName: 'locale-date',
     },
     {
         key: 'date-time.currentLocaleTime',

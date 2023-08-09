@@ -1417,6 +1417,7 @@
     "dependencies": {
         "base32-encode": "^2.0.0",
         "date-fns": "^2.30.0",
+        "handlebars": "^4.7.8",
         "lorem-ipsum": "^2.0.8",
         "randexp": "^0.5.3"
     }
