@@ -39,6 +39,12 @@ Only `boolean`, `number`, and `string` arguments are accepted at this moment.
 * `degree` - Whole-number degree 0..360
 * `radian` - Radian with up to 2-digits precision
 * `digit(len = 1)` - Latin digits to length
+* `date` - Random ISO date
+* `time` - Random ISO time
+* `timestamp` - Random ISO timestamp
+* `currentDate` - Current ISO date
+* `currentTime` - Current ISO time
+* `currentTimestamp` - Current ISO timestamp
 * `letter(len = 1)` - Latin letters to length (case-insensitive)
 * `symbol(len = 1)` - ASCII symbols to length
 * `character(len = 1)` - ASCII/Latin characters to length

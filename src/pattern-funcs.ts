@@ -9,6 +9,14 @@ import {
     randomHTMLColorName,
     randomHTMLHexColor,
 } from './colors';
+import {
+    currentISODate,
+    currentISOTime,
+    currentISOTimestamp,
+    randomISODate,
+    randomISOTime,
+    randomISOTimestamp,
+} from './date-time';
 import { bigserial, guid, serial, urid, uuid } from './identifiers';
 import {
     city,
@@ -87,6 +95,13 @@ export const directiveDB: Record<string, PatternFunction> = {
     digit: (len: number = 1) => randomDigits(len.toString()),
     degree: () => degree(),
     radian: () => radians(),
+    date: () => randomISODate(),
+    time: () => randomISOTime(),
+    timestamp: () => randomISOTimestamp(),
+    currentdate: () => currentISODate(),
+    currenttime: () => currentISOTime(),
+    currenttimestamp: () => currentISOTimestamp(),
+    now: () => currentISOTimestamp(),
     letter: (len: number = 1) => randomLatinLetterLength(len.toString()),
     symbol: (len: number = 1) => randomASCIISymbolLength(len.toString()),
     character: (len: number = 1) => randomASCIICharacterLength(len.toString()),
