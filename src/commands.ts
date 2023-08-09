@@ -78,7 +78,6 @@ import {
     randomSimpleFloat,
     randomUnit,
 } from './numbers';
-import { cachePattern, providePattern, useCachedPattern } from './pattern';
 import {
     age,
     email,
@@ -98,6 +97,7 @@ import {
 } from './person';
 import { PROMPT_LENGTH, PROMPT_PATTERN, PROMPT_SAVE_REGEX } from './prompts';
 import { fromRegex, saveRegexPreset, useRegexPreset } from './regex';
+import { cacheTemplate, provideTemplate, useCachedTemplate } from './template';
 import {
     englishAdjective,
     englishAdverb,
@@ -170,7 +170,7 @@ const commands: Command[] = [
         category: 'Template',
         title: 'Cache Selection As Template',
         shortTitle: 'Cache Template',
-        func: cachePattern,
+        func: cacheTemplate,
         isCommand: true,
     },
     {
@@ -178,7 +178,7 @@ const commands: Command[] = [
         category: 'Template',
         title: 'Template From Input',
         shortTitle: 'Input Template',
-        func: providePattern,
+        func: provideTemplate,
         prompt: PROMPT_PATTERN,
     },
     {
@@ -186,14 +186,14 @@ const commands: Command[] = [
         category: 'Template',
         title: 'Use Cached Template',
         shortTitle: 'Use Template',
-        func: useCachedPattern,
+        func: useCachedTemplate,
     },
     {
         key: 'template.cacheUseLength',
         category: 'Template',
         title: 'Use Cached Template Multiple Times',
         shortTitle: 'Use Template Multiple',
-        func: useCachedPattern,
+        func: useCachedTemplate,
         prompt: PROMPT_LENGTH,
     },
     {

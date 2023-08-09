@@ -34,7 +34,6 @@ import {
 } from './locations';
 import { randomBool } from './misc';
 import { degree, hex, radians, randomDigits } from './numbers';
-import { PatternFunction } from './pattern';
 import {
     age,
     email,
@@ -52,6 +51,7 @@ import {
     ssn,
 } from './person';
 import { fromRegex } from './regex';
+import { TemplateFunction } from './template';
 import {
     englishAdjective,
     englishAdverb,
@@ -65,7 +65,7 @@ import {
 } from './text';
 import { rand, randInt } from './utils';
 
-export const directiveDB: Record<string, PatternFunction> = {
+export const directiveDB: Record<string, TemplateFunction> = {
     bool: () => randomBool(),
     boolean: () => randomBool(),
     float: (min = Number.MIN_SAFE_INTEGER, max = Number.MAX_SAFE_INTEGER) =>

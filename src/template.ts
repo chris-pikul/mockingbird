@@ -1,16 +1,16 @@
 import { window } from 'vscode';
 
-import { directiveDB } from './pattern-funcs';
 import { getContext } from './state';
+import { directiveDB } from './template-funcs';
 import { getSelection, showError } from './vscode';
 
 const regexTemplate = /(?<!\\){{(.+?)}}/g;
 
-export type PatternArg = number | boolean | string;
+export type TemplateArg = number | boolean | string;
 
-export type PatternFunction = (...args: any[]) => string;
+export type TemplateFunction = (...args: any[]) => string;
 
-function convertArgument(arg: string): PatternArg {
+function convertArgument(arg: string): TemplateArg {
     if (arg.charAt(0) === '"') {
         const lastQuote = arg.lastIndexOf('"');
         if (lastQuote > 1) return arg.substring(1, lastQuote);
@@ -50,7 +50,7 @@ function executeDirective(directive: string): string {
     );
 }
 
-export function usePattern(pattern: string): string {
+export function useTemplate(pattern: string): string {
     let result = '';
     const matches = pattern.matchAll(regexTemplate);
     let lastEnd = 0;
@@ -73,16 +73,16 @@ export function usePattern(pattern: string): string {
     return result;
 }
 
-export function providePattern(pattern?: string): string {
+export function provideTemplate(pattern?: string): string {
     if (!pattern) {
         showError(`Must provide a pattern to use!`);
         return '';
     }
 
-    return usePattern(pattern);
+    return useTemplate(pattern);
 }
 
-export function cachePattern(): void {
+export function cacheTemplate(): void {
     const context = getContext();
     if (!context) return showError('No available extension context!');
 
@@ -97,7 +97,7 @@ export function cachePattern(): void {
     }
 }
 
-export function useCachedPattern(length?: string): string {
+export function useCachedTemplate(length?: string): string {
     const context = getContext();
     if (!context) {
         showError('No available extension context!');
@@ -109,7 +109,7 @@ export function useCachedPattern(length?: string): string {
         const len = length ? Math.max(parseInt(length), 1) : 1;
         let result = '';
         for (let i = 0; i < len; i++) {
-            result += usePattern(cached);
+            result += useTemplate(cached);
 
             if (i < len - 1) result += '\n';
         }
