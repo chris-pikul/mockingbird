@@ -2,7 +2,7 @@
     "name": "mockingbird",
     "displayName": "Mockingbird",
     "description": "Generate data for mocks and testing with ease",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "engines": {
         "vscode": "^1.80.0"
     },
