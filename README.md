@@ -8,9 +8,18 @@ Mockingbird generates random data of all sorts. And not just numbers and random 
 
 There are plenty of features to list here, so they are broken up into categories just like the context menu is. If there is something missing, check the [Contributing](#contributing) section below.
 
+### Templates
+
+To facilitate making structured data, Mockingbird provides a templating engine to help build these. You can generate data in any format you want, just as: json, yaml, xml, csv, text, etc.. This is possible because the templating engine does not care about the text format, and only cares about it's template tags.
+
+These tags follow a familiar Handlebars style of wrapping the template tag in double-curly-braces `{{}}`. There are a ton of tag functions you can use, and some even accept arguments to customize them.
+
+See the documentation at [Templates](https://github.com/chris-pikul/mockingbird/blob/main/TEMPLATES.md) for
+more information.
+
 ### Regular Expressions
 
-Provided a Regular Expression, will generate random data that conforms to it. This is the most powerful, and easiest way to get data if another generator doesn't work for you. You can provide a full expression with flags, or just the pattern portion.
+Provided a Regular Expression, Mockingbird will generate random data that conforms to it. This is the most powerful, and easiest way to get data if another generator doesn't work for you. You can provide a full expression with flags, or just the pattern portion.
 
 Example: Given the pattern `/[a-z0-9]{3,16}@[a-z0-9]{3,32}\.(?:com|net|org)/i`, will generate random "email address" looking text.
 
@@ -22,29 +31,7 @@ Vtp@U3GTp.neT</pre>
 </details>
 <br>
 
-For extra flexibility there are commands to create new presets that are saved to your settings
-and recall them later.
-
-### Patterns
-
-For other cases that don't fit with the provided generators, you can customize the output by building a pattern string. Unlike the [Regular Expression](#regular-expressions) feature, these are a bit more readable and useful for when static and dynamic text intersect.
-
-They use a formatting string that takes double-brace `{{directive}}` style formatting strings. Within the formatting directive you can specify the data type generator to use for part.
-
-Example: `Hello {{name}}, your birthday is on {{localeDate}}, your favorite color is {{namedColor}} and you have {{int(0, 10)}} cats.`
-
-Outputs: `Hello Johnathan Smith, your birthday is on 2/4/1981, your favorite color is mauve and you have 3 cats.`
-
-See the documentation at [Patterns](https://github.com/chris-pikul/mockingbird/blob/main/PATTERNS.md) for
-more information.
-
-### Templates
-
-__This feature is WIP, and below is the idea of how it WILL work__
-
-To help facilitate making mock data, usually you need to fill structures to build some sort of database. This is useful for API testing before you really wire things up. To do this, you can leverage the [Patterns](#patterns) feature and super charge it by building a multi-line pattern of how the data should look. You can then generate as many copies of that as you want.
-
-To do this, you can write the template out in a file view, select it, and use the `Use Selection As Pattern Template` command to have it parsed and ready. Now, wherever you want to insert this, you can use either the `Generate Using Cached Pattern Template` to execute the template once, or `Generate Multiple Using Cached Pattern Template` to specify how many times you want it executed.
+For extra flexibility there are commands to create new presets that are saved to your settings so you can recall them later.
 
 ### Date/Time
 
