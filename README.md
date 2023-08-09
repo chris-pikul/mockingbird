@@ -162,6 +162,7 @@ Here is the list of all commands this extension provides:
 * `mb.number.randomHexInteger16` Random Number: Hexidecimal Integer (16bit)
 * `mb.number.randomHexInteger24` Random Number: Hexidecimal Integer (24bit)
 * `mb.number.randomHexInteger32` Random Number: Hexidecimal Integer (32bit)
+* `mb.number.hexCharacters` Random Number: Hexidecimal Characters To Length
 * `mb.number.randomDigit` Random Number: Digit (0-9)
 * `mb.number.randomOctalInteger16` Random Number: Octal Integer (16bit)
 * `mb.number.randomOctalInteger24` Random Number: Octal Integer (24bit)
@@ -232,6 +233,23 @@ Here is the list of all commands this extension provides:
 * `mb.person.age` Random Person: Age (Normal Distribution)
 * `mb.person.ageMin` Random Person: Age With Minimum (Normal Distribution)
 * `mb.person.ssn` Random Person: Social Security Number (US)
+* `mb.identifier.serial` Random Identifier: Serial (32bit Integer)
+* `mb.identifier.bigserial` Random Identifier: Big Serial (64bit Integer)
+* `mb.identifier.guid` Random Identifier: GUID
+* `mb.identifier.uuid` Random Identifier: UUID
+* `mb.identifier.urid` Random Identifier: URID
+* `mb.location.longitude` Random Location: Longitude
+* `mb.location.latitude` Random Location: Latitude
+* `mb.location.gpsDMS` Random Location: GPS Coordinate (DMS)
+* `mb.location.gpsDMM` Random Location: GPS Coordinate (DMM)
+* `mb.location.gpsDD` Random Location: GPS Coordinate (DD)
+* `mb.location.city` Random Location: City (US)
+* `mb.location.stateCode` Random Location: State Code (US)
+* `mb.location.stateName` Random Location: State Name (US)
+* `mb.location.countryCode` Random Location: Country Code (ISO 2-letter)
+* `mb.location.countryName` Random Location: Country Name
+* `mb.location.postZip` Random Location: US Zip Code
+* `mb.location.streetAddress` Random Location: US Street Address
 
 ## Contributing
 
