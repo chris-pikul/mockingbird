@@ -4,6 +4,7 @@ import { window } from 'vscode';
 
 import commands from './commands';
 import { getContext } from './state';
+import { randIntRange } from './utils';
 import {
     type Command,
     type OutputFunction,
@@ -85,6 +86,33 @@ export function instantiateHandlebars() {
                 );
             }
         }
+    });
+
+    // Additional helpers
+    Handlebars.registerHelper('repeat', function () {
+        let min = 1;
+        let max = 1;
+
+        if (arguments.length > 1) {
+            if (arguments.length === 2) {
+                min = parseInt(arguments[0]);
+                max = min;
+            } else {
+                min = parseInt(arguments[0]);
+                max = parseInt(arguments[1]);
+            }
+        }
+        const opts = arguments[arguments.length - 1];
+
+        const times = min === max ? min : randIntRange(min, max);
+        let result = '';
+
+        /* eslint-disable no-invalid-this */
+        // @ts-ignore
+        for (let i = 0; i < times; i++) result += opts.fn(this);
+        /* eslint-enable */
+
+        return result;
     });
 }
 

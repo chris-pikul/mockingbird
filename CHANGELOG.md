@@ -12,6 +12,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - Added automatic template helper injection using manifest.
 - Changed all template tag functions
 - Templates are automatically extracted into own MD file
+- Handlebar block helper to repeat within 1, X, or randomly between X/Y times.
 
 ## 0.1.0
 - Initial release
