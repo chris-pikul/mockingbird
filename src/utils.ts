@@ -37,6 +37,18 @@ export function parseRange(input: string): [number, number] {
     return [Number.NaN, Number.NaN];
 }
 
+export function parseArgumentsRange(
+    args: IArguments,
+    defaultMin: number = 1,
+    defaultMax: number = 10,
+): [number, number] {
+    if (args && args.length > 0) {
+        if (args.length === 1) return parseRange(args[0]);
+        return [parseInt(args[0]), parseInt(args[1])];
+    }
+    return [defaultMin, defaultMax];
+}
+
 /**
  * Returns a random fraction with up to 2 digits in the decimal place.
  *

@@ -1,8 +1,8 @@
 import Primes from './data/primes.json';
 import {
     executeRepeated,
+    parseArgumentsRange,
     parseLength,
-    parseRange,
     rand,
     randChar,
     randInt,
@@ -49,8 +49,12 @@ export function randomSimpleFloat(): string {
     return withDigits(randSigned(Number.MAX_SAFE_INTEGER));
 }
 
-export function randomFloatRange(range: string): string {
-    const [min, max] = parseRange(range);
+export function randomFloatRange(_arg0?: string, _arg1?: string): string {
+    const [min, max] = parseArgumentsRange(
+        arguments,
+        0,
+        Number.MAX_SAFE_INTEGER,
+    );
     return withDigits(rand(min, max));
 }
 
@@ -70,8 +74,12 @@ export function randomInteger32(): string {
     return Math.trunc(randSigned(0xffffffff)).toString();
 }
 
-export function randomIntegerRange(range: string): string {
-    const [min, max] = parseRange(range);
+export function randomIntegerRange(_arg0?: string, _arg1?: string): string {
+    const [min, max] = parseArgumentsRange(
+        arguments,
+        0,
+        Number.MAX_SAFE_INTEGER,
+    );
     return randInt(min, max).toString();
 }
 

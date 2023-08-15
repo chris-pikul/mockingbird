@@ -11,6 +11,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - Changed command manifest to allow for declaring handlebar helpers.
 - Added automatic template helper injection using manifest.
 - Changed all template tag functions
+- Templates are automatically extracted into own MD file
 
 ## 0.1.0
 - Initial release
