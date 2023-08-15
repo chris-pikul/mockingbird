@@ -2,6 +2,8 @@
 
 All notable changes to the "mockingbird" extension will be documented in this file.
 
+## 0.3.0
+
 ## 0.2.3
 - Changed templates to use [Handlebars](https://handlebarsjs.com) as new templating engine.
 - Changed command manifest to allow for declaring handlebar helpers.
