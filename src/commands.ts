@@ -585,7 +585,7 @@ const commands: Command[] = [
             validator: (input?: string) => !!(input && parseInt(input) > 0),
             errorMessage: 'Please enter a positive integer',
         },
-        templateName: 'digits',
+        templateName: ['digits', 'number', 'numbers'],
     },
     {
         key: 'number.degree',
