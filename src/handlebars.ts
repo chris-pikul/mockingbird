@@ -88,6 +88,8 @@ export function instantiateHandlebars() {
         }
     });
 
+    /* eslint-disable no-invalid-this */
+
     // Additional helpers
     Handlebars.registerHelper('repeat', function () {
         let min = 1;
@@ -107,13 +109,22 @@ export function instantiateHandlebars() {
         const times = min === max ? min : randIntRange(min, max);
         let result = '';
 
-        /* eslint-disable no-invalid-this */
         // @ts-ignore
         for (let i = 0; i < times; i++) result += opts.fn(this);
-        /* eslint-enable */
 
         return result;
     });
+
+    Handlebars.registerHelper('maybe', function () {
+        const opts = arguments[arguments.length - 1];
+
+        const happens = Math.random() >= 0.5;
+        // @ts-ignore
+        if (happens) return opts.fn(this);
+        return '';
+    });
+
+    /* eslint-enable */
 }
 
 export function executeTemplateImmediate(template: string): string {

@@ -16,6 +16,29 @@ For your convienience there is a "block helper" provided to repeat sections of t
 * __One Argument__ is taken as the number of times to repeat the block. 
 * __Two Arguments__ is understood as a range, and will execute a random number of times between the first and second argument.
 
+Example:
+```handlebars
+{{! execute the generators between 2 and 5 times}}
+{{#repeat 2 5}}
+    {{ word }}
+    {{ digit }}
+{{/repeat}}
+```
+
+<details>
+    <summary>Example Output</summary>
+    <pre>    ipsum
+    0
+    nisi
+    7
+    officia
+    5</pre>
+</details>
+
+## Maybe Yes, Maybe No
+
+In case you might want to output something, or might not, there's the `mayb` block. This simple blocks just flips a virtual coin and decides whether it wants to output or not. That simple.
+
 ## Available Generators
 
 * `bool | boolean` Boolean
