@@ -2,6 +2,108 @@
 
 Templates are structured pieces of text that have template-tag instructions imbedded in them. These templat-tags can perform a number of the Mockingbird generators. These templates are powered by [Handlebars.js](https://handlebarsjs.com/), so following their documentation can also help you.
 
+## Useful Examples
+
+Why would you want templates? Plenty of reasons. One of them being to expand on the already numerous generators to make more complex types of generators. But really, the biggest reason I included them is for mocking JSON data, or any other type of structured data. Using templates you can pre-make the template text and execute it repeatedly.
+
+Here's an example of making a bunch of fake users for testing an imaginary API:
+
+```handlebars
+[
+    {{#repeat 3 5}}
+    {
+        "id": "{{uuid}}",
+        "name": "{{name}}",
+        "age": {{age 13}},
+        "address": {
+            "street": "{{address}}",
+            "city": "{{city}}",
+            "state": "{{state-code}}",
+            "postalCode": "{{zip}}",
+            "country": "{{country-code}}"
+        },
+        "theme": "{{html-color}}",
+        "followers": {{integer 1 1000}},
+        {{#maybe}}"active": false,{{/maybe}}
+        "createdAt": "{{timestamp}}"
+    }
+    {{/repeat}}
+]
+```
+
+<details>
+    <summary>Example Output</summary>
+<pre>
+[
+    {
+        "id": "1a76ce2b-194b-4b95-a598-66ca76c87b19",
+        "name": "Erika Barbosa",
+        "age": 37,
+        "address": {
+            "street": "629 Miller Ave. Apt. 778",
+            "city": "Fresno",
+            "state": "TX",
+            "postalCode": "62093",
+            "country": "GM"
+        },
+        "theme": "DarkGrey",
+        "followers": 909,
+        "active": false,
+        "createdAt": "2003-10-21T17:35:26-07:00"
+    }
+    {
+        "id": "f891efb6-d374-dfa8-d9c6-4fa6d26c9d29",
+        "name": "Raquel Mustafa",
+        "age": 18,
+        "address": {
+            "street": "95 Lisa Ln. Apt. 130",
+            "city": "Aurora",
+            "state": "DE",
+            "postalCode": "92195",
+            "country": "TK"
+        },
+        "theme": "Yellow",
+        "followers": 960,
+        "active": false,
+        "createdAt": "1977-05-15T07:51:12-10:00"
+    }
+    {
+        "id": "c73ef091-6832-43bb-a2dd-95977afcffdf",
+        "name": "Francisca Song",
+        "age": 44,
+        "address": {
+            "street": "7694 Anil St, Apt. 405",
+            "city": "Spokane",
+            "state": "AS",
+            "postalCode": "16322",
+            "country": "BA"
+        },
+        "theme": "Gainsboro",
+        "followers": 171,
+        "active": false,
+        "createdAt": "1997-12-15T05:12:29+03:00"
+    }
+    {
+        "id": "b0cc272b-c08e-464b-8ad3-d5b0e74bc7cc",
+        "name": "Isabel Pan",
+        "age": 43,
+        "address": {
+            "street": "2207 Nora Circle Apt. 606",
+            "city": "Atlanta",
+            "state": "NY",
+            "postalCode": "98572",
+            "country": "SI"
+        },
+        "theme": "DarkBlue",
+        "followers": 654,
+        
+        "createdAt": "2021-01-07T15:56:36+06:00"
+    }
+]</pre>
+</details>
+
+## Template Brief
+
 At the very root, the template-tags take the form of double-brace enclosed annotations such as `{{ float }}`. Inserting these tags anywhere in your text will have them replaced with the output of that generator.
 
 Some generators accept inputs, such as the `regex` generator, or the `digits` generator. To provide arguments to a tag, just space separate them after the the generator name. Such as `{{float 10 20}}` to generate a random float between 10 and 20.
