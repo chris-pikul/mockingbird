@@ -571,7 +571,7 @@ const commands: Command[] = [
         category: 'Random Number',
         title: 'Percentage',
         func: randomPercentage,
-        templateName: 'percentage',
+        templateName: ['percent', 'percentage'],
     },
     {
         key: 'number.randomDigits',
