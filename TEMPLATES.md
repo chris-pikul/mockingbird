@@ -1,3 +1,23 @@
+# Mockingbird Templates
+
+Templates are structured pieces of text that have template-tag instructions imbedded in them. These templat-tags can perform a number of the Mockingbird generators. These templates are powered by [Handlebars.js](https://handlebarsjs.com/), so following their documentation can also help you.
+
+At the very root, the template-tags take the form of double-brace enclosed annotations such as `{{ float }}`. Inserting these tags anywhere in your text will have them replaced with the output of that generator.
+
+Some generators accept inputs, such as the `regex` generator, or the `digits` generator. To provide arguments to a tag, just space separate them after the the generator name. Such as `{{float 10 20}}` to generate a random float between 10 and 20.
+
+It's important to note that if a generator expects a string, you can wrap them in quotes. This is especially important for the `regex` generator which expects a regular expression to be passed into it. For example: `{{regex "[A-Z]\-\d{10}"}}` is properly formed.
+
+## Repeating Blocks
+
+For your convienience there is a "block helper" provided to repeat sections of template for you. Using the handlebars notation, it is prefixed with a `#` for the opening tag, and requires a closing tag prefixed with `/`. The block helper is simply "`repeat`" and it optionally accepts up to 2 arguments:
+
+* __No Arguments__ it will only execute the block once.
+* __One Argument__ is taken as the number of times to repeat the block. 
+* __Two Arguments__ is understood as a range, and will execute a random number of times between the first and second argument.
+
+## Available Generators
+
 * `bool | boolean` Boolean
 * `regex | regexp` __(accepts input)__ Generate Using Regular Expression
 * `year` __(accepts input)__ Year With Custom Range
