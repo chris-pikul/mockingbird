@@ -39,6 +39,7 @@ export type Command = {
     prompt?: CommandPrompt;
     prompts?: CommandPrompt[];
     isCommand?: boolean;
+    templateName?: string | string[];
 };
 
 /**

@@ -2,10 +2,10 @@
 * `mb.regular_expression.fromRegex` Regular Expression: Generate Using Regular Expression
 * `mb.regular_expression.saveRegex` Regular Expression: Save Selection as Regular Expression Preset
 * `mb.regular_expression.useRegex` Regular Expression: Use Regular Expression Preset
-* `mb.pattern.cacheSet` Pattern: Cache Selection As Pattern
-* `mb.pattern.input` Pattern: Pattern From Input
-* `mb.pattern.cacheUse` Pattern: Use Cached Pattern
-* `mb.pattern.cacheUseLength` Pattern: Use Cached Pattern Multiple Times
+* `mb.template.cacheSet` Template: Cache Selection As Template
+* `mb.template.input` Template: Template From Input
+* `mb.template.cacheUse` Template: Use Cached Template
+* `mb.template.cacheUseLength` Template: Use Cached Template Multiple Times
 * `mb.date-time.currentISOTimestamp` Insert Date/Time: Current ISO Timestamp
 * `mb.date-time.currentISODate` Insert Date/Time: Current ISO Date
 * `mb.date-time.currentISOTime` Insert Date/Time: Current ISO Time

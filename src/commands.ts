@@ -26,6 +26,11 @@ import {
     randomMonth,
     randomYear,
 } from './date-time';
+import {
+    cacheTemplate,
+    executeTemplateImmediate,
+    useCachedTemplate,
+} from './handlebars';
 import { bigserial, guid, serial, urid, uuid } from './identifiers';
 import {
     city,
@@ -78,7 +83,6 @@ import {
     randomSimpleFloat,
     randomUnit,
 } from './numbers';
-import { cachePattern, providePattern, useCachedPattern } from './pattern';
 import {
     age,
     email,
@@ -133,6 +137,7 @@ const commands: Command[] = [
         category: 'Random',
         title: 'Boolean',
         func: randomBool,
+        templateName: ['bool', 'boolean'],
     },
     {
         key: 'regular_expression.fromRegex',
@@ -147,6 +152,7 @@ const commands: Command[] = [
             validator: (input?: string) => !!(input && input.length > 0),
             errorMessage: 'Please enter a non-empty regular expression',
         },
+        templateName: ['regex', 'regexp'],
     },
     {
         key: 'regular_expression.saveRegex',
@@ -166,34 +172,34 @@ const commands: Command[] = [
         isCommand: true,
     },
     {
-        key: 'pattern.cacheSet',
-        category: 'Pattern',
-        title: 'Cache Selection As Pattern',
-        shortTitle: 'Cache Pattern',
-        func: cachePattern,
+        key: 'template.cacheSet',
+        category: 'Template',
+        title: 'Cache Selection As Template',
+        shortTitle: 'Cache Template',
+        func: cacheTemplate,
         isCommand: true,
     },
     {
-        key: 'pattern.input',
-        category: 'Pattern',
-        title: 'Pattern From Input',
-        shortTitle: 'Input Pattern',
-        func: providePattern,
+        key: 'template.input',
+        category: 'Template',
+        title: 'Template From Input',
+        shortTitle: 'Input Template',
+        func: executeTemplateImmediate,
         prompt: PROMPT_PATTERN,
     },
     {
-        key: 'pattern.cacheUse',
-        category: 'Pattern',
-        title: 'Use Cached Pattern',
-        shortTitle: 'Use Pattern',
-        func: useCachedPattern,
+        key: 'template.cacheUse',
+        category: 'Template',
+        title: 'Use Cached Template',
+        shortTitle: 'Use Template',
+        func: useCachedTemplate,
     },
     {
-        key: 'pattern.cacheUseLength',
-        category: 'Pattern',
-        title: 'Use Cached Pattern Multiple Times',
-        shortTitle: 'Use Pattern Multiple',
-        func: useCachedPattern,
+        key: 'template.cacheUseLength',
+        category: 'Template',
+        title: 'Use Cached Template Multiple Times',
+        shortTitle: 'Use Template Multiple',
+        func: useCachedTemplate,
         prompt: PROMPT_LENGTH,
     },
     {
@@ -275,6 +281,7 @@ const commands: Command[] = [
             errorMessage:
                 'Please enter a valid space-deliminated integer range',
         },
+        templateName: 'year',
     },
     {
         key: 'date-time.randomMonth',
@@ -282,6 +289,7 @@ const commands: Command[] = [
         title: 'Month (1..12)',
         shortTitle: 'Random Month',
         func: randomMonth,
+        templateName: 'month',
     },
     {
         key: 'date-time.randomDay',
@@ -289,6 +297,7 @@ const commands: Command[] = [
         title: 'Day (1..30)',
         shortTitle: 'Random Day',
         func: randomDay,
+        templateName: 'day',
     },
     {
         key: 'date-time.randomISOTimestamp',
@@ -296,6 +305,7 @@ const commands: Command[] = [
         title: 'ISO Timestamp (1970..Now)',
         shortTitle: 'Random ISO Timestamp',
         func: randomISOTimestamp,
+        templateName: 'timestamp',
     },
     {
         key: 'date-time.randomISODate',
@@ -303,6 +313,7 @@ const commands: Command[] = [
         title: 'ISO Date (1970..Now)',
         shortTitle: 'Random ISO Date',
         func: randomISODate,
+        templateName: 'date',
     },
     {
         key: 'date-time.randomISOTime',
@@ -310,6 +321,7 @@ const commands: Command[] = [
         title: 'ISO Time',
         shortTitle: 'Random ISO Time',
         func: randomISOTime,
+        templateName: 'time',
     },
     {
         key: 'number.pi',
@@ -338,6 +350,7 @@ const commands: Command[] = [
         title: 'Unit Float (0..1)',
         shortTitle: 'Random Unit',
         func: randomUnit,
+        templateName: 'unit',
     },
     {
         key: 'number.randomPositiveFloat',
@@ -380,6 +393,7 @@ const commands: Command[] = [
             placeholder: 'MIN MAX',
             validator: (input?: string) => !!(input && input.indexOf(' ') > 0),
         },
+        templateName: 'float',
     },
     {
         key: 'number.randomPositiveInteger',
@@ -422,6 +436,7 @@ const commands: Command[] = [
             placeholder: 'MIN MAX',
             validator: (input?: string) => !!(input && input.indexOf(' ') > 0),
         },
+        templateName: ['integer', 'int'],
     },
     {
         key: 'number.randomByte',
@@ -429,6 +444,7 @@ const commands: Command[] = [
         title: 'Byte (Unsigned)',
         shortTitle: 'Random Byte',
         func: randomByte,
+        templateName: 'byte',
     },
     {
         key: 'number.randomSignedByte',
@@ -436,6 +452,7 @@ const commands: Command[] = [
         title: 'Byte (Signed)',
         shortTitle: 'Random Signed Byte',
         func: randomSignedByte,
+        templateName: 'signed-byte',
     },
     {
         key: 'number.randomShort',
@@ -443,6 +460,7 @@ const commands: Command[] = [
         title: 'Short (16bit Integer)',
         shortTitle: 'Random Short',
         func: randomShort,
+        templateName: 'short',
     },
     {
         key: 'number.randomSignedShort',
@@ -450,6 +468,7 @@ const commands: Command[] = [
         title: 'Signed Short (16bit Integer)',
         shortTitle: 'Random Signed Short',
         func: randomSignedShort,
+        templateName: 'signed-short',
     },
     {
         key: 'number.randomHexInteger16',
@@ -457,6 +476,7 @@ const commands: Command[] = [
         title: 'Hexidecimal Integer (16bit)',
         shortTitle: 'Random 16bit Hex',
         func: randomHexInteger16,
+        templateName: 'hex16',
     },
     {
         key: 'number.randomHexInteger24',
@@ -464,6 +484,7 @@ const commands: Command[] = [
         title: 'Hexidecimal Integer (24bit)',
         shortTitle: 'Random 24bit Hex',
         func: randomHexInteger24,
+        templateName: 'hex24',
     },
     {
         key: 'number.randomHexInteger32',
@@ -471,6 +492,7 @@ const commands: Command[] = [
         title: 'Hexidecimal Integer (32bit)',
         shortTitle: 'Random 32bit Hex',
         func: randomHexInteger32,
+        templateName: 'hex32',
     },
     {
         key: 'number.hexCharacters',
@@ -478,6 +500,7 @@ const commands: Command[] = [
         title: 'Hexidecimal Characters To Length',
         shortTitle: 'Random Hex',
         func: hex,
+        templateName: 'hex',
     },
     {
         key: 'number.randomDigit',
@@ -485,6 +508,7 @@ const commands: Command[] = [
         title: 'Digit (0-9)',
         shortTitle: 'Random Digit',
         func: randomDigit,
+        templateName: 'digit',
     },
     {
         key: 'number.randomOctalInteger16',
@@ -492,6 +516,7 @@ const commands: Command[] = [
         title: 'Octal Integer (16bit)',
         shortTitle: 'Random Octal 16',
         func: randomOctalInteger16,
+        templateName: 'octal16',
     },
     {
         key: 'number.randomOctalInteger24',
@@ -499,6 +524,7 @@ const commands: Command[] = [
         title: 'Octal Integer (24bit)',
         shortTitle: 'Random Octal 24',
         func: randomOctalInteger24,
+        templateName: 'octal24',
     },
     {
         key: 'number.randomOctalInteger32',
@@ -506,6 +532,7 @@ const commands: Command[] = [
         title: 'Octal Integer (32bit)',
         shortTitle: 'Random Octal 32',
         func: randomOctalInteger32,
+        templateName: 'octal32',
     },
     {
         key: 'number.randomBinaryInteger16',
@@ -513,6 +540,7 @@ const commands: Command[] = [
         title: 'Binary Integer (16bit)',
         shortTitle: 'Random Binary 16',
         func: randomBinaryInteger16,
+        templateName: 'binary16',
     },
     {
         key: 'number.randomBinaryInteger24',
@@ -520,6 +548,7 @@ const commands: Command[] = [
         title: 'Binary Integer (24bit)',
         shortTitle: 'Random Binary 24',
         func: randomBinaryInteger24,
+        templateName: 'binary24',
     },
     {
         key: 'number.randomBinaryInteger32',
@@ -527,6 +556,7 @@ const commands: Command[] = [
         title: 'Binary Integer (32bit)',
         shortTitle: 'Random Binary 32',
         func: randomBinaryInteger32,
+        templateName: 'binary32',
     },
     {
         key: 'number.randomPrime',
@@ -534,12 +564,14 @@ const commands: Command[] = [
         title: 'Prime',
         shortTitle: 'Random Prime',
         func: randomPrime,
+        templateName: 'prime',
     },
     {
         key: 'number.randomPercentage',
         category: 'Random Number',
         title: 'Percentage',
         func: randomPercentage,
+        templateName: ['percent', 'percentage'],
     },
     {
         key: 'number.randomDigits',
@@ -553,24 +585,28 @@ const commands: Command[] = [
             validator: (input?: string) => !!(input && parseInt(input) > 0),
             errorMessage: 'Please enter a positive integer',
         },
+        templateName: ['digits', 'number', 'numbers'],
     },
     {
         key: 'number.degree',
         category: 'Random Number',
         title: 'Degree (whole number)',
         func: degree,
+        templateName: 'degree',
     },
     {
         key: 'number.radian',
         category: 'Random Number',
         title: 'Radian (2-digit precision)',
         func: radians,
+        templateName: 'radian',
     },
     {
         key: 'color.randomHex',
         category: 'Random Color',
         title: 'Hex Color',
         func: randomColorHex,
+        templateName: 'color-hex',
     },
     {
         key: 'color.randomHexSimple',
@@ -583,36 +619,42 @@ const commands: Command[] = [
         category: 'Random Color',
         title: 'Hex Color (Known Colors)',
         func: randomColorHexUseful,
+        templateName: 'color',
     },
     {
         key: 'color.randomRGB',
         category: 'Random Color',
         title: 'RGB Color',
         func: randomColorRGB,
+        templateName: 'rgb',
     },
     {
         key: 'color.randomRGBA',
         category: 'Random Color',
         title: 'RGBA Color',
         func: randomColorRGBA,
+        templateName: 'rgba',
     },
     {
         key: 'color.randomHSL',
         category: 'Random Color',
         title: 'HSL Color',
         func: randomColorHSL,
+        templateName: 'hsl',
     },
     {
         key: 'color.randomHSB',
         category: 'Random Color',
         title: 'HSB Color',
         func: randomColorHSB,
+        templateName: 'hsb',
     },
     {
         key: 'color.randomCMYK',
         category: 'Random Color',
         title: 'CMYK Color',
         func: randomColorCMYK,
+        templateName: 'cmyk',
     },
     {
         key: 'color.htmlHex',
@@ -627,6 +669,7 @@ const commands: Command[] = [
         title: 'Named Color From HTML/CSS',
         shortTitle: 'Named Color',
         func: randomHTMLColorName,
+        templateName: 'html-color',
     },
     {
         key: 'color.name',
@@ -634,6 +677,7 @@ const commands: Command[] = [
         title: 'Color Name',
         shortTitle: 'Color Name',
         func: randomColorName,
+        templateName: 'color-name',
     },
     {
         key: 'text.latin-ascii.letterUpper',
@@ -647,6 +691,7 @@ const commands: Command[] = [
         title: 'Latin Upper-case Letter To Length',
         func: randomLatinLetterUpperLength,
         prompt: PROMPT_LENGTH,
+        templateName: 'uppercase-letter',
     },
     {
         key: 'text.latin-ascii.latinLetterLower',
@@ -660,6 +705,7 @@ const commands: Command[] = [
         title: 'Latin Lower-case Letter To Length',
         func: randomLatinLetterLowerLength,
         prompt: PROMPT_LENGTH,
+        templateName: 'lowercase-letter',
     },
     {
         key: 'text.latin-ascii.latinLetter',
@@ -673,6 +719,7 @@ const commands: Command[] = [
         title: 'Latin Letter (A-Z, a-z) To Length',
         func: randomLatinLetterLength,
         prompt: PROMPT_LENGTH,
+        templateName: 'letter',
     },
     {
         key: 'text.latin-ascii.latinNumber',
@@ -699,6 +746,7 @@ const commands: Command[] = [
         title: 'Latin Character (A-Z, a-z, 0-9) To Length',
         func: randomLatinLetterNumberLength,
         prompt: PROMPT_LENGTH,
+        templateName: 'alpha-numeric',
     },
     {
         key: 'text.latin-ascii.asciiSymbol',
@@ -712,6 +760,7 @@ const commands: Command[] = [
         title: 'Latin/ASCII Symbol To Length',
         func: randomASCIISymbolLength,
         prompt: PROMPT_LENGTH,
+        templateName: 'symbol',
     },
     {
         key: 'text.latin-ascii.asciiCharacter',
@@ -725,6 +774,7 @@ const commands: Command[] = [
         title: 'ASCII Character (A-Z, a-z, 0-9, symbols) To Length',
         func: randomASCIICharacterLength,
         prompt: PROMPT_LENGTH,
+        templateName: ['char', 'character'],
     },
     {
         key: 'text.emoji',
@@ -739,6 +789,7 @@ const commands: Command[] = [
         title: 'Emoji (Extended Blocks)',
         shortTitle: 'Emoji',
         func: randomEmojiPicto,
+        templateName: 'emoji',
     },
     {
         key: 'text.lorem_ipsum.word',
@@ -754,6 +805,7 @@ const commands: Command[] = [
         shortTitle: 'Words',
         func: loremIpsumWords,
         prompt: PROMPT_LENGTH,
+        templateName: ['word', 'words'],
     },
     {
         key: 'text.lorem_ipsum.sentence',
@@ -769,6 +821,7 @@ const commands: Command[] = [
         shortTitle: 'Sentences',
         func: loremIpsumSentences,
         prompt: PROMPT_LENGTH,
+        templateName: ['sentence', 'sentences'],
     },
     {
         key: 'text.lorem_ipsum.paragraph',
@@ -784,6 +837,7 @@ const commands: Command[] = [
         shortTitle: 'Paragraphs',
         func: loremIpsumParagraphs,
         prompt: PROMPT_LENGTH,
+        templateName: ['paragraph', 'paragraphs'],
     },
     {
         key: 'text.lorem_ipsum.wordHTML',
@@ -799,6 +853,7 @@ const commands: Command[] = [
         shortTitle: 'Words',
         func: loremIpsumHTMLWords,
         prompt: PROMPT_LENGTH,
+        templateName: 'html-words',
     },
     {
         key: 'text.lorem_ipsum.sentenceHTML',
@@ -814,6 +869,7 @@ const commands: Command[] = [
         shortTitle: 'Sentences',
         func: loremIpsumHTMLSentences,
         prompt: PROMPT_LENGTH,
+        templateName: 'html-sentences',
     },
     {
         key: 'text.lorem_ipsum.paragraphHTML',
@@ -829,102 +885,119 @@ const commands: Command[] = [
         shortTitle: 'Paragraphs',
         func: loremIpsumHTMLParagraphs,
         prompt: PROMPT_LENGTH,
+        templateName: 'html-paragraphs',
     },
     {
         key: 'text.adjective',
         category: 'Random Text',
         title: 'English Adjective',
         func: englishAdjective,
+        templateName: 'adjective',
     },
     {
         key: 'text.adverb',
         category: 'Random Text',
         title: 'English Adverb',
         func: englishAdverb,
+        templateName: 'adverb',
     },
     {
         key: 'text.noun',
         category: 'Random Text',
         title: 'English Noun',
         func: englishNoun,
+        templateName: 'noun',
     },
     {
         key: 'person.firstName',
         category: 'Random Person',
         title: 'First Name',
         func: firstName,
+        templateName: 'first-name',
     },
     {
         key: 'person.lastName',
         category: 'Random Person',
         title: 'Last Name',
         func: lastName,
+        templateName: 'last-name',
     },
     {
         key: 'person.anyName',
         category: 'Random Person',
         title: 'Any Name',
         func: middleName,
+        templateName: 'middle-name',
     },
     {
         key: 'person.middleInitial',
         category: 'Random Person',
         title: 'Middle Initial',
         func: middleInitial,
+        templateName: 'middle-initial',
     },
     {
         key: 'person.fullName',
         category: 'Random Person',
         title: 'Full Name',
         func: fullName,
+        templateName: ['name', 'full-name'],
     },
     {
         key: 'person.phone_number.phoneNumberUS',
         category: 'Random Person',
         title: 'Phone Number (US)',
         func: phoneNumberUS,
+        templateName: 'phone-us',
     },
     {
         key: 'person.phone_number.phoneNumberUK',
         category: 'Random Person',
         title: 'Phone Number (UK)',
         func: phoneNumberUK,
+        templateName: 'phone-uk',
     },
     {
         key: 'person.phone_number.phoneNumberDE',
         category: 'Random Person',
         title: 'Phone Number (DE)',
         func: phoneNumberDE,
+        templateName: 'phone-de',
     },
     {
         key: 'person.phone_number.phoneNumberFR',
         category: 'Random Person',
         title: 'Phone Number (FR)',
         func: phoneNumberFR,
+        templateName: 'phone-fr',
     },
     {
         key: 'person.phone_number.phoneNumberIT',
         category: 'Random Person',
         title: 'Phone Number (IT)',
         func: phoneNumberIT,
+        templateName: 'phone-it',
     },
     {
         key: 'person.phone_number.phoneNumberEU',
         category: 'Random Person',
         title: 'Phone Number (EU)',
         func: phoneNumberEU,
+        templateName: 'phone-eu',
     },
     {
         key: 'person.phone_number.phoneNumberE164',
         category: 'Random Person',
         title: 'Phone Number (E.164)',
         func: phoneNumberE164,
+        templateName: ['phone', 'e164'],
     },
     {
         key: 'person.email',
         category: 'Random Person',
         title: 'Email Address (Known Providers)',
         func: email,
+        templateName: 'email',
     },
     {
         key: 'person.age',
@@ -940,6 +1013,7 @@ const commands: Command[] = [
         shortTitle: 'Minimum Age',
         func: age,
         prompt: PROMPT_LENGTH,
+        templateName: 'age',
     },
     {
         key: 'person.ssn',
@@ -947,48 +1021,56 @@ const commands: Command[] = [
         title: 'Social Security Number (US)',
         shortTitle: 'SSN',
         func: ssn,
+        templateName: 'ssn',
     },
     {
         key: 'identifier.serial',
         category: 'Random Identifier',
         title: 'Serial (32bit Integer)',
         func: serial,
+        templateName: 'serial',
     },
     {
         key: 'identifier.bigserial',
         category: 'Random Identifier',
         title: 'Big Serial (64bit Integer)',
         func: bigserial,
+        templateName: ['bigserial', 'long'],
     },
     {
         key: 'identifier.guid',
         category: 'Random Identifier',
         title: 'GUID',
         func: guid,
+        templateName: 'guid',
     },
     {
         key: 'identifier.uuid',
         category: 'Random Identifier',
         title: 'UUID',
         func: uuid,
+        templateName: 'uuid',
     },
     {
         key: 'identifier.urid',
         category: 'Random Identifier',
         title: 'URID',
         func: urid,
+        templateName: 'urid',
     },
     {
         key: 'location.longitude',
         category: 'Random Location',
         title: 'Longitude',
         func: longitude,
+        templateName: 'longitude',
     },
     {
         key: 'location.latitude',
         category: 'Random Location',
         title: 'Latitude',
         func: latitude,
+        templateName: 'latitude',
     },
     {
         key: 'location.gpsDMS',
@@ -996,6 +1078,7 @@ const commands: Command[] = [
         title: 'GPS Coordinate (DMS)',
         shortTitle: 'GPS DMS',
         func: gpsDMS,
+        templateName: 'gps-dms',
     },
     {
         key: 'location.gpsDMM',
@@ -1003,6 +1086,7 @@ const commands: Command[] = [
         title: 'GPS Coordinate (DMM)',
         shortTitle: 'GPS DMM',
         func: gpsDMM,
+        templateName: ['gps', 'gps-dmm'],
     },
     {
         key: 'location.gpsDD',
@@ -1010,24 +1094,28 @@ const commands: Command[] = [
         title: 'GPS Coordinate (DD)',
         shortTitle: 'GPS DD',
         func: gpsDD,
+        templateName: 'gps-dd',
     },
     {
         key: 'location.city',
         category: 'Random Location',
         title: 'City (US)',
         func: city,
+        templateName: 'city',
     },
     {
         key: 'location.stateCode',
         category: 'Random Location',
         title: 'State Code (US)',
         func: stateCode,
+        templateName: 'state-code',
     },
     {
         key: 'location.stateName',
         category: 'Random Location',
         title: 'State Name (US)',
         func: stateName,
+        templateName: 'state',
     },
     {
         key: 'location.countryCode',
@@ -1035,6 +1123,7 @@ const commands: Command[] = [
         title: 'Country Code (ISO 2-letter)',
         shortTitle: 'Country Code',
         func: countryCode,
+        templateName: 'country-code',
     },
     {
         key: 'location.countryName',
@@ -1042,18 +1131,21 @@ const commands: Command[] = [
         title: 'Country Name',
         shortTitle: 'Country',
         func: countryName,
+        templateName: 'country',
     },
     {
         key: 'location.postZip',
         category: 'Random Location',
         title: 'US Zip Code',
         func: postZip,
+        templateName: 'zip',
     },
     {
         key: 'location.streetAddress',
         category: 'Random Location',
         title: 'US Street Address',
         func: usStreetAddress,
+        templateName: 'address',
     },
 ];
 export default commands;

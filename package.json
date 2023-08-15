@@ -2,7 +2,7 @@
     "name": "mockingbird",
     "displayName": "Mockingbird",
     "description": "Generate data for mocks and testing with ease",
-    "version": "0.2.0",
+    "version": "0.2.3",
     "engines": {
         "vscode": "^1.80.0"
     },
@@ -149,28 +149,28 @@
                 "category": "Regular Expression"
             },
             {
-                "command": "mb.pattern.cacheSet",
-                "title": "Cache Selection As Pattern",
-                "shortTitle": "Cache Pattern",
-                "category": "Pattern"
+                "command": "mb.template.cacheSet",
+                "title": "Cache Selection As Template",
+                "shortTitle": "Cache Template",
+                "category": "Template"
             },
             {
-                "command": "mb.pattern.input",
-                "title": "Pattern From Input",
-                "shortTitle": "Input Pattern",
-                "category": "Pattern"
+                "command": "mb.template.input",
+                "title": "Template From Input",
+                "shortTitle": "Input Template",
+                "category": "Template"
             },
             {
-                "command": "mb.pattern.cacheUse",
-                "title": "Use Cached Pattern",
-                "shortTitle": "Use Pattern",
-                "category": "Pattern"
+                "command": "mb.template.cacheUse",
+                "title": "Use Cached Template",
+                "shortTitle": "Use Template",
+                "category": "Template"
             },
             {
-                "command": "mb.pattern.cacheUseLength",
-                "title": "Use Cached Pattern Multiple Times",
-                "shortTitle": "Use Pattern Multiple",
-                "category": "Pattern"
+                "command": "mb.template.cacheUseLength",
+                "title": "Use Cached Template Multiple Times",
+                "shortTitle": "Use Template Multiple",
+                "category": "Template"
             },
             {
                 "command": "mb.date-time.currentISOTimestamp",
@@ -874,7 +874,7 @@
                     "submenu": "mockingbird/regular_expression"
                 },
                 {
-                    "submenu": "mockingbird/pattern"
+                    "submenu": "mockingbird/template"
                 },
                 {
                     "submenu": "mockingbird/date-time"
@@ -914,18 +914,18 @@
                     "command": "mb.regular_expression.useRegex"
                 }
             ],
-            "mockingbird/pattern": [
+            "mockingbird/template": [
                 {
-                    "command": "mb.pattern.cacheSet"
+                    "command": "mb.template.cacheSet"
                 },
                 {
-                    "command": "mb.pattern.input"
+                    "command": "mb.template.input"
                 },
                 {
-                    "command": "mb.pattern.cacheUse"
+                    "command": "mb.template.cacheUse"
                 },
                 {
-                    "command": "mb.pattern.cacheUseLength"
+                    "command": "mb.template.cacheUseLength"
                 }
             ],
             "mockingbird/date-time": [
@@ -1341,8 +1341,8 @@
                 "label": "Regular Expression"
             },
             {
-                "id": "mockingbird/pattern",
-                "label": "Pattern"
+                "id": "mockingbird/template",
+                "label": "Template"
             },
             {
                 "id": "mockingbird/date-time",
@@ -1393,7 +1393,8 @@
         "package": "webpack --mode production --devtool hidden-source-map",
         "lint": "eslint src --ext ts",
         "commands": "node ./scripts/fill-commands.mjs",
-        "commands:extract": "node ./scripts/extract-commands.mjs"
+        "commands:extract": "node ./scripts/extract-commands.mjs",
+        "templates": "node ./scripts/extract-templates.mjs"
     },
     "devDependencies": {
         "@trivago/prettier-plugin-sort-imports": "^4.2.0",
@@ -1417,6 +1418,7 @@
     "dependencies": {
         "base32-encode": "^2.0.0",
         "date-fns": "^2.30.0",
+        "handlebars": "^4.7.8",
         "lorem-ipsum": "^2.0.8",
         "randexp": "^0.5.3"
     }
